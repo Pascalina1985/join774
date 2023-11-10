@@ -1,6 +1,7 @@
+
+
 async function init() {
     await includeHTML();
-    await includeHeaderHTML();
 }
 
 async function includeHTML() {
@@ -15,10 +16,4 @@ async function includeHTML() {
             element.innerHTML = 'Page not found';
         }
     }
-}
-
-async function includeHeaderHTML() {
-    const response = await fetch('./assets/templates/header.html');
-    const html = await response.text();
-    document.getElementById('headerContainer').innerHTML = html;
 }
