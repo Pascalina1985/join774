@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join</title>
+    <link rel="stylesheet" href="log-in.css">
+    <link rel="icon" type="image/x-icon" href="./img/log-in/Capa 2.png">
+    <script src="./js/log-in.js"></script>
+</head>
+
+<body>
+    <div id="log-in-page">
+
+        <div>
+            <img class="Join-img" src="./img/log-in/Capa 2.png">
+        </div>
+
+
+        <div class="Sign-up-section">
+            <button type="button" class="btn">Sign up</button>
+            <h3>Not a Join User?</h3>
+        </div>
+
+
+        <div class="Log-in-position">
+            <form onsubmit="userLogIn()" class="form">
+                <div class="log-in-field">
+                    <div id="log-in-headline-underline">
+                        <h1 class="log-in-headline">Log in</h1>
+                    </div>
+                    <input required class="mail" type="email" placeholder="Email">
+                    <input required class="password" type="password" placeholder="Password">
+                    <div class="checkbox">
+                        <form>
+                            <input type="checkbox" name="remember" id="">
+                            <label for="remember">Remember me</label>
+                        </form>
+                    </div>
+                    <div class="buttons">
+                        <button class="btn">Log in</button>
+                        <form onsubmit="guestLogIn()">
+                            <button class="btn-clear">Guest Log in</button>
+                        </form>
+                    </div>
+                </div>
+            </form>
+            <div class="legal">
+                <p class="bold1">Privacy Policy</p>
+                <p class="bold2">Legal notice</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
