@@ -1,0 +1,40 @@
+.summary-main-section {
+    height: 30px;
+    margin-left: 232px;
+    display: flex;
+    flex-direction: column;
+}
+
+.join-container {
+    display: flex;
+    width: 625px;
+    height: 73px;
+    margin-top: 110px;
+    margin-left: 96px;
+    gap: 30px;
+    align-items: center;
+}
+
+.blue-line {
+    height: 59px;
+    border: 3px;
+    width: 3px;
+    background-color: rgb(15, 154, 253);
+}
+
+.h1 {
+    width: 264px;
+    height: 73px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 61px;
+    color: black;
+}
+
+.join-text {
+    width: 301px;
+    height: 32px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 27px;
+}
