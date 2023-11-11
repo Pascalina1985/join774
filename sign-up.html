@@ -1,14 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Join</title>
     <link rel="stylesheet" href="sign-up.css">
     <link rel="icon" type="image/x-icon" href="./img/log-in/Capa 2.png">
+    <script src="script.js"></script>
     <script src="js/log-in.js"></script>
 </head>
+
 <body>
-    
+    <div id="Sign-up-page">
+
+        <div>
+            <img class="Join-img" src="./img/log-in/Capa 2.png">
+        </div>
+
+
+        <div class="Log-in-position">
+            <form class="form">
+                <div class="log-in-field">
+                    <div class="center">
+                        <div class="arrow-position">
+                            <img onclick="history.back()" src="./img/log-in/arrow-left-line.png">
+                        </div>
+                        <div id="log-in-headline-underline" style="margin-right: 70px;">
+                            <h1 class="log-in-headline">Sign up</h1>
+                        </div>
+                    </div>
+                    <input required class="new-user" type="text" placeholder="Name">
+                    <input required class="mail" type="email" placeholder="Email">
+                    <input required class="password" type="password" placeholder="Password">
+                    <input required class="password" type="password" placeholder="Confirm Password">
+                    <div class="checkbox">
+                        <form>
+                          <input type="checkbox" name="remember" id="remember">
+                          <label for="remember" class="center">I accept the <p style="color: rgb(41, 171, 226); margin-left: 4px;">Privacy policy</p></label>
+                        </form>
+                      </div>
+                    <div class="buttons">
+                        <button class="btn">Sign up</button>
+                    </div>
+                </div>
+            </form>
+            <div class="legal">
+                <p class="bold1">Privacy Policy</p>
+                <p class="bold2">Legal notice</p>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>

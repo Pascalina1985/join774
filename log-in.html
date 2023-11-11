@@ -7,12 +7,12 @@
     <title>Join</title>
     <link rel="stylesheet" href="log-in.css">
     <link rel="icon" type="image/x-icon" href="./img/log-in/Capa 2.png">
+    <script src="script.js"></script>
     <script src="./js/log-in.js"></script>
 </head>
 
 <body>
     <div id="log-in-page">
-
         <div>
             <img class="Join-img" src="./img/log-in/Capa 2.png">
         </div>
@@ -40,9 +40,7 @@
                     </div>
                     <div class="buttons">
                         <button class="btn">Log in</button>
-                        <form onsubmit="guestLogIn()">
-                            <button class="btn-clear">Guest Log in</button>
-                        </form>
+                        <button onclick="guestLogIn()" class="btn-clear">Guest Log in</button>
                     </div>
                 </div>
             </form>
