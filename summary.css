@@ -38,3 +38,164 @@
     font-weight: 400;
     font-size: 27px;
 }
+
+section {
+    width: 560px;
+    height: 562px;
+    margin-top: 239px;
+    margin-left: 328px;
+    display: flex;
+    flex-direction: column;
+}
+
+.do-done-container {
+    display: flex;
+    height: 168px;
+    align-items: center;
+    gap: 18px;
+}
+
+.do-done-picture {
+    width: 69px;
+    height: 69px;
+}
+
+.do-container {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    width: 264px;
+    height: 168px;
+    border-radius: 30px;
+    padding: 38px, 19px, 38px, 19px;
+    background-color: rgb(255, 255, 255);
+    justify-content: center;
+}
+
+.task-span {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 64px;
+    text-align: center;
+}
+
+.text-span {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    text-align: center;
+}
+
+.to-do-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.background-color {
+    background-color: rgb(246, 247, 248);
+}
+
+.urgent-deadline-container {
+    height: 168px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 30px;
+    padding: 28px, 48px, 28px, 48px;
+    gap: 61px;
+    margin-top: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.urgent-container {
+    display: flex;
+    align-items: center;
+}
+
+.urgent-picture {
+    width: 60px;
+    height: 60px;
+}
+
+.urgent-line-container {
+    height: 102px;
+    width: 2px;
+    background-color: rgb(209, 209, 209);
+    border: 2px;
+}
+
+.deadline-container {
+    display: flex;
+    flex-direction: column;
+    width: 178px;
+    height: 57px;
+    gap: 13px;
+    align-items: center;
+    justify-content: center;
+}
+
+.h2 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 21px;
+}
+
+.text-deadline {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.task-container {
+    height: 170px;
+    margin-top: 28px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.task-sections {
+    display: flex;
+    flex-direction: column;
+    width: 168px;
+    height: 168px;
+    gap: 13px;
+    border-radius: 30px;
+    background-color: rgb(255, 255, 255);
+    align-items: center;
+    text-align: center;
+}
+
+.text-task {
+    width: 83px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.section-oversection {
+    display: flex;
+}
+
+.greeting-section {
+    width: 385px;
+    height: 136px;
+    gap: 3px;
+    margin-top: 451.5px;
+    margin-left: 80px;
+    display: flex;
+    flex-direction: column;
+}
+
+.greeting-class {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 47px;
+}
+
+.user-name-class {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 64px;
+    color: rgb(41, 171, 226);
+}
