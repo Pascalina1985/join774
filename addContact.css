@@ -1,0 +1,58 @@
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+
+header {
+    display: inline-flex;
+    height: 594px;
+    padding: 66px 48px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 12px;
+    flex-shrink: 0;
+    background-color: #2a3647;
+    border-bottom-left-radius: 30px;
+    border-top-left-radius: 30px;
+}
+
+h1 {
+    color: white;
+    font-size: 61px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+}
+
+h2 {
+    color: white;
+    font-size: 27px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+}
+
+.logo {
+    width: 55.6px;
+    height: 66.483px;
+    position: absolute;
+    left: 46.904px;
+    top: 154px;
+}
+
+.headline {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+
+.addContactMainContainer {
+    width: 1212px;
+    height: 592px;
+    background: #FFF
+}
