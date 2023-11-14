@@ -1,0 +1,120 @@
+main {
+    display: flex;
+}
+
+.contact-list {
+    display: flex;
+    flex-direction: column;
+    width: 456px;
+    min-height: 920px;
+    max-height: 928px;
+    overflow-y: auto;
+    margin-top: 0;
+    margin-left: 232px;
+    position: fixed;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 4px 0px 6px 0px #00000014;
+}
+
+.button-container {
+    width: 456px;
+    height: 101px;
+}
+
+.contact-button {
+    width: 352px;
+    height: 56px;
+    border-radius: 10px;
+    gap: 16px;
+    background-color: rgb(42, 54, 71);
+    color: rgb(255, 255, 255);
+    padding: 12px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 22.5px;
+    margin-left: 52px;
+}
+
+.contact-picture {
+    width: 29.33px;
+    height: 20.91px;
+}
+
+.letter-container {
+    display: flex;
+    width: 352px;
+    height: 58px;
+    padding: 17px 36px;
+    gap: 8px;
+    margin-left: 28px;
+}
+
+.letter {
+    width: 14px;
+    height: 24px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.contact-line {
+    width: 352px;
+    height: 1px;
+    background-color: rgb(209, 209, 209);
+    margin-left: 28px;
+}
+
+.contact-data {
+    width: 352px;
+    height: 78px;
+    padding: 15px 24px;
+    display: flex;
+    gap: 35px;
+    margin-left: 28px;
+    align-items: center;
+}
+
+.contact-logo {
+    width: 42px;
+    height: 42px;
+    border-radius: 45px;
+    display: flex;
+    gap: 10px;
+    background-color: rgb(255, 122, 0);
+    align-items: center;
+    justify-content: center;
+}
+
+.personal-contact-information {
+    width: 140px;
+    height: 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.personal-name {
+    width: 121px;
+    height: 24px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.personal-email {
+    width: 140px;
+    height: 19px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: rgb(0, 124, 238);
+}
+
+.headline-contacts {
+    display: flex;
+    margin-left: 0;
+    width: 100vw;
+    height: calc(100vh - 96px);
+    background-color: rgb(246, 247, 248);
+}

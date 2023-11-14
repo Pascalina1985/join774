@@ -1,20 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacts</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="contacts.css">
 </head>
 
 <body onload="init()">
     <header w3-include-html=".\assets\templates\header.html"></header>
     <div class="sidebarContainer" w3-include-html=".\assets\templates\side_menu.html"></div>
 
+    <main>
+        <div class="contact-list">
+            <div class="button-container"><button class="contact-button">Add new contact <img class="contact-picture" src="./img/contacts/person_add.png"></button></div>
+            <div id="contact-list">
+                <div class="letter-container">
+                    <p class="letter">A</p>
+                </div>
+                <div class="contact-line"></div>
+                <div class="contact-data">
+                    <div class="contact-logo">AM</div>
+                    <div class="personal-contact-information">
+                        <div class="personal-name">Anton Mayer</div>
+                        <div class="personal-email">anton@gmail.com</div>
+                    </div>
+                </div>
+                <div class="contact-data">
+                    <div class="contact-logo">AS</div>
+                    <div class="personal-contact-information">
+                        <div class="personal-name">Anja Schulz</div>
+                        <div class="personal-email">schulz@hotmail.com</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="headline-contacts"></div>
+        </div>
+    </main>
 </body>
 
 </html>
