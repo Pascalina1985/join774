@@ -18,7 +18,7 @@ async function includeHTML() {
 }
 
 function skalierungAnpassen() {
-    let minWidth = 1440;
+    let minWidth = 1445;
     // Fenstergröße abrufen
     let windowWidth = window.innerWidth;
     if (windowWidth < minWidth) {
