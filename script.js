@@ -1,5 +1,6 @@
 async function init() {
     await includeHTML();
+    skalierungAnpassen();
 }
 
 async function includeHTML() {
@@ -20,21 +21,21 @@ function skalierungAnpassen() {
     let minWidth = 1440;
     // Fenstergröße abrufen
     let windowWidth = window.innerWidth;
-if (windowWidth<minWidth) {
-    // Skalierung berechnen
-    let scale = windowWidth / 1460;
-    // Skalierung auf zwei Dezimalstellen runden
-    scale = Math.round(scale * 100) / 100;
-    // Transformations-String erstellen
-    let transformString = 'scale(' + scale + ')';
+    if (windowWidth < minWidth) {
+        // Skalierung berechnen
+        let scale = windowWidth / 1460;
+        // Skalierung auf zwei Dezimalstellen runden
+        scale = Math.round(scale * 100) / 100;
+        // Transformations-String erstellen
+        let transformString = 'scale(' + scale + ')';
 
-    // Transformations-String auf das gewünschte Element anwenden (z.B., das Body-Element)
-    document.body.style.transform = transformString;
-}
-else{
-    document.body.style.transform = 'scale(1)';
-}
-    
+        // Transformations-String auf das gewünschte Element anwenden (z.B., das Body-Element)
+        document.body.style.transform = transformString;
+    }
+    else {
+        document.body.style.transform = 'scale(1)';
+    }
+
 }
 window.onresize = function () {
     skalierungAnpassen();
