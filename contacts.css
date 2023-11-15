@@ -34,6 +34,12 @@ main {
     align-items: center;
     margin-top: 22.5px;
     margin-left: 52px;
+    border: 1px;
+}
+
+.contact-button:hover {
+    cursor: pointer;
+    background-color: rgb(41, 171, 226);
 }
 
 .contact-picture {
@@ -73,6 +79,12 @@ main {
     gap: 35px;
     margin-left: 28px;
     align-items: center;
+    border-radius: 10px;
+}
+
+.contact-data:hover {
+    cursor: pointer;
+    background-color: rgb(246, 247, 248);
 }
 
 .contact-logo {
@@ -113,8 +125,44 @@ main {
 
 .headline-contacts {
     display: flex;
-    margin-left: 0;
-    width: 100vw;
+    margin-left: 688px;
+    width: 100%;
     height: calc(100vh - 96px);
     background-color: rgb(246, 247, 248);
+}
+
+.headline-contacts-container {
+    display: flex;
+    margin-left: 55px;
+    margin-top: 110px;
+    width: 569px;
+    height: 73px;
+    gap: 30px;
+    align-items: center;
+}
+
+.headline-contacts-headline {
+    width: 274px;
+    height: 73px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 61px;
+    align-items: center;
+}
+
+.headline-contacts-line {
+    height: 59px;
+    border-radius: 3px;
+    width: 3px;
+    background-color: rgb(41, 171, 226);
+    align-items: center;
+}
+
+.headline-contacts-text {
+    width: 235px;
+    height: 32px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 26px;
+    align-items: center;
 }
