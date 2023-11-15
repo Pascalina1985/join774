@@ -1,4 +1,4 @@
-main {
+.contactContainer{
     display: flex;
 }
 
@@ -10,7 +10,6 @@ main {
     max-height: 928px;
     overflow-y: auto;
     margin-top: 0;
-    margin-left: 232px;
     position: fixed;
     background-color: rgb(255, 255, 255);
     box-shadow: 4px 0px 6px 0px #00000014;
@@ -123,17 +122,9 @@ main {
     color: rgb(0, 124, 238);
 }
 
-.headline-contacts {
-    display: flex;
-    margin-left: 688px;
-    width: 100%;
-    height: calc(100vh - 96px);
-    background-color: rgb(246, 247, 248);
-}
-
 .headline-contacts-container {
     display: flex;
-    margin-left: 55px;
+    margin-left: 511px;
     margin-top: 110px;
     width: 569px;
     height: 73px;

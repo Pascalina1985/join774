@@ -1,6 +1,5 @@
 .summary-main-section {
     height: 30px;
-    margin-left: 232px;
     display: flex;
     flex-direction: column;
 }
@@ -43,7 +42,7 @@ section {
     width: 560px;
     height: 562px;
     margin-top: 239px;
-    margin-left: 328px;
+    margin-left:96px;
     display: flex;
     flex-direction: column;
 }

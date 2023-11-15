@@ -14,12 +14,13 @@
 <body>
     <div class="addContactMainContainer">
         <header>
-            <img class="logo" src="img\sidebar\joinLogoWhite.png" alt="">
             <div class="headline">
+                <img class="logo" src="img\sidebar\joinLogoWhite.png" alt="">
                 <h1>Add contact</h1>
                 <h2>Tasks are better with a team!</h2>
                 <img class="vector5" src="img\addContact\vector.png" alt="">
             </div>
+            
         </header>
         <div class="createContactContainer">
             <div class="contactImage">
@@ -31,15 +32,15 @@
                 </button>
                 <div class="inputContainer">
                     <div class="input">
-                        <input type="text" placeholder="Name">
+                        <input type="text" id="name" name="name" placeholder="Name" required>
                         <img class="icons" src="img\addContact\personInput.png" alt="">
                     </div>
                     <div class="input">
-                        <input type="text" placeholder="Email">
+                        <input type="email" id="email" name="email" placeholder="Email" required>
                         <img class="icons" src="img\addContact\mail.png" alt="">
                     </div>
                     <div class="input">
-                        <input type="text" placeholder="Phone">
+                        <input type="tel" id="telefon" name="telefon" placeholder="Phone" required>
                         <img class="icons" src="img\addContact\call.png" alt="">
                     </div>
                 </div>
