@@ -24,17 +24,20 @@ function skalierungAnpassen() {
     let sidebarHeigth = document.querySelector('.sidebarContainer').offsetHeight;
 
     // Skalierung berechnen
-    let scale = windowWidth / 1460;
+    let scaleX = windowWidth / 1460;
+    let scaleY = windowHeigth / sidebarHeigth;
     // Skalierung auf zwei Dezimalstellen runden
-    scale = Math.round(scale * 100) / 100;
+    scaleX = Math.round(scaleX * 100) / 100;
+    scaleY = Math.round(scaleY * 100) / 100;
     // Transformations-String erstellen
-    let transformString = 'scale(' + scale + ')';
+    let transformStringX = 'scale(' + scaleX + ')';
+    let transformStringY = 'scale(' + scaleY + ')';
     //sobald die höhe der Sidebar erreicht ist wird es nicht weiter Skalliert
-    if (sidebarHeigth * scale < windowHeigth) {
+    if (sidebarHeigth * scaleX < windowHeigth) {
         // Transformations-String auf das gewünschte Element anwenden (z.B., das Body-Element)
-        document.body.style.transform = transformString;
+        document.body.style.transform = transformStringX;
     }
-
+    else{document.body.style.transform = transformStringY;}
 }
 window.onresize = function () {
     skalierungAnpassen();
