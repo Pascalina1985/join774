@@ -6,16 +6,17 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 
-.mainContainer{
+.mainContainer {
     display: flex;
     flex-direction: column;
     height: 1024px;
     width: 1208px;
 }
 
-.contentContainer{
+.contentContainer {
     height: 928px;
     width: 1208px;
     background-color: rgb(246, 247, 248);

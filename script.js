@@ -18,22 +18,21 @@ async function includeHTML() {
 }
 
 function skalierungAnpassen() {
-    let minWidth = 1440;
     // Fenstergröße abrufen
     let windowWidth = window.innerWidth;
-    if (windowWidth < minWidth) {
-        // Skalierung berechnen
-        let scale = windowWidth / 1460;
-        // Skalierung auf zwei Dezimalstellen runden
-        scale = Math.round(scale * 100) / 100;
-        // Transformations-String erstellen
-        let transformString = 'scale(' + scale + ')';
+    let windowHeigth = window.innerHeight;
+    let sidebarHeigth = document.querySelector('.sidebarContainer').offsetHeight;
 
+    // Skalierung berechnen
+    let scale = windowWidth / 1460;
+    // Skalierung auf zwei Dezimalstellen runden
+    scale = Math.round(scale * 100) / 100;
+    // Transformations-String erstellen
+    let transformString = 'scale(' + scale + ')';
+    //sobald die höhe der Sidebar erreicht ist wird es nicht weiter Skalliert
+    if (sidebarHeigth * scale < windowHeigth) {
         // Transformations-String auf das gewünschte Element anwenden (z.B., das Body-Element)
         document.body.style.transform = transformString;
-    }
-    else {
-        document.body.style.transform = 'scale(1)';
     }
 
 }
