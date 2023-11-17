@@ -22,7 +22,6 @@ function skalierungAnpassen() {
     let windowWidth = window.innerWidth;
     let windowHeigth = window.innerHeight;
     let sidebarHeigth = document.querySelector('.sidebarContainer').offsetHeight;
-
     // Skalierung berechnen
     let scaleX = windowWidth / 1460;
     let scaleY = windowHeigth / sidebarHeigth;
