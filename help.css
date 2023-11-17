@@ -1,0 +1,82 @@
+.h1 {
+    width: 138px;
+    height: 73px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 61px;
+    margin-left: 96px;
+    margin-top: 110px;
+}
+
+.text-section {
+    margin-left: 96px;
+    width: 1014px;
+    height: auto;
+    max-height: 628px;
+    overflow-y: hidden;
+}
+
+.text-section:hover {
+    overflow-y: auto;
+}
+
+.text-section h3 {
+    width: 346x;
+    height: 32px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 27px;
+}
+
+.intro-text {
+    height: 38px;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.join-text {
+    height: 190px;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.use-text {
+    height: 19px;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.subpoints-list {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.subpoint-points {
+    display: flex;
+    height: 61px;
+    gap: 35px;
+}
+
+.height61 {
+    height: 61px;
+}
+
+.height80 {
+    height: 80px;
+}
+
+.subpoints-number {
+    width: 21px;
+    height: 32px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 27px;
+}
+
+.join-blue {
+    color: rgb(41, 171, 226);
+}

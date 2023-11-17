@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="help.css">
+</head>
+
+<body onload="init()">
+    <div class="sidebarContainer" w3-include-html=".\assets\templates\side_menu.html"></div>
+    <div class="mainContainer">
+        <header w3-include-html=".\assets\templates\header.html"></header>
+        <div class="contentContainer">
+            <h1 class="h1">Help</h1>
+            <div class="text-section">
+                <span class="intro-text">Welcome to the help page for <span class="join-blue">Join</span>, your guide to using our kanban project management tool. Here, we'll provide an overview of what <span class="join-blue">Join</span> is, how it can
+                benefit you, and how to use it.</span>
+                <h3>What is Join?</h3>
+                <span class="join-text"><span class="join-blue">Join</span> is a kanban-based project management tool designed and built by a group of dedicated students as part of their web development bootcamp at the Developer Akademie.<br> Kanban,
+                a Japanese term meaning "billboard", is a highly effective method to visualize work, limit work-in-progress, and maximize efficiency (or flow). <span class="join-blue">Join</span> leverages the principles of kanban to help users manage
+                their tasks and projects in an intuitive, visual interface.<br> It is important to note that <span class="join-blue">Join</span> is designed as an educational exercise and is not intended for extensive business usage. While we strive to
+                ensure the best possible user experience, we cannot guarantee consistent availability, reliability, accuracy, or other aspects of quality regarding <span class="join-blue">Join</span>.</span>
+                <h3>How to use it</h3>
+                <span class="use-text">Here is a step-by-step guide on how to use <span class="join-blue">Join</span>:</span>
+                <div class="subpoints-list">
+                    <div class="subpoint-points height61">
+                        <span class="subpoints-number">1.</span>
+                        <span><b>Exploring the Board</b><br>Exploring the Board
+                                When you log in to <span class="join-blue">Join</span>, you'll find a default board. This board represents your project and contains four default lists: "To Do", "In Progress", “Await feedback” and
+                        "Done".</span>
+                    </div>
+                    <div class="subpoint-points height80">
+                        <span class="subpoints-number">2.</span>
+                        <span><b>Creating Contacts</b><br>Creating Contacts
+                                In <span class="join-blue">Join</span>, you can add contacts to collaborate on your projects. Go to the "Contacts" section, click on "New contact", and fill in the required information. Once added,
+                        these contacts can be assigned tasks and they can interact with the tasks on the board.</span>
+                    </div>
+                    <div class="subpoint-points height80">
+                        <span class="subpoints-number">3.</span>
+                        <span><b>Adding Cards</b><br>Adding Cards
+                                Now that you've added your contacts, you can start adding cards. Cards represent individual tasks. Click the "+" button under the appropriate list to create a new card. Fill in the task details in the card, like task name, description, due date, assignees, etc.</span>
+                    </div>
+                    <div class="subpoint-points height61">
+                        <span class="subpoints-number">4.</span>
+                        <span><b>Moving Cards</b><br>As the task
+                             moves from one stage to another, you can reflect that on the board by dragging and dropping the card from one<br> list to another.</span>
+                    </div>
+                    <div class="subpoint-points height61">
+                        <span class="subpoints-number">5.</span>
+                        <span><b>Deleting Cards</b><br>Once a task
+                             is completed, you can either move it to "Done" list or delete it. Deliting a card will permantly remove it from the board. Please exercise caution when deleting cards, as this action is irreversible</span>
+                    </div>
+                    <h3>Enjoy using Join!</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
