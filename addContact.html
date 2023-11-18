@@ -1,56 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
+<div class="addContactMainContainer">
+    <div class="addContactHeader">
+        <img class="logo" src="img\sidebar\joinLogoWhite.png" alt="">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Contact</title>
-    <link rel="stylesheet" href="addContact.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
-    <script src="script.js"></script>
-</head>
+        <div class="headline">
+            <h1>Add contact</h1>
+            <h2>Tasks are better with a team!</h2>
+            <img class="vector5" src="img\addContact\vector.png" alt="">
+        </div>
 
-<body>
-    <div class="addContactMainContainer">
-        <header>
-            <div class="headline">
-                <img class="logo" src="img\sidebar\joinLogoWhite.png" alt="">
-                <h1>Add contact</h1>
-                <h2>Tasks are better with a team!</h2>
-                <img class="vector5" src="img\addContact\vector.png" alt="">
-            </div>
-            
-        </header>
-        <div class="createContactContainer">
-            <div class="contactImage">
-                <img src="img\addContact\person.png" alt="">
-            </div>
-            <div class="createContact">
-                <button class="closeButton">
-                    <img class="icons" src="img\addContact\close.png" alt="">
-                </button>
-                <div class="inputContainer">
-                    <div class="input">
-                        <input type="text" id="name" name="name" placeholder="Name" required>
-                        <img class="icons" src="img\addContact\personInput.png" alt="">
-                    </div>
-                    <div class="input">
-                        <input type="email" id="email" name="email" placeholder="Email" required>
-                        <img class="icons" src="img\addContact\mail.png" alt="">
-                    </div>
-                    <div class="input">
-                        <input type="tel" id="telefon" name="telefon" placeholder="Phone" required>
-                        <img class="icons" src="img\addContact\call.png" alt="">
-                    </div>
+    </div>
+    <div class="createContactContainer">
+        <div class="contactImage">
+            <img src="img\addContact\person.png" alt="">
+        </div>
+        <div class="createContact">
+            <button onclick="closeAddContact()" class="closeButton">
+                <img class="icons" src="img\addContact\close.png" alt="">
+            </button>
+            <div class="inputContainer">
+                <div class="input">
+                    <input type="text" id="name" name="name" placeholder="Name" required>
+                    <img class="icons" src="img\addContact\personInput.png" alt="">
                 </div>
-                <div class="createContactButton">
-                    <button class="cancelBTN">Cancel <img class="icons" src="img\addContact\close.png" alt=""></button>
-                    <button class="createBTN">Create Contact <img class="icons" src="img\addContact\check.png" alt=""></button>
+                <div class="input">
+                    <input type="email" id="email" name="email" placeholder="Email" required>
+                    <img class="icons" src="img\addContact\mail.png" alt="">
                 </div>
+                <div class="input">
+                    <input type="tel" id="telefon" name="telefon" placeholder="Phone" required>
+                    <img class="icons" src="img\addContact\call.png" alt="">
+                </div>
+            </div>
+            <div class="createContactButton">
+                <button onclick="closeAddContact()" class="cancelBTN">Cancel <img class="icons" src="img\addContact\close.png" alt=""></button>
+                <button class="createBTN">Create Contact <img class="icons" src="img\addContact\check.png"
+                        alt=""></button>
             </div>
         </div>
     </div>
-</body>
-
-</html>
+</div>

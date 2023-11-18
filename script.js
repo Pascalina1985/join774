@@ -44,3 +44,11 @@ window.onresize = function () {
 window.onload = function () {
     skalierungAnpassen();
 };
+
+function showAddContact(){
+    document.getElementById('addContact').classList.remove('displayNone');
+}
+
+function closeAddContact(){
+    document.getElementById('addContact').classList.add('displayNone');
+}

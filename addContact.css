@@ -1,25 +1,16 @@
-body {
-    height: 100vh;
-    width: 100vw;
-    margin: 0;
-    font-family: 'Inter', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
-
-header {
+.addContactHeader {
     display: flex;
     height: 594px;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
     gap: 12px;
     flex-shrink: 0;
     background-color: #2a3647;
     border-bottom-left-radius: 30px;
     border-top-left-radius: 30px;
+}
+
+.displayNone{
+    display: none;
 }
 
 h1 {
@@ -43,10 +34,11 @@ h2 {
 }
 
 .logo {
+    position: absolute;
     width: 55.6px;
     height: 66.483px;
-    margin-bottom: 12.02px;
-    margin-left: 1.1px;
+    margin-top: 154px;
+    margin-left: 46.9px;
 }
 
 .vector5 {
@@ -65,13 +57,16 @@ h2 {
 
 .addContactMainContainer {
     display: flex;
+    align-items: center;
     width: 1212px;
     height: 592px;
-    background: #FFF
+    background-color: rgba(0, 0, 0, 0.3);
 }
 
 .createContactContainer {
     display: flex;
+    background: #FFF;
+    height: 592px;
 }
 
 .contactImage {
@@ -89,9 +84,9 @@ h2 {
 .createContact {
     display: flex;
     flex-direction: column;
-    margin-left: 72px;
-    margin-right: 48px;
-    margin-top: 48px;
+    padding-left: 72px;
+    padding-right: 48px;
+    padding-top: 48px;
 }
 
 .closeButton {
@@ -118,7 +113,6 @@ h2 {
 .input {
     display: flex;
     width: 422px;
-    padding: 13px 21px;
     align-items: center;
     justify-content: space-between;
     border-radius: 10px;
@@ -129,6 +123,7 @@ h2 {
 .icons {
     width: 24px;
     height: 24px;
+    padding-right: 21px;
 }
 
 .input :placeholder-shown {
@@ -146,6 +141,7 @@ h2 {
 }
 
 .cancelBTN {
+    cursor: pointer;
     font-family: 'Inter', sans-serif;
     background-color: #FFF;
     display: flex;
@@ -163,6 +159,7 @@ h2 {
 }
 
 .createBTN {
+    cursor: pointer;
     font-family: 'Inter', sans-serif;
     display: flex;
     padding: 16px;
@@ -187,4 +184,7 @@ input {
     font-style: normal;
     font-weight: 400;
     line-height: 120%;
+    padding-left: 21px;
+    padding-top: 13px;
+    padding-bottom: 13px;
 }

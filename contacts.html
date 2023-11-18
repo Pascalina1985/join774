@@ -10,6 +10,7 @@
     <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="contacts.css">
+    <link rel="stylesheet" href="addContact.css">
 </head>
 
 <body onload="init()">
@@ -21,7 +22,7 @@
             <div class="contactContainer">
                 <div class="contact-list">
                     <div class="button-container">
-                        <button class="contact-button">Add new contact<img class="contact-picture"
+                        <button onclick="showAddContact()" class="contact-button">Add new contact<img class="contact-picture"
                                 src="./img/contacts/person_add.png"></button>
                     </div>
                     <div id="contact-list">
@@ -53,7 +54,9 @@
             </div>
 
         </div>
+        
     </div>
+    <div id="addContact" class="addContact displayNone" w3-include-html=".\addContact.html"></div>
 </body>
 
 </html>
