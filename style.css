@@ -62,14 +62,26 @@ body {
     gap: 15px;
 }
 
+.button{
+    display: flex;
+width: 232px;
+padding: 8px 56px;
+align-items: center;
+gap: 8px;
+}
+
 .sidebarMenuButton {
     background: #2A3647;
+    width: 232px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 8px;
     gap: 20px;
     text-decoration: none;
+}
+
+.sidebarMenuButton:hover{
+    background: #091931;
 }
 
 .sidebarMenuButton img {

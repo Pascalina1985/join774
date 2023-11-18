@@ -10,7 +10,7 @@
     <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="contacts.css">
-    <link rel="stylesheet" href="addContact.css">
+    <link rel="stylesheet" href="addAndEditContact.css">
 </head>
 
 <body onload="init()">
@@ -22,8 +22,8 @@
             <div class="contactContainer">
                 <div class="contact-list">
                     <div class="button-container">
-                        <button onclick="showAddContact()" class="contact-button">Add new contact<img class="contact-picture"
-                                src="./img/contacts/person_add.png"></button>
+                        <button onclick="showAddContact('addContact')" class="contact-button">Add new contact<img
+                                class="contact-picture" src="./img/contacts/person_add.png"></button>
                     </div>
                     <div id="contact-list">
                         <div class="letter-container">
@@ -46,17 +46,18 @@
                         </div>
                     </div>
                 </div>
-                    <div class="headline-contacts-container">
-                        <div class="headline-contacts-headline">Contacts</div>
-                        <div class="headline-contacts-line"></div>
-                        <div class="headline-contacts-text">Better with a team</div>
-                    </div>
+                <div class="headline-contacts-container">
+                    <div class="headline-contacts-headline">Contacts</div>
+                    <div class="headline-contacts-line"></div>
+                    <div class="headline-contacts-text">Better with a team</div>
+                </div>
             </div>
 
         </div>
-        
+
     </div>
     <div id="addContact" class="addContact displayNone" w3-include-html=".\addContact.html"></div>
+    <div id="editContact" class="addContact displayNone" w3-include-html=".\editContact.html"></div>
 </body>
 
 </html>

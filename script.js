@@ -36,7 +36,7 @@ function skalierungAnpassen() {
         // Transformations-String auf das gewünschte Element anwenden (z.B., das Body-Element)
         document.body.style.transform = transformStringX;
     }
-    else{document.body.style.transform = transformStringY;}
+    else { document.body.style.transform = transformStringY; }
 }
 window.onresize = function () {
     skalierungAnpassen();
@@ -45,10 +45,10 @@ window.onload = function () {
     skalierungAnpassen();
 };
 
-function showAddContact(){
-    document.getElementById('addContact').classList.remove('displayNone');
+function showAddContact(element) {
+    document.getElementById(element).classList.remove('displayNone');
 }
 
-function closeAddContact(){
-    document.getElementById('addContact').classList.add('displayNone');
+function closeAddContact(element) {
+    document.getElementById(element).classList.add('displayNone');
 }
