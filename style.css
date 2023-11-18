@@ -81,7 +81,7 @@ gap: 8px;
 }
 
 .sidebarMenuButton:hover{
-    background: #091931;
+    background: #2A3D59;
 }
 
 .sidebarMenuButton img {
@@ -143,6 +143,10 @@ gap: 8px;
     font-style: normal;
     font-weight: 400;
     line-height: 120%;
+}
+
+.sidebarFooter a:hover{
+    color: #CDCDCD;
 }
 
 
