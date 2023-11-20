@@ -15,7 +15,7 @@ body {
     position: absolute;
     top: 50px;
     animation: loadSize;
-    animation-duration: 1300ms;
+    animation-duration: 950ms;
 }
 
 @keyframes loadSize {
@@ -33,6 +33,8 @@ body {
     }
 
     to {
+        width: 250px;
+        height: 120px;
         background-color: transparent;
         background-size: 120px 120px;
         position: absolute;
@@ -44,10 +46,10 @@ body {
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
-    width: 40vw;
+    width: 400px;
     justify-content: space-evenly;
     position: absolute;
-    top: 20px;
+    top: 50px;
     right: 20px;
 }
 
@@ -67,8 +69,8 @@ body {
     border-radius: 40px;
     background-color: #FFFFFF;
     box-shadow: 1px 1px 14px lightgray;
-    width: 55vw;
-    height: 40vh;
+    width: 620px;
+    height: 50vh;
     justify-content: center;
     margin-top: 200px;
 }
@@ -98,49 +100,51 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 34vh;
+    height: 39vh;
     justify-content: space-between;
 }
 
 .mail {
     background-image: url(./img/log-in/mail.png);
     background-repeat: no-repeat;
-    background-size: 20px;
+    background-size: 25px;
     background-position: right 10px center;
     border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 10px;
-    padding: 13px;
-    width: 32vw;
+    padding: 15px;
+    width: 500px;
     opacity: 0.6;
 }
 
 .password {
     background-image: url(./img/log-in/lock.png);
     background-repeat: no-repeat;
-    background-size: 20px;
+    background-size: 25px;
     background-position: right 10px center;
     border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 10px;
-    padding: 13px;
-    width: 32vw;
+    padding: 15px;
+    width: 500px;
     opacity: 0.6;
 }
 
 .checkbox {
     display: flex;
-    width: 27vw;
+    width: 400px;
+    justify-content: flex-start;
 }
 
 .buttons {
     display: flex;
-    width: 32vw;
+    width: 350px;
     justify-content: space-around;
 }
 
 .btn {
-    padding: 12px;
+    padding: 12px 24px;
     border-radius: 10px;
     font-size: 18px;
+    font-weight: bold;
     cursor: pointer;
     background-color: rgb(42, 54, 71);
     color: white;
@@ -180,7 +184,7 @@ body {
 
 .legal {
     display: flex;
-    width: 30vw;
+    width: 300px;
     justify-content: space-around;
     opacity: 0.4;
     margin-top: 150px;
@@ -197,6 +201,7 @@ body {
     color: rgb(41, 171, 226);
     font-weight: bold;
 }
+
 
 @media (min-width: 700px) {
     .Sign-up-section-for-mobile {
@@ -274,6 +279,7 @@ body {
         display: flex;
         width: 68vw;
         justify-content: flex-start;
+        margin-top: 10px;
     }
 
     .buttons {
