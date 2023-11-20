@@ -1,25 +1,15 @@
-body {
-    height: 100vh;
-    width: 100vw;
-    margin: 0;
-    font-family: 'Inter', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-header {
+.addAndEditContactHeader {
     display: flex;
     height: 594px;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
     gap: 12px;
     flex-shrink: 0;
     background-color: #2a3647;
     border-bottom-left-radius: 30px;
     border-top-left-radius: 30px;
+}
+
+.displayNone {
+    display: none;
 }
 
 h1 {
@@ -43,10 +33,11 @@ h2 {
 }
 
 .logo {
+    position: absolute;
     width: 55.6px;
     height: 66.483px;
-    margin-bottom: 12.02px;
-    margin-left: 1.1px;
+    margin-top: 154px;
+    margin-left: 46.9px;
 }
 
 .vector5 {
@@ -63,15 +54,18 @@ h2 {
 }
 
 
-.addContactMainContainer {
+.addAndEditContactMainContainer {
     display: flex;
+    align-items: center;
     width: 1212px;
     height: 592px;
-    background: #FFF
+    background-color: rgba(0, 0, 0, 0.3);
 }
 
 .createContactContainer {
     display: flex;
+    background: #FFF;
+    height: 592px;
 }
 
 .contactImage {
@@ -89,9 +83,9 @@ h2 {
 .createContact {
     display: flex;
     flex-direction: column;
-    margin-left: 72px;
-    margin-right: 48px;
-    margin-top: 48px;
+    padding-left: 72px;
+    padding-right: 48px;
+    padding-top: 48px;
 }
 
 .closeButton {
@@ -115,30 +109,14 @@ h2 {
     gap: 32px;
 }
 
-.input {
-    display: flex;
-    width: 422px;
-    padding: 13px 21px;
-    align-items: center;
-    justify-content: space-between;
-    border-radius: 10px;
-    border: 1px solid #D1D1D1;
-    background: #FFF;
-}
+
 
 .icons {
     width: 24px;
     height: 24px;
+    padding-right: 21px;
 }
 
-.input :placeholder-shown {
-    color: #D1D1D1;
-    font-family: 'Inter', sans-serif;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 120%;
-}
 
 .createContactButton {
     display: flex;
@@ -146,6 +124,7 @@ h2 {
 }
 
 .cancelBTN {
+    cursor: pointer;
     font-family: 'Inter', sans-serif;
     background-color: #FFF;
     display: flex;
@@ -162,13 +141,26 @@ h2 {
     color: #2A3647;
 }
 
+.cancelBTN:hover {
+    border: 2px solid var(--Ligth-blue, #29ABE2);
+    color: #29ABE2;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.cancelBTN:hover svg path {
+    stroke: #29ABE2;
+}
+
+
 .createBTN {
+    cursor: pointer;
     font-family: 'Inter', sans-serif;
     display: flex;
     padding: 16px;
     justify-content: center;
     align-items: center;
     gap: 4px;
+    border: 0;
     border-radius: 10px;
     background: #2A3647;
     color: #FFF;
@@ -178,13 +170,48 @@ h2 {
     line-height: 120%;
 }
 
+.createBTN:hover {
+    background: var(--Ligth-blue, #29ABE2);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
 input {
-    border: 0;
-    width: 100%;
+    width: 380px;
+    height: 24px;
     color: black;
     font-family: 'Inter', sans-serif;
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
     line-height: 120%;
+    padding: 13px 21px;
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-origin: content-box;
+    border: 1px solid #D1D1D1;
+    border-radius: 10px;
+}
+
+input:focus {
+    outline: none;
+    border: 1px solid var(--Ligth-blue, #29ABE2);
+}
+
+input :placeholder-shown {
+    color: #D1D1D1;
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+}
+
+.iconName{
+    background-image: url('img/addContact/personInput.png');
+}
+.iconMail{
+    background-image: url('img/addContact/mail.png');
+}
+.iconPhone{
+    background-image: url('img/addContact/call.png');
 }

@@ -18,24 +18,25 @@ async function includeHTML() {
 }
 
 function skalierungAnpassen() {
-    let minWidth = 1440;
     // Fenstergröße abrufen
     let windowWidth = window.innerWidth;
-    if (windowWidth < minWidth) {
-        // Skalierung berechnen
-        let scale = windowWidth / 1460;
-        // Skalierung auf zwei Dezimalstellen runden
-        scale = Math.round(scale * 100) / 100;
-        // Transformations-String erstellen
-        let transformString = 'scale(' + scale + ')';
-
+    let windowHeigth = window.innerHeight;
+    let sidebarHeigth = document.querySelector('.sidebarContainer').offsetHeight;
+    // Skalierung berechnen
+    let scaleX = windowWidth / 1460;
+    let scaleY = windowHeigth / sidebarHeigth;
+    // Skalierung auf zwei Dezimalstellen runden
+    scaleX = Math.round(scaleX * 100) / 100;
+    scaleY = Math.round(scaleY * 100) / 100;
+    // Transformations-String erstellen
+    let transformStringX = 'scale(' + scaleX + ')';
+    let transformStringY = 'scale(' + scaleY + ')';
+    //sobald die höhe der Sidebar erreicht ist wird es nicht weiter Skalliert
+    if (sidebarHeigth * scaleX < windowHeigth) {
         // Transformations-String auf das gewünschte Element anwenden (z.B., das Body-Element)
-        document.body.style.transform = transformString;
+        document.body.style.transform = transformStringX;
     }
-    else {
-        document.body.style.transform = 'scale(1)';
-    }
-
+    else { document.body.style.transform = transformStringY; }
 }
 window.onresize = function () {
     skalierungAnpassen();
@@ -43,3 +44,11 @@ window.onresize = function () {
 window.onload = function () {
     skalierungAnpassen();
 };
+
+function showAddContact(element) {
+    document.getElementById(element).classList.remove('displayNone');
+}
+
+function closeAddContact(element) {
+    document.getElementById(element).classList.add('displayNone');
+}
