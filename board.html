@@ -9,6 +9,7 @@
         rel="stylesheet">
     <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="board.css">
 </head>
 
 <body onload="init()">
@@ -16,6 +17,58 @@
     <div class="mainContainer">
         <header w3-include-html=".\assets\templates\header.html"></header>
         <div class="contentContainer">
+
+            <nav class="board-navigation">
+                <div><h1>Board</h1></div>
+
+                <div class="board-find-add-container">
+                    <div class="board-searchbar"><input type="text" placeholder="Find Task"> <button>&#128269;</button></div>
+                    <button>Add Task &#43;</button>
+                </div>
+            </nav>
+
+            <section class="board-task-container">
+
+                <figure class="board-task-group" >
+                    <div class="board-task-header">
+                        <span>To do</span>
+                        <div>XX</div>
+                    </div>
+
+                    <article class="board-task">No tasks To Do</article>
+                </figure>
+
+                <figure class="board-task-group" >
+                    <div class="board-task-header">
+                        <span>In progress</span>
+                        <div>XX</div>
+                    </div>
+
+                    <article class="board-task">Nothing in progress</article>
+                </figure>
+
+                <figure class="board-task-group" >
+                    <div class="board-task-header">
+                        <span>Await feedback</span>
+                        <div>XX</div>
+                    </div>
+
+                    <article class="board-task">No Feedback yet</article>
+                </figure>
+
+                <figure class="board-task-group" >
+                    <div class="board-task-header">
+                        <span>Done</span>
+                        <div>XX</div>
+                    </div>
+
+                    <article class="board-task">Nothing done yet</article>
+                </figure>
+
+            </section>
+
+
+
 
         </div>
     </div>
