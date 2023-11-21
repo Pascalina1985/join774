@@ -1,0 +1,66 @@
+<section class="tasks">
+    <div class="headline">
+        <h2>Add Task</h2>
+    </div>
+    <div class="position-left-right">
+
+        <div class="left-selection">
+            <div class="title">
+                <p style="margin: 0;">Title<b style="color: red;">*</b></p>
+                <input required type="text" placeholder="Enter a Title">
+            </div>
+            <div class="description">
+                <p style="margin: 0;">Description</p>
+                <textarea id="" cols="35" rows="5" placeholder="Enter a Description"></textarea>
+            </div>
+            <div class="contact">
+                <label for="contacts">Assigned to</label>
+                <select name="contacts" id="">
+                    <option value="Test Person">Select contacts to assign</option>
+                </select>
+            </div>
+        </div>
+
+
+        <div class="middle-line"></div>
+
+
+        <div class="right-selection">
+            <div class="date">
+                <p style="margin: 0;">Due date<b style="color: red;">*</b></p>
+                <input required type="date" name="" id="">
+            </div>
+            <div class="prio">
+                <p style="margin: 0;">Prio</p>
+                <div class="prio-selection">
+                    <button class="btn-select">Urgent<img src="./img/add-Task/Prio alta.png"></button>
+                    <button class="btn-select">Medium<img src="./img/add-Task/Capa 1.png"></button>
+                    <button class="btn-select">Low<img src="./img/add-Task/Prio baja.png"></button>
+                </div>
+            </div>
+            <div class="contact">
+                <label for="Category">Category<b style="color: red;">*</b></label>
+                <select name="Category" id="">
+                    <option value="">Select task Category</option>
+                    <option value="">Technical Task</option>
+                    <option value="">User Story</option>
+                </select>
+            </div>
+            <div class="subtask">
+                <p style="margin: 0;">Subtasks</p>
+                <input type="text" placeholder="Add new subtask">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="buttons-and-text">
+    <div class="required-text">
+        <b style="color: red;">*</b>
+        <p>This field is required</p>
+    </div>
+    <div class="btn-position">
+        <button class="btn-clear">Clear X</button>
+        <button class="btn">Create Task <img src="./img/add-Task/check.png"></button>
+    </div>
+</section>
