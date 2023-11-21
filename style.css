@@ -31,7 +31,7 @@ body {
     border: solid rgba(0, 0, 0, 0.3) 9999px;
 }
 
-.displayNone{
+.displayNone {
     display: none;
 }
 
@@ -62,12 +62,12 @@ body {
     gap: 15px;
 }
 
-.button{
+.sidebarButton {
     display: flex;
-width: 232px;
-padding: 8px 56px;
-align-items: center;
-gap: 8px;
+    width: 232px;
+    padding: 8px 56px;
+    align-items: center;
+    gap: 8px;
 }
 
 .sidebarMenuButton {
@@ -80,7 +80,7 @@ gap: 8px;
     text-decoration: none;
 }
 
-.sidebarMenuButton:hover{
+.sidebarMenuButton:hover {
     background: #2A3D59;
 }
 
@@ -91,6 +91,7 @@ gap: 8px;
 }
 
 .sidebarMenuButton p {
+    margin: 0;
     color: #CDCDCD;
     font-size: 16px;
     font-style: normal;
@@ -145,16 +146,12 @@ gap: 8px;
     line-height: 120%;
 }
 
-.sidebarFooter a:hover{
+.sidebarFooter a:hover {
     color: #CDCDCD;
 }
 
 
 /*Header*/
-
-.template-container {
-    display: flex;
-}
 
 header {
     padding-left: 348px;
@@ -170,10 +167,6 @@ header h2 {
     font-size: 20px;
     font-weight: 400;
     font-family: 'Inter', sans-serif;
-}
-
-#headerContainer {
-    width: 100vw;
 }
 
 .headline-container {
@@ -192,6 +185,10 @@ header h2 {
     align-items: center;
 }
 
+.header-picture-logo {
+    display: none;
+}
+
 .header-picure-help {
     width: 32px;
     height: 32px;
@@ -201,4 +198,98 @@ header h2 {
     width: 56px;
     height: 56px;
     gap: 16px;
+}
+
+
+@media (max-width: 700px) {
+    .sidebarContainer {
+        height: 80px;
+        width: 100%;
+        flex-direction: row;
+        position: fixed;
+        bottom: 0;
+    }
+
+    .sidebarLogo {
+        display: none;
+    }
+
+    .sidebarFooter {
+        display: none;
+    }
+
+    .sidebarButton {
+        flex-direction: column;
+        gap: 4px;
+        width: 76px;
+        height: 76px;
+    }
+
+    .sidebarMenuButton {
+        width: 76px;
+        height: 76px;
+        gap: 0;
+        border-radius: 8px;
+    }
+
+    .sidebarMenuContainer {
+        padding: 0px 16px;
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .sidebarMenuButton p {
+        width: 76px;
+        text-align: center;
+    }
+
+    .sidebarMenuButton img {
+        width: 24px;
+        height: 24px;
+        padding-top: 15px;
+    }
+
+    .sidebarMenuButton:hover {
+        background: #091931;
+    }
+
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        padding: 0;
+        height: 80px;
+        width: 100%;
+    }
+
+    .headline-container {
+        display: none;
+    }
+
+    .header-picure-help {
+        display: none;
+    }
+
+    .header-picture-logo {
+        display: flex;
+        height: 39px;
+        width: 32px;
+    }
+
+    .header-picture-user {
+        width: 40px;
+        height: 40px;
+    }
+
+    .header-pictures-container {
+        padding-left: 16px;
+        padding-right: 16px;
+        height: 80px;
+        width: 100%;
+        gap: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 }
