@@ -161,7 +161,7 @@ section {
 .urgent-deadline-container:hover .task-span,
 .urgent-deadline-container:hover .text-span,
 .urgent-deadline-container:hover .h2,
-.urgent-deadline-container:hover .text-deadline{
+.urgent-deadline-container:hover .text-deadline {
     color: white;
 }
 
@@ -170,13 +170,13 @@ section {
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
-.urgent-deadline-container:active .task-span{
+.urgent-deadline-container:active .task-span {
     color: #000;
 }
 
 .urgent-deadline-container:active .text-span,
 .urgent-deadline-container:active .h2,
-.urgent-deadline-container:active .text-deadline{
+.urgent-deadline-container:active .text-deadline {
     color: #2A3647;
 }
 
@@ -281,12 +281,12 @@ section {
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
-
-.task-sections:active .task-span{
+.task-sections:active .task-span {
     color: #000;
 }
+
 .task-sections:active .text-task {
-    color:#2A3647
+    color: #2A3647
 }
 
 .text-task {
@@ -323,4 +323,116 @@ section {
     font-weight: 700;
     font-size: 64px;
     color: rgb(41, 171, 226);
+}
+
+@media (max-width: 700px) {
+    body {
+        display: block;
+    }
+    .summary-main-section {
+        width: 223px;
+        height: 104px;
+        flex-direction: column;
+        gap: 16px;
+    }
+    .join-container {
+        width: 223px;
+        height: 104px;
+        display: block;
+        gap: 16px;
+        margin-top: 48px;
+        margin-left: 16px;
+    }
+    .h1 {
+        width: 203px;
+        height: 56px;
+        font-size: 47px;
+    }
+    .blue-line {
+        display: none;
+    }
+    .join-text {
+        width: 223px;
+        height: 24px;
+        font-size: 20px;
+    }
+    .greeting-section {
+        display: none;
+    }
+    section {
+        width: 100%;
+        margin-left: 16px;
+        margin-top: 80px;
+    }
+    .do-container {
+        width: 186px;
+        height: 110px;
+    }
+    .do-done-container {
+        width: 396px;
+        height: 110px;
+    }
+    .urgent-deadline-container {
+        width: 396px;
+        height: 110px;
+    }
+    .task-container {
+        width: 396px;
+        height: 116px;
+    }
+    .do-done-picture {
+        height: 40px;
+        width: 40px;
+    }
+    .task-span {
+        width: 23px;
+        height: 56px;
+        font-size: 27px;
+    }
+    .text-span {
+        width: 40px;
+        height: 17px;
+        font-size: 14px;
+    }
+    .urgent-container {
+        width: 108px;
+        height: 73px;
+        justify-content: center;
+    }
+    .urgent-picture {
+        width: 40px;
+        height: 40px;
+    }
+    .urgent-line-container {
+        height: 68px;
+    }
+    .deadline-container {
+        width: 135px;
+        height: 44px;
+        gap: 8px;
+    }
+    .h2 {
+        width: 135px;
+        height: 19px;
+        font-size: 16px;
+    }
+    .text-deadline {
+        width: 130px;
+        height: 17px;
+        font-size: 14px;
+    }
+    .task-container {
+        width: 396px;
+        height: 116px;
+    }
+    .task-sections {
+        width: 116px;
+        height: 116px;
+        gap: 13px;
+    }
+    .text-task {
+        width: 54px;
+        height: 34px;
+        font-size: 14px;
+    }
 }
