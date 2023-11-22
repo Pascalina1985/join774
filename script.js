@@ -1,6 +1,10 @@
-async function init() {
+svgURLS = ['iconSummery', 'iconAddTask', 'iconBoard', 'iconContacts']
+
+async function init(site) {
     await includeHTML();
     skalierungAnpassen();
+    loadSVG();
+    changeSidebarActive(site);
 }
 
 async function includeHTML() {
@@ -35,6 +39,28 @@ function skalierungAnpassen() {
     if (window.innerWidth < 700) {document.body.style.transform = 'scale(1)'} 
     if (sidebarHeigth * scaleX > windowHeigth) {document.body.style.transform = transformStringY;}
 }
+
+function loadSVG(){
+    for (let i = 0; i < svgURLS.length; i++) {
+        const element = svgURLS[i];
+        fetch(`img/sidebar/${element}.svg`)
+        .then(response => response.text())
+        .then(svgData => {
+            document.getElementById(element).innerHTML = svgData;
+        });
+    }
+    }
+
+function changeSidebarActive(site){
+    document.getElementById('summery').classList.remove('active');
+    document.getElementById('addTask').classList.remove('active');
+    document.getElementById('board').classList.remove('active');
+    document.getElementById('contacts').classList.remove('active');
+    document.getElementById('contacts').classList.remove('active');
+    document.getElementById('contacts').classList.remove('active');
+    document.getElementById(site).classList.add('active');
+}
+
 window.onresize = function () {
         skalierungAnpassen();
     

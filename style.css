@@ -150,6 +150,20 @@ body {
     color: #CDCDCD;
 }
 
+.sidebarMenuContainer .active{
+    background-color: #091931 !important;
+}
+.active p{
+    color: white;
+}
+.active path{
+    fill: white;
+}
+.sidebarFooter .active{
+    color: #29ABE2;
+}
+
+
 
 /*Header*/
 
