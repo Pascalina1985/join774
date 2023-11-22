@@ -1,6 +1,15 @@
-async function init() {
-    await includeHTML();
+svgURLS = ['iconSummery', 'iconAddTask', 'iconBoard', 'iconContacts']
+
+window.onresize = function () {
     skalierungAnpassen();
+};
+
+async function init(site) {
+    document.body.classList.add('visible');
+    skalierungAnpassen();
+    await includeHTML();
+    loadSVG();
+    changeSidebarActive(site);
 }
 
 async function includeHTML() {
@@ -8,16 +17,16 @@ async function includeHTML() {
     for (let i = 0; i < includeElements.length; i++) {
         let element = includeElements[i];
         file = element.getAttribute("w3-include-html"); // "includes/header.html"
-        try{
-        let resp = await fetch(file);
-        if (resp.ok) {
-            element.innerHTML = await resp.text();
-        } else {
-            element.innerHTML = 'Page not found';
+        try {
+            let resp = await fetch(file);
+            if (resp.ok) {
+                element.innerHTML = await resp.text();
+            } else {
+                element.innerHTML = 'Page not found';
+            }
+        } catch (error) {
+            console.error('Error loading file:', error);
         }
-    }catch(error){
-        console.error('Error loading file:', error);
-    }
     }
 }
 
@@ -31,14 +40,31 @@ function skalierungAnpassen() {
     scaleY = Math.round(scaleY * 100) / 100;
     let transformStringX = 'scale(' + scaleX + ')';
     let transformStringY = 'scale(' + scaleY + ')';
-    if (sidebarHeigth * scaleX < windowHeigth) {document.body.style.transform = transformStringX;}
-    if (window.innerWidth < 700) {document.body.style.transform = 'scale(1)'} 
-    if (sidebarHeigth * scaleX > windowHeigth) {document.body.style.transform = transformStringY;}
+    if (sidebarHeigth * scaleX < windowHeigth) { document.body.style.transform = transformStringX; }
+    if (window.innerWidth < 700) { document.body.style.transform = 'scale(1)' }
+    if (sidebarHeigth * scaleX > windowHeigth) { document.body.style.transform = transformStringY; }
 }
-window.onresize = function () {
-        skalierungAnpassen();
-    
-};
+
+function loadSVG() {
+    for (let i = 0; i < svgURLS.length; i++) {
+        const element = svgURLS[i];
+        fetch(`img/sidebar/${element}.svg`)
+            .then(response => response.text())
+            .then(svgData => {
+                document.getElementById(element).innerHTML = svgData;
+            });
+    }
+}
+
+function changeSidebarActive(site) {
+    document.getElementById('summery').classList.remove('active');
+    document.getElementById('addTask').classList.remove('active');
+    document.getElementById('board').classList.remove('active');
+    document.getElementById('contacts').classList.remove('active');
+    document.getElementById('privacyPolicy').classList.remove('active');
+    document.getElementById('legalNotice').classList.remove('active');
+    document.getElementById(site).classList.add('active');
+}
 
 function showAddContact(element) {
     document.getElementById(element).classList.remove('displayNone');
