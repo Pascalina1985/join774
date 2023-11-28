@@ -1,39 +1,46 @@
-let contacts = [{
-    'firstname': 'Anton',
-    'lastname': 'Mayer',
-    'email': 'anton@gmail.com'
-},
-{
-    'firstname': 'Anja',
-    'lastname': 'Schulz',
-    'email': 'schulz@hotmail.com'
-},
-{
-    'firstname': 'Hans',
-    'lastname': 'Rüben',
-    'email': 'hans@web.de'
-},
-{
-    'firstname': 'Frederiko',
-    'lastname': 'Roberto',
-    'email': 'hans@web.de'
-}
+let contacts = [
 ];
 
 let letters = [];
 
 async function initContacts() {
+    await loadContacts();
     fillLetter();
     loadLetters();
     renderContacts();
 }
 
+async function loadContacts() {
+    try {
+        contacts = JSON.parse(await getItem('contact2'));
+    } catch (e) {
+        console.error('Loading error:', e);
+    }
+}
+
+async function addContact() {
+    let name = document.getElementById('name');
+    let email = document.getElementById('email');
+    let phone = document.getElementById('phone');
+    contacts.push({ name: name.value, email: email.value, phone: phone.value });
+    await setItem('contact2', JSON.stringify(contacts));
+    closeAddContact('addContact');
+    resetAddContact(name, email, phone);
+    initContacts();
+}
+
+function resetAddContact(name, email, phone){
+    name.value = '';
+    email.value = '';
+    phone.value = '';
+}
+
 function renderContacts() {
     for (let i = 0; i < contacts.length; i++) {
         const contact = contacts[i];
-        let firstLetterName = contact.firstname.charAt(0);
-        let firstLetterLastName = contact.lastname.charAt(0);
-        document.getElementById(firstLetterLastName).innerHTML += showAvailableContactsHTML(contact, firstLetterLastName, firstLetterName, i);
+        let firstLetterName = contact.name.charAt(0);
+        let firstLetterLastName = contact.name.charAt(0);
+        document.getElementById(firstLetterName).innerHTML += showAvailableContactsHTML(contact, firstLetterLastName, firstLetterName, i);
     }
 }
 
@@ -41,7 +48,7 @@ function showAvailableContactsHTML(contact, firstLetterLastName, firstLetterName
     return `<div onclick="showContact(${i})" class="contact-data">
                 <div class="contact-logo">${firstLetterName}${firstLetterLastName}</div>
                     <div class="personal-contact-information">
-                <div class="personal-name">${contact.firstname} ${contact.lastname}</div>
+                <div class="personal-name">${contact.name}</div>
                 <div class="personal-email">${contact.email}</div>
             </div>
             </div>`;
@@ -49,7 +56,7 @@ function showAvailableContactsHTML(contact, firstLetterLastName, firstLetterName
 //Filtert die Einzelnen Buchstaben raus
 function fillLetter() {
     for (let i = 0; i < contacts.length; i++) {
-        let name = contacts[i]['lastname'];
+        let name = contacts[i]['name'];
         let letter = name.charAt(0);
         if (!letters.includes(letter)) {
             letters.push(letter);
@@ -59,6 +66,7 @@ function fillLetter() {
 //setzt das Grundgerüst der Kontakte
 function loadLetters() {
     let container = document.getElementById('contact-list');
+    container.innerHTML = '';
     for (let i = 0; i < letters.length; i++) {
         const element = letters[i];
         container.innerHTML += letterHTML(element);

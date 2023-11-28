@@ -13,6 +13,11 @@ async function init(site) {
     loadScript(site);
 }
 
+function loadScript(site){
+    if (site === 'contacts') {initContacts()}
+}
+
+
 async function includeHTML() {
     let includeElements = document.querySelectorAll('[w3-include-html]');
     for (let i = 0; i < includeElements.length; i++) {
@@ -66,9 +71,6 @@ function changeSidebarActive(site) {
     document.getElementById(site).classList.add('active');
 }
 
-function loadScript(site){
-    if (site === 'contacts') {initContacts()}
-}
 
 function showAddContact(element) {
     document.getElementById(element).classList.remove('displayNone');
