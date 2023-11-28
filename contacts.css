@@ -1,4 +1,4 @@
-.contactContainer{
+.contactContainer {
     display: flex;
 }
 
@@ -156,4 +156,14 @@
     font-weight: 400;
     font-size: 26px;
     align-items: center;
+}
+
+#showedContact {
+    background-color: blueviolet;
+    width: 452px;
+    height: 364px;
+    margin-left: 518px;
+    margin-top: 32px;
+    display: flex;
+    gap: 21px;
 }
