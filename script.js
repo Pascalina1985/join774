@@ -10,6 +10,7 @@ async function init(site) {
     await includeHTML();
     loadSVG();
     changeSidebarActive(site);
+    loadScript(site);
 }
 
 async function includeHTML() {
@@ -63,6 +64,10 @@ function changeSidebarActive(site) {
     document.getElementById('privacyPolicy').classList.remove('active');
     document.getElementById('legalNotice').classList.remove('active');
     document.getElementById(site).classList.add('active');
+}
+
+function loadScript(site){
+    if (site === 'contacts') {initContacts()}
 }
 
 function showAddContact(element) {

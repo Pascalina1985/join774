@@ -24,7 +24,6 @@ let letters = [];
 
 async function initContacts() {
     fillLetter();
-    
     loadLetters();
     renderContacts();
 }
