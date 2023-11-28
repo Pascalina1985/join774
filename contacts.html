@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="addAndEditContact.css">
 </head>
 
-<body onload="init('contacts'); renderContacts();">
+<body onload="init('contacts'), initContacts()">
 
     <div class="sidebarContainer" w3-include-html=".\assets\templates\side_menu.html"></div>
     <div class="mainContainer">
@@ -26,24 +26,7 @@
                                 class="contact-picture" src="./img/contacts/person_add.png"></button>
                     </div>
                     <div id="contact-list">
-                        <div class="letter-container">
-                            <p class="letter">A</p>
-                        </div>
-                        <div class="contact-line"></div>
-                        <div class="contact-data">
-                            <div class="contact-logo">AM</div>
-                            <div class="personal-contact-information">
-                                <div class="personal-name">Anton Mayer</div>
-                                <div class="personal-email">anton@gmail.com</div>
-                            </div>
-                        </div>
-                        <div class="contact-data">
-                            <div class="contact-logo">AS</div>
-                            <div class="personal-contact-information">
-                                <div class="personal-name">Anja Schulz</div>
-                                <div class="personal-email">schulz@hotmail.com</div>
-                            </div>
-                        </div>
+                        
                     </div>
                 </div>
                 <div class="headline-contacts-container">
