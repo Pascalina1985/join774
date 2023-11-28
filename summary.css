@@ -325,6 +325,10 @@ section {
     color: rgb(41, 171, 226);
 }
 
+.contentContainer{
+    display: flex;
+}
+
 @media (max-width: 700px) {
     body {
         display: block;
