@@ -17,9 +17,9 @@ async function register() {
     let email = document.getElementById('email');
     let password = document.getElementById('password');
     users.push({ newUser: newUser.value, email: email.value, password: password.value, });
+    await setItem('users', JSON.stringify(users));
     setTimeout(moveToLogin, 3000);
     moveToLogin();
-    await setItem('users', JSON.stringify(users));
     resetForm();
 }
 
