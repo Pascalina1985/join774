@@ -7,12 +7,12 @@
     <title>Join</title>
     <link rel="stylesheet" href="log-in.css">
     <link rel="icon" type="image/x-icon" href="./img/log-in/Capa 2.png">
-    <script src="./js/sign_up.js"></script>
-    <script src="./js/login.js"></script>
     <script src="./js/storage.js"></script>
+    <script src="./js/login.js"></script>
+    <script src="./js/sign_up.js"></script>
 </head>
 
-<body onload="initRegister()">
+<body>
     <div id="log-in-page">
         <div class="Join-img">
         </div>
@@ -25,7 +25,7 @@
 
 
         <div class="Log-in-position">
-            <form onsubmit="userLogIn(); return false;" class="form">
+            <form onsubmit="initRegister(); return false;" class="form">
                 <div class="log-in-field">
                     <div id="log-in-headline-underline">
                         <h1 class="log-in-headline">Log in</h1>

@@ -1,6 +1,5 @@
 async function initRegister() {
     loadUsers();
-    login();
 }
 
 
@@ -21,6 +20,7 @@ async function register() {
     await setItem('users', JSON.stringify(users));
     resetForm();
 }
+
 
 
 function moveToLogin() {
