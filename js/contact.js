@@ -1,5 +1,4 @@
-let contacts = [
-];
+let contacts = [];
 
 let letters = [];
 
@@ -29,7 +28,7 @@ async function addContact() {
     initContacts();
 }
 
-function resetAddContact(name, email, phone){
+function resetAddContact(name, email, phone) {
     name.value = '';
     email.value = '';
     phone.value = '';
@@ -86,5 +85,31 @@ function letterHTML(letter) {
 }
 
 function showContact(i) {
+    let name = contacts[i].name;
+    let email = contacts[i].email;
+    let phone = contacts[i].phone;
+    document.getElementById('showedContact').innerHTML = ``;
+    document.getElementById('showedContact').innerHTML = showContactHTML(name, email, phone);
+}
 
+function showContactHTML(name, email, phone) {
+    return `
+    <div class="user-name-initials">
+        <div class="user-initials"><span>${name.charAt(0)}</span></div>
+        <div class="user-name-information">
+            <h3>${name}</h3>
+            <div class="edit-delete">
+                <div class="edit-delete-data1"><img src="./img/contacts/edit.png"><span>Edit</span></div>
+                <div class="edit-delete-data2"><img src="./img/contacts/delete.png"><span>Delete</span></div>
+            </div>
+        </div>
+    </div>
+    <span class="contact-information-headline">Contact Information</span>
+    <div class="email-phone-information">
+        <span class="email-span">Email</span>
+        <span class="email-span-2">${email}</span>
+        <span class="email-span">Phone</span>
+        <span class="phone-span">${phone}</span>
+    </div>
+    `;
 }
