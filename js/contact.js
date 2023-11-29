@@ -1,5 +1,5 @@
 let contacts = [];
-
+let editContactValue;
 let letters = [];
 
 async function initContacts() {
@@ -100,7 +100,7 @@ function showContactHTML(name, email, phone, i) {
         <div class="user-name-information">
             <h3>${name}</h3>
             <div class="edit-delete">
-                <div class="edit-delete-data1"><img src="./img/contacts/edit.png"><span>Edit</span></div>
+                <div onclick='openEditContact(${i})' class="edit-delete-data1"><img src="./img/contacts/edit.png"><span>Edit</span></div>
                 <div onclick='deleteContact(${i})' class="edit-delete-data2"><img src="./img/contacts/delete.png"><span>Delete</span></div>
             </div>
         </div>
@@ -118,5 +118,33 @@ function showContactHTML(name, email, phone, i) {
 async function deleteContact(i){
     contacts.splice(i,1);
     await setItem('contact2', JSON.stringify(contacts));
+    initContacts();
+}
+
+function openEditContact(i){
+    showAddContact('editContact');
+    loadEditContact(i);
+    editContactValue=i;
+}
+
+function loadEditContact(i){
+    let name = contacts[i].name;
+    let email = contacts[i].email;
+    let phone = contacts[i].phone;
+    let nameInput = document.getElementById('nameEdit');
+    let emailInput = document.getElementById('emailEdit');
+    let phoneInput = document.getElementById('phoneEdit');
+    nameInput.value = name;
+    emailInput.value = email;
+    phoneInput.value = phone;
+}
+
+async function editContact(){
+    let nameInput = document.getElementById('nameEdit');
+    let emailInput = document.getElementById('emailEdit');
+    let phoneInput = document.getElementById('phoneEdit');
+    contacts[editContactValue] = ({ name: nameInput.value, email: emailInput.value, phone: phoneInput.value });
+    await setItem('contact2', JSON.stringify(contacts));
+    closeAddContact('editContact');
     initContacts();
 }
