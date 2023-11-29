@@ -54,6 +54,7 @@ function showAvailableContactsHTML(contact, firstLetterLastName, firstLetterName
 }
 //Filtert die Einzelnen Buchstaben raus
 function fillLetter() {
+    letters = [];
     for (let i = 0; i < contacts.length; i++) {
         let name = contacts[i]['name'];
         let letter = name.charAt(0);
@@ -89,10 +90,10 @@ function showContact(i) {
     let email = contacts[i].email;
     let phone = contacts[i].phone;
     document.getElementById('showedContact').innerHTML = ``;
-    document.getElementById('showedContact').innerHTML = showContactHTML(name, email, phone);
+    document.getElementById('showedContact').innerHTML = showContactHTML(name, email, phone, i);
 }
 
-function showContactHTML(name, email, phone) {
+function showContactHTML(name, email, phone, i) {
     return `
     <div class="user-name-initials">
         <div class="user-initials"><span>${name.charAt(0)}</span></div>
@@ -100,7 +101,7 @@ function showContactHTML(name, email, phone) {
             <h3>${name}</h3>
             <div class="edit-delete">
                 <div class="edit-delete-data1"><img src="./img/contacts/edit.png"><span>Edit</span></div>
-                <div class="edit-delete-data2"><img src="./img/contacts/delete.png"><span>Delete</span></div>
+                <div onclick='deleteContact(${i})' class="edit-delete-data2"><img src="./img/contacts/delete.png"><span>Delete</span></div>
             </div>
         </div>
     </div>
@@ -112,4 +113,10 @@ function showContactHTML(name, email, phone) {
         <span class="phone-span">${phone}</span>
     </div>
     `;
+}
+
+async function deleteContact(i){
+    contacts.splice(i,1);
+    await setItem('contact2', JSON.stringify(contacts));
+    initContacts();
 }

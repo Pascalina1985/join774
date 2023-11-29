@@ -234,6 +234,7 @@
     gap: 13px;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }
 
 .edit-delete-data2 {
@@ -242,6 +243,7 @@
     margin-left: 78px;
     display: flex;
     gap: 8px;
+    cursor: pointer;
 }
 
 .contact-information-headline {
