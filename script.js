@@ -10,7 +10,13 @@ async function init(site) {
     await includeHTML();
     loadSVG();
     changeSidebarActive(site);
+    loadScript(site);
 }
+
+function loadScript(site){
+    if (site === 'contacts') {initContacts()}
+}
+
 
 async function includeHTML() {
     let includeElements = document.querySelectorAll('[w3-include-html]');
@@ -40,9 +46,8 @@ function skalierungAnpassen() {
     scaleY = Math.round(scaleY * 100) / 100;
     let transformStringX = 'scale(' + scaleX + ')';
     let transformStringY = 'scale(' + scaleY + ')';
-    if (sidebarHeigth * scaleX < windowHeigth) { document.body.style.transform = transformStringX; }
-    if (window.innerWidth < 700) { document.body.style.transform = 'scale(1)' }
-    if (sidebarHeigth * scaleX > windowHeigth) { document.body.style.transform = transformStringY; }
+    if (sidebarHeigth * scaleX < windowHeigth) { document.body.style.transform = transformStringX; };
+    if (sidebarHeigth * scaleX > windowHeigth) { document.body.style.transform = transformStringY; };
 }
 
 function loadSVG() {
@@ -65,6 +70,7 @@ function changeSidebarActive(site) {
     document.getElementById('legalNotice').classList.remove('active');
     document.getElementById(site).classList.add('active');
 }
+
 
 function showAddContact(element) {
     document.getElementById(element).classList.remove('displayNone');

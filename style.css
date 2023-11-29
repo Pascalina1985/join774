@@ -222,7 +222,10 @@ header h2 {
 }
 
 
-@media (max-width: 700px) {
+@media screen and (max-width: 700px) {
+    body{
+        transform: scale(1) !important;
+    }
     .sidebarContainer {
         height: 80px;
         width: 100%;
@@ -244,6 +247,7 @@ header h2 {
         gap: 4px;
         width: 76px;
         height: 76px;
+        padding: 0;
     }
 
     .sidebarMenuButton {

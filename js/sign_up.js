@@ -14,7 +14,6 @@ async function loadUsers() {
 
 
 async function register() {
-
     let newUser = document.getElementById('newUser');
     let email = document.getElementById('email');
     let password = document.getElementById('password');
