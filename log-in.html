@@ -8,29 +8,30 @@
     <link rel="stylesheet" href="log-in.css">
     <link rel="icon" type="image/x-icon" href="./img/log-in/Capa 2.png">
     <script src="./js/sign_up.js"></script>
+    <script src="./js/login.js"></script>
     <script src="./js/storage.js"></script>
 </head>
 
-<body>
+<body onload="initRegister()">
     <div id="log-in-page">
         <div class="Join-img">
         </div>
 
 
         <div class="Sign-up-section">
-            <button type="button" class="btn">Sign up</button>
+            <button onclick="toSignUp()" type="button" class="btn">Sign up</button>
             <h3>Not a Join User?</h3>
         </div>
 
 
         <div class="Log-in-position">
-            <form onsubmit="userLogIn()" class="form">
+            <form onsubmit="userLogIn(); return false;" class="form">
                 <div class="log-in-field">
                     <div id="log-in-headline-underline">
                         <h1 class="log-in-headline">Log in</h1>
                     </div>
-                    <input required class="mail" type="email" placeholder="Email">
-                    <input required class="password" type="password" placeholder="Password">
+                    <input required id="email" class="mail" type="email" placeholder="Email">
+                    <input required id="password" class="password" type="password" placeholder="Password">
                     <div class="checkbox">
                         <form>
                             <input type="checkbox" name="remember" id="">
@@ -38,7 +39,7 @@
                         </form>
                     </div>
                     <div class="buttons">
-                        <button class="btn">Log in</button>
+                        <button onclick="login()" class="btn">Log in</button>
                         <button onclick="guestLogIn()" class="btn-clear">Guest Log in</button>
                     </div>
                 </div>
@@ -55,6 +56,7 @@
             </div>
         </div>
     </div>
+    <div id="msgBox"></div>
 </body>
 
 </html>
