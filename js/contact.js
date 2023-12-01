@@ -38,12 +38,13 @@ function renderContacts() {
     for (let i = 0; i < contacts.length; i++) {
         const contact = contacts[i];
         let firstLetterName = contact.name.charAt(0);
-        let firstLetterLastName = contact.name.charAt(0);
-        document.getElementById(firstLetterName).innerHTML += showAvailableContactsHTML(contact, firstLetterLastName, firstLetterName, i);
+        let nachName = contact.name.split(' ')[1];
+        let firstLetterLastName = nachName.charAt(0);
+        document.getElementById(firstLetterName).innerHTML += showAvailableContactsHTML(contact, firstLetterName, firstLetterLastName, i);
     }
 }
 
-function showAvailableContactsHTML(contact, firstLetterLastName, firstLetterName, i) {
+function showAvailableContactsHTML(contact, firstLetterName, firstLetterLastName, i) {
     return `<div onclick="showContact(${i})" class="contact-data">
                 <div class="contact-logo">${firstLetterName}${firstLetterLastName}</div>
                     <div class="personal-contact-information">
@@ -87,16 +88,18 @@ function letterHTML(letter) {
 
 function showContact(i) {
     let name = contacts[i].name;
+    let nachName = name.split(' ')[1];
+    let firstLetterLastName = nachName.charAt(0);
     let email = contacts[i].email;
     let phone = contacts[i].phone;
     document.getElementById('showedContact').innerHTML = ``;
-    document.getElementById('showedContact').innerHTML = showContactHTML(name, email, phone, i);
+    document.getElementById('showedContact').innerHTML = showContactHTML(name, email, phone, i, firstLetterLastName);
 }
 
-function showContactHTML(name, email, phone, i) {
+function showContactHTML(name, email, phone, i, firstLetterLastName) {
     return `
     <div class="user-name-initials">
-        <div class="user-initials"><span>${name.charAt(0)}</span></div>
+        <div class="user-initials"><span>${name.charAt(0)}${firstLetterLastName}</span></div>
         <div class="user-name-information">
             <h3>${name}</h3>
             <div class="edit-delete">
@@ -115,19 +118,20 @@ function showContactHTML(name, email, phone, i) {
     `;
 }
 
-async function deleteContact(i){
-    contacts.splice(i,1);
+async function deleteContact(i) {
+    contacts.splice(i, 1);
     await setItem('contact2', JSON.stringify(contacts));
+    document.getElementById('showedContact').innerHTML = ``;
     initContacts();
 }
 
-function openEditContact(i){
+function openEditContact(i) {
     showAddContact('editContact');
     loadEditContact(i);
-    editContactValue=i;
+    editContactValue = i;
 }
 
-function loadEditContact(i){
+function loadEditContact(i) {
     let name = contacts[i].name;
     let email = contacts[i].email;
     let phone = contacts[i].phone;
@@ -139,7 +143,7 @@ function loadEditContact(i){
     phoneInput.value = phone;
 }
 
-async function editContact(){
+async function editContact() {
     let nameInput = document.getElementById('nameEdit');
     let emailInput = document.getElementById('emailEdit');
     let phoneInput = document.getElementById('phoneEdit');
