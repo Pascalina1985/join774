@@ -38,8 +38,8 @@ function renderContacts() {
     for (let i = 0; i < contacts.length; i++) {
         const contact = contacts[i];
         let firstLetterName = contact.name.charAt(0);
-        let nachName = contact.name.split(' ')[1];
-        let firstLetterLastName = nachName.charAt(0);
+        let lastName = contact.name.split(' ')[1];
+        let firstLetterLastName = lastName.charAt(0);
         document.getElementById(firstLetterName).innerHTML += showAvailableContactsHTML(contact, firstLetterName, firstLetterLastName, i);
     }
 }

@@ -1,6 +1,5 @@
 let prios = [];
 
-
 async function addTask() {
     let title = document.getElementById('titleInput').value;
     let description = document.getElementById('descriptionInput').value;
@@ -11,7 +10,7 @@ async function addTask() {
 
     tasks.push({ title: title, description: description, contact: getContact(), prio: getPrio(), date: date, category: category, subtask: subtask });
     await setItem('task', JSON.stringify(tasks));
-    console.log(tasks)
+    console.log(tasks);
 }
 
 
