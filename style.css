@@ -282,7 +282,6 @@ svg {
     }
 
     .contentContainer {
-        justify-content: center;
         width: 100%;
         height: unset;
     }

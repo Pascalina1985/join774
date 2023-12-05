@@ -21,7 +21,6 @@
     flex-direction: column;
     overflow-y: auto;
     overflow-x: hidden;
-    flex: 1;
     width: 100%;
 }
 
@@ -317,12 +316,15 @@
 
     .contact-list {
         height: unset;
-        align-items: center;
         width: 100%;
         position:unset;
+        
     }
 
-
+    #contact-list{
+        align-items: center;
+        max-height: calc(100vh - 160px);
+    }
 
     .letter-container {
         margin-left: 0;
@@ -330,14 +332,15 @@
 
     .contact-data {
         margin-left: 0;
+        width: 300px;
     }
 
     .contact-line {
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
         gap: 10px;
-        align-self: stretch;
+        align-self: center;
+        margin:0;
     }
 
     #showedContact {
