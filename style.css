@@ -256,28 +256,52 @@ svg {
     color: rgb(41, 171, 226);
 }
 
+.container {
+    display: flex;
+}
+
 @media screen and (max-width: 700px) {
     body {
-        transform: scale(1) !important;
+        display: flex;
+        transform: none !important;
+        flex-direction: column;
     }
+
+    .container {
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+        justify-content: space-between;
+        
+    }
+
+    .mainContainer {
+        display: flex;
+        height: auto;
+        width: 100%;
+    }
+
     .contentContainer {
         justify-content: center;
-        width: 100vw;
-        height: 100vh;
+        width: 100%;
+        height: unset;
     }
+
     .sidebarContainer {
         height: 80px;
         width: 100%;
         flex-direction: row;
-        position: fixed;
-        bottom: 0;
+        order: 1;
     }
+
     .sidebarLogo {
         display: none;
     }
+
     .sidebarFooter {
         display: none;
     }
+
     .sidebarButton {
         flex-direction: column;
         gap: 4px;
@@ -285,53 +309,61 @@ svg {
         height: 76px;
         padding: 0;
     }
+
     .sidebarMenuButton {
         width: 76px;
         height: 76px;
         gap: 0;
         border-radius: 8px;
     }
+
     .sidebarMenuContainer {
         padding: 0px 16px;
         width: 100%;
         flex-direction: row;
         justify-content: space-between;
     }
+
     .sidebarMenuButton p {
         width: 76px;
         text-align: center;
     }
+
     .sidebarMenuButton img {
         width: 24px;
         height: 24px;
         padding-top: 15px;
     }
+
     .sidebarMenuButton:hover {
         background: #091931;
     }
+
     header {
-        position: fixed;
-        top: 0;
-        left: 0;
         padding: 0;
         height: 80px;
         width: 100%;
     }
+
     .headline-container {
         display: none;
     }
+
     .header-picure-help {
         display: none;
     }
+
     .header-picture-logo {
         display: flex;
         height: 39px;
         width: 32px;
     }
+
     .header-picture-user {
         width: 40px;
         height: 40px;
     }
+
     .header-pictures-container {
         padding-left: 16px;
         padding-right: 16px;
