@@ -1,20 +1,22 @@
 svgURLS = ['iconSummery', 'iconAddTask', 'iconBoard', 'iconContacts']
 
-window.onresize = function () {
+window.onresize = function() {
     skalierungAnpassen();
 };
 
 async function init(site) {
     document.body.classList.add('visible');
     skalierungAnpassen();
+    await loadUsers();
     await includeHTML();
+    headerUserInitials();
     loadSVG();
     changeSidebarActive(site);
     loadScript(site);
 }
 
-function loadScript(site){
-    if (site === 'contacts') {initContacts()}
+function loadScript(site) {
+    if (site === 'contacts') { initContacts() }
 }
 
 
@@ -78,4 +80,33 @@ function showAddContact(element) {
 
 function closeAddContact(element) {
     document.getElementById(element).classList.add('displayNone');
+}
+
+async function loadUsers() {
+    try {
+        users = JSON.parse(await getItem('users'));
+    } catch (e) {
+        console.error('Loading error:', e);
+    }
+}
+
+//verwendet users-JSON aus signup, sobald log-in-JSON am Start, dann Verwendung dieser Daten
+function headerUserInitials() {
+    let userName = users[10].newUser; // Beispiel-User
+    let firstLetterName = userName.charAt(0);
+    let lastName = userName.split(' ')[1];
+    let firstLetterLastName = lastName ? lastName.charAt(0) : '';
+    document.getElementById('userLoginInitials').innerHTML = renderUserInitials(firstLetterName, firstLetterLastName);
+}
+
+function renderUserInitials(firstLetterName, firstLetterLastName) {
+    if (!firstLetterLastName) {
+        return `
+        <span class="header-picture-user">${firstLetterName}</span>
+        `;
+    } else {
+        return `
+        <span class="header-picture-user">${firstLetterName}${firstLetterLastName}</span>
+        `;
+    }
 }
