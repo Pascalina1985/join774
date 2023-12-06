@@ -68,3 +68,23 @@
     justify-content: center;
 
 }
+
+.contact-button {
+    width: 125px;
+    height: 40px;
+    border-radius: 4px;
+    font-size: large;
+    gap: 16px;
+    background-color: rgb(42, 54, 71);
+    color: rgb(255, 255, 255);
+    padding: 12px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px;
+}
+
+.contact-button:hover {
+    cursor: pointer;
+    background-color: rgb(41, 171, 226);
+}
