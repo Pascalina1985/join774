@@ -1,6 +1,7 @@
 body {
     margin: 0;
     background-color: #F6F7F8;
+    font-family: 'Inter', sans-serif;
 }
 
 
@@ -9,7 +10,7 @@ body {
     height: 120px;
     object-fit: contain;
     position: absolute;
-    top: 50px;
+    top: 20px;
 }
 
 
@@ -45,10 +46,10 @@ body {
     border-radius: 40px;
     background-color: #FFFFFF;
     box-shadow: 1px 1px 14px lightgray;
-    width: 55vw;
+    width: 600px;
     height: 60vh;
     justify-content: center;
-    margin-top: 200px;
+    margin-top: 170px;
 }
 
 #log-in-headline-underline {
@@ -59,16 +60,16 @@ body {
     content: "";
     position: absolute;
     bottom: 0;
-    left: 15px;
-    width: 80%;
-    height: 2px;
+    left: 50px;
+    width: 55%;
+    height: 4px;
     background-color: rgb(41, 171, 226);
 }
 
 .log-in-headline {
     margin: 0;
-    font-size: 7vh;
-    font-weight: 900;
+    font-size: 60px;
+    font-weight: bold;
     padding: 10px;
 }
 
@@ -76,43 +77,43 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 48vh;
+    height: 53vh;
     justify-content: space-between;
 }
 
 .new-user {
     background-image: url(./img/log-in/person.png);
     background-repeat: no-repeat;
-    background-size: 20px;
+    background-size: 25px;
     background-position: right 10px center;
     border: 1px solid rgba(0, 0, 0, 0.2);
-    border-radius: 4px;
-    padding: 9px;
-    width: 35vw;
+    border-radius: 10px;
+    padding: 15px;
+    width: 350px;
     opacity: 0.6;
 }
 
 .mail {
     background-image: url(./img/log-in/mail.png);
     background-repeat: no-repeat;
-    background-size: 20px;
+    background-size: 25px;
     background-position: right 10px center;
     border: 1px solid rgba(0, 0, 0, 0.2);
-    border-radius: 4px;
-    padding: 9px;
-    width: 35vw;
+    border-radius: 10px;
+    padding: 15px;
+    width: 350px;
     opacity: 0.6;
 }
 
 .password {
     background-image: url(./img/log-in/lock.png);
     background-repeat: no-repeat;
-    background-size: 20px;
+    background-size: 25px;
     background-position: right 10px center;
     border: 1px solid rgba(0, 0, 0, 0.2);
-    border-radius: 4px;
-    padding: 9px;
-    width: 35vw;
+    border-radius: 10px;
+    padding: 15px;
+    width: 350px;
     opacity: 0.6;
 }
 
@@ -122,7 +123,7 @@ body {
 
 .checkbox {
     display: flex;
-    width: 27vw;
+    width: 260px;
     justify-content: center;
     align-items: center;
 }
@@ -145,7 +146,7 @@ body {
     cursor: pointer;
     background-color: rgb(42, 54, 71);
     color: white;
-    width: 11vw;
+    width: 180px;
     height: 5vh;
     display: flex;
     justify-content: center;
@@ -182,10 +183,10 @@ body {
 
 .legal {
     display: flex;
-    width: 30vw;
-    justify-content: space-around;
+    width: 290px;
+    justify-content: space-evenly;
     opacity: 0.4;
-    margin-top: 150px;
+    margin-top: 110px;
 }
 
 .bold1:hover {
@@ -198,4 +199,72 @@ body {
     cursor: pointer;
     color: rgb(41, 171, 226);
     font-weight: bold;
+}
+
+@media (max-width: 615px) {
+
+    .Join-img {
+        left: -50px;
+    }
+
+    .form {
+        width: 370px;
+    }
+
+    .log-in-headline {
+        font-size: 48px;
+    }
+
+    .new-user {
+        width: 310px;
+    }
+
+    .mail {
+        width: 310px;
+    }
+
+    .password {
+        width: 310px;
+    }
+}
+
+@media (max-width: 370px) {
+    
+    .Join-img {
+        height: 100px;
+        left: -50px;
+    }
+
+    .form {
+        width: 310px;
+    }
+
+    .log-in-headline {
+        font-size: 32px;
+    }
+
+    .arrow-position {
+        margin-right: 32px;
+    }
+
+    #log-in-headline-underline::after {
+        left: 30px;
+    }
+
+    .log-in-field {
+        height: 51vh;
+    }
+
+    .new-user {
+        width: 240px;
+    }
+
+    .mail {
+        width: 240px;
+    }
+
+    .password {
+        width: 240px;
+    }
+
 }

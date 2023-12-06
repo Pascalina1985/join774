@@ -13,28 +13,28 @@
         <div class="contactImage">
             <img src="img\addContact\person.png" alt="">
         </div>
-        <div class="createContact">
+        <form class="createContact" onsubmit="addContact(); return false;">
             <button onclick="closeAddContact('addContact')" class="closeButton">
                 <img class="icons" src="img\addContact\close.png" alt="">
             </button>
             <div class="inputContainer">
                 <div>
-                    <input class="iconName" type="text" id="name" name="name" placeholder="Name" required>
+                    <input required id="name" class="iconName" type="text" name="name" placeholder="Name">
                 </div>
                 <div>
-                    <input class="iconMail" type="email" id="email" name="email" placeholder="Email" required>
+                    <input required id="email" class="iconMail" type="email" name="email" placeholder="Email">
                 </div>
                 <div>
-                    <input class="iconPhone" type="tel" id="telefon" name="telefon" placeholder="Phone" required>
+                    <input required id="phone" class="iconPhone" type="tel" name="telefon" placeholder="Phone">
                 </div>
             </div>
             <div class="createContactButton">
-                <button onclick="closeAddContact('addContact')" class="cancelBTN">Cancel <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                <a onclick="closeAddContact('addContact')" class="cancelBTN">Cancel <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
                     <path d="M12.0692 12.0001L17.3122 17.2431M6.82617 17.2431L12.0692 12.0001L6.82617 17.2431ZM17.3122 6.75708L12.0682 12.0001L17.3122 6.75708ZM12.0682 12.0001L6.82617 6.75708L12.0682 12.0001Z" stroke="#2A3647" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg></button>
+                    </svg></a>
                 <button class="createBTN">Create Contact <img class="icons" src="img\addContact\check.png"
                         alt=""></button>
             </div>
-        </div>
+        </form>
     </div>
 </div>

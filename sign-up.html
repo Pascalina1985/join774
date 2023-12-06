@@ -7,10 +7,12 @@
     <title>Join</title>
     <link rel="stylesheet" href="sign-up.css">
     <link rel="icon" type="image/x-icon" href="./img/log-in/Capa 2.png">
-    <script src="js/log-in.js"></script>
+    <script src="./js/sign_up.js"></script>
+    <script src="./js/login.js"></script>
+    <script src="./js/storage.js"></script>
 </head>
 
-<body>
+<body onload="initRegister()">
     <div id="Sign-up-page">
 
         <div>
@@ -19,7 +21,7 @@
 
 
         <div class="Log-in-position">
-            <form class="form">
+            <form class="form" onsubmit="register(); return false;">
                 <div class="log-in-field">
                     <div class="center">
                         <div class="arrow-position">
@@ -29,10 +31,10 @@
                             <h1 class="log-in-headline">Sign up</h1>
                         </div>
                     </div>
-                    <input required class="new-user" type="text" placeholder="Name">
-                    <input required class="mail" type="email" placeholder="Email">
-                    <input required class="password" type="password" placeholder="Password">
-                    <input required class="password" type="password" placeholder="Confirm Password">
+                    <input required id="newUser" class="new-user" type="text" placeholder="Name">
+                    <input required id="email" class="mail" type="email" placeholder="Email">
+                    <input required id="password" class="password" type="password" placeholder="Password">
+                    <input required id="confirmPassword" class="password" type="password" placeholder="Confirm Password">
                     <div class="checkbox">
                         <form>
                           <input type="checkbox" name="remember" id="remember">
@@ -40,7 +42,7 @@
                         </form>
                       </div>
                     <div class="buttons">
-                        <button class="btn">Sign up</button>
+                        <button id="registerBtn" class="btn">Sign up</button>
                     </div>
                 </div>
             </form>

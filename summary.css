@@ -24,25 +24,27 @@
 .h1 {
     width: 264px;
     height: 73px;
-    font-family: 'Inter', sans-serif;
-    font-weight: 700;
     font-size: 61px;
-    color: black;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
 }
 
 .join-text {
+    color: #2A3647;
     width: 301px;
     height: 32px;
-    font-family: 'Inter', sans-serif;
-    font-weight: 400;
     font-size: 27px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
 }
 
 section {
     width: 560px;
     height: 562px;
     margin-top: 239px;
-    margin-left:96px;
+    margin-left: 96px;
     display: flex;
     flex-direction: column;
 }
@@ -74,22 +76,58 @@ section {
 
 .do-container:hover {
     cursor: pointer;
-    background-color: rgb(42, 54, 71);
-    color: rgb(255, 255, 255);
+    background: #2A3647;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
-.task-span {
-    font-family: 'Inter', sans-serif;
-    font-weight: 600;
-    font-size: 64px;
-    text-align: center;
+.do-container:hover .task-span,
+.do-container:hover .text-span {
+    color: white;
 }
 
-.text-span {
-    font-family: 'Inter', sans-serif;
-    font-weight: 400;
-    font-size: 20px;
-    text-align: center;
+.pencil:hover path {
+    fill: #2A3647;
+}
+
+.pencil:hover circle {
+    fill: white;
+}
+
+.checkmark:hover circle {
+    fill: white;
+}
+
+.checkmark:hover path {
+    stroke: #2A3647;
+}
+
+.do-container:active {
+    background: #F9F9F9;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.do-container:active .task-span {
+    color: black;
+}
+
+.do-container:active .text-span {
+    color: #2A3647;
+}
+
+.pencil:active path {
+    fill: white;
+}
+
+.pencil:active circle {
+    fill: #2A3647;
+}
+
+.checkmark:active circle {
+    fill: #2A3647;
+}
+
+.checkmark:active path {
+    stroke: white;
 }
 
 .to-do-container {
@@ -111,13 +149,35 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0px 0px 4px 0px #0000001A;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
 .urgent-deadline-container:hover {
     cursor: pointer;
     background-color: rgb(42, 54, 71);
-    color: rgb(255, 255, 255);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.urgent-deadline-container:hover .task-span,
+.urgent-deadline-container:hover .text-span,
+.urgent-deadline-container:hover .h2,
+.urgent-deadline-container:hover .text-deadline {
+    color: white;
+}
+
+.urgent-deadline-container:active {
+    background-color: white;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.urgent-deadline-container:active .task-span {
+    color: #000;
+}
+
+.urgent-deadline-container:active .text-span,
+.urgent-deadline-container:active .h2,
+.urgent-deadline-container:active .text-deadline {
+    color: #2A3647;
 }
 
 .urgent-container {
@@ -128,12 +188,13 @@ section {
 .urgent-picture {
     width: 60px;
     height: 60px;
+    padding-right: 19px;
 }
 
 .urgent-line-container {
     height: 102px;
     width: 2px;
-    background-color: rgb(209, 209, 209);
+    background-color: #d1d1d1;
     border: 2px;
 }
 
@@ -148,15 +209,39 @@ section {
 }
 
 .h2 {
-    font-family: 'Inter', sans-serif;
-    font-weight: 700;
+    margin: 0;
+    color: #2A3647;
     font-size: 21px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
 }
 
 .text-deadline {
-    font-family: 'Inter', sans-serif;
-    font-weight: 400;
+    color: #2A3647;
     font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+}
+
+.task-span {
+    color: #000;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+}
+
+.text-span {
+    color: #2A3647;
+    text-align: center;
+    font-size: 21px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
 }
 
 .task-container {
@@ -169,28 +254,48 @@ section {
 
 .task-sections {
     display: flex;
-    flex-direction: column;
     width: 168px;
     height: 168px;
-    gap: 13px;
-    border-radius: 30px;
-    background-color: rgb(255, 255, 255);
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    text-align: center;
-    box-shadow: 0px 0px 4px 0px #0000001A;
+    border-radius: 30px;
+    background: var(--white, #FFF);
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.10);
 }
 
 .task-sections:hover {
     cursor: pointer;
     background-color: rgb(42, 54, 71);
-    color: rgb(255, 255, 255);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.task-sections:hover .task-span,
+.task-sections:hover .text-task {
+    color: white;
+}
+
+.task-sections:active {
+    cursor: pointer;
+    background-color: white;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.task-sections:active .task-span {
+    color: #000;
+}
+
+.task-sections:active .text-task {
+    color: #2A3647
 }
 
 .text-task {
-    width: 83px;
-    font-family: 'Inter', sans-serif;
+    color: #2A3647;
+    text-align: center;
+    font-size: 21px;
+    font-style: normal;
     font-weight: 400;
-    font-size: 20px;
+    line-height: 120%;
 }
 
 .section-oversection {
@@ -218,4 +323,149 @@ section {
     font-weight: 700;
     font-size: 64px;
     color: rgb(41, 171, 226);
+}
+
+.contentContainer {
+    display: flex;
+}
+
+@media (max-width: 700px) {
+    body {
+        display: block;
+    }
+
+    .summary-main-section {
+        flex-direction: column;
+        gap: 16px;
+        margin-top: 48px;
+    }
+
+    .join-container {
+        width: 223px;
+        height: 104px;
+        display: block;
+        gap: 16px;
+        margin-top: 48px;
+        margin-left: 16px;
+    }
+
+    .h1 {
+        width: 203px;
+        height: 56px;
+        font-size: 47px;
+    }
+
+    .blue-line {
+        display: none;
+    }
+
+    .join-text {
+        width: 223px;
+        height: 24px;
+        font-size: 20px;
+        margin-block-start: 0;
+        margin-block-end: 0;
+    }
+
+    .greeting-section {
+        display: none;
+    }
+
+    section {
+        width: 396px;
+        height: 384px;
+        margin-left: 0;
+        margin-top: 192px;
+    }
+
+    .do-container {
+        width: 186px;
+        height: 110px;
+        gap: 10px;
+    }
+
+    .do-done-container {
+        width: 396px;
+        height: 110px;
+    }
+
+    .urgent-deadline-container {
+        width: 396px;
+        height: 110px;
+        gap: 20px;
+    }
+
+    .task-container {
+        width: 396px;
+        height: 116px;
+    }
+
+    .do-done-picture {
+        height: 40px;
+        width: 40px;
+    }
+
+    .task-span {
+        width: 23px;
+        height: 56px;
+        font-size: 47px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 120%;
+    }
+
+    .text-span {
+        width: 40px;
+        height: 17px;
+        font-size: 14px;
+    }
+
+    .urgent-container {
+        width: 108px;
+        height: 73px;
+    }
+
+    .urgent-picture {
+        width: 40px;
+        height: 40px;
+    }
+
+    .urgent-line-container {
+        height: 68px;
+    }
+
+    .deadline-container {
+        width: 140px;
+        height: 44px;
+        gap: 8px;
+    }
+
+    .h2 {
+        width: 100%;
+        height: 19px;
+        font-size: 16px;
+    }
+
+    .text-deadline {
+        width: 130px;
+        height: 17px;
+        font-size: 14px;
+    }
+
+    .task-container {
+        width: 396px;
+        height: 116px;
+    }
+
+    .task-sections {
+        width: 116px;
+        height: 116px;
+        gap: 13px;
+    }
+
+    .text-task {
+        width: 54px;
+        height: 34px;
+        font-size: 14px;
+    }
 }
