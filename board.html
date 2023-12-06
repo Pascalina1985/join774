@@ -24,8 +24,8 @@
                 </div>
 
                 <div class="board-find-add-container">
-                    <div class="board-searchbar"><input type="text" placeholder="Find Task"> <button>&#128269;</button></div>
-                    <button class="contact-button" >Add Task &#43;</button>
+                    <div class="board-searchbar"><input type="text" placeholder="Find Task">  <img src="img/board/vector .png" alt=""><img src="img/board/magnifying-glass=Default.png" alt=""></div>
+                    <button class="add-task-button" >Add Task <img src="img/board/add.png" alt=""></button>
                 </div>
             </nav>
 
@@ -34,37 +34,50 @@
                 <figure class="board-task-group">
                     <div class="board-task-header">
                         <span>To do</span>
-                        <div>XX</div>
+                        <div><img src="img/board/plus button.png" alt=""></div>
                     </div>
 
-                    <article class="board-task">No tasks To Do</article>
+                    <article class="empty-board-task">No tasks To Do</article>
                 </figure>
 
                 <figure class="board-task-group">
                     <div class="board-task-header">
                         <span>In progress</span>
-                        <div>XX</div>
+                        <div><img src="img/board/plus button.png" alt=""></div>
                     </div>
 
-                    <article class="board-task">Nothing in progress</article>
+                    <article class="empty-board-task">Nothing in progress</article>
                 </figure>
 
                 <figure class="board-task-group">
                     <div class="board-task-header">
                         <span>Await feedback</span>
-                        <div>XX</div>
+                        <div><img src="img/board/plus button.png" alt=""></div>
                     </div>
 
-                    <article class="board-task">No Feedback yet</article>
+                    <article class="empty-board-task">No Feedback yet</article>
                 </figure>
 
                 <figure class="board-task-group">
                     <div class="board-task-header">
                         <span>Done</span>
-                        <div>XX</div>
+                        <div><img src="img/board/plus button.png" alt=""></div>
                     </div>
 
-                    <article class="board-task">Nothing done yet</article>
+                    <article class="card">
+                        <div class="cardLabel" id="cardLabel${i}">Technical Task</div>
+                        <div class="card-header" id="cardHeader${i}">CSS Architecture Planning</div>
+                        <div class="card-content" id="cardContent${i}">Define CSS naming conventions and structure...</div>
+                        <div class="card-progress" id="cardProgress${i}">
+                            <div class="progressbar" id="progressbar${i}"></div>
+                            <div class="subtasks" id="subtasks${i}">1/2 Subtasks</div>
+                        </div>
+                        <div class="organisation" id="organisation${i}">
+                            <div class="members" id="members${i}"><img src="img/header/User profile initials.png" alt="" class="profile-badge"></div>
+                            <div class="prority" id="priority${i}"><img src="img/add-Task/Prio alta.png" alt=""></div>
+                        </div>
+                    </article>
+
                 </figure>
 
             </section>

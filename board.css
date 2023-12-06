@@ -13,23 +13,40 @@
 
 .board-find-add-container {
     display: flex;
+    gap: 32px;
 }
 
 .board-searchbar {
+    border: solid 1px #2A3647;
+    border-radius: 10px;
+    justify-content: space-between;
+    flex: 1 0 0;
+    background-color: white;
     display: flex;
-    height: 20px;
-    width: 200px;
-    border: solid 1px grey;
-    border-radius: 4px;
-    padding: 8px;
-    margin-right: 20px;
+    width: 312px;
+    padding: 8px 16px;
+    align-items: center;
+    gap: 10px;
+    
+}
+
+.board-searchbar:focus-within{
+    border: 1px solid var(--Ligth-blue, #29ABE2);
 }
 
 .board-searchbar input{
     background-color: transparent;
     border: none;
     font-size: large;
+    outline: none;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 24px */
 }
+
+
 
 .board-searchbar button {
     background-color: transparent;
@@ -47,44 +64,153 @@
 }
 
 .board-task-header{
-    color: #2A3647;
-    font-weight: bold;
-    font-size: large;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin-bottom: 20px;
+    color: var(--menu-color, #42526E);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
 }
 
 .board-task-group{
     width: 20%;
 }
 
-.board-task {
-    border: dashed 1px #2A3647;
-    border-radius: 4px;
-    padding: 8px;
+.empty-board-task {
     display: flex;
-    justify-content: center;
-
-}
-
-.contact-button {
-    width: 125px;
-    height: 40px;
-    border-radius: 4px;
-    font-size: large;
-    gap: 16px;
-    background-color: rgb(42, 54, 71);
-    color: rgb(255, 255, 255);
-    padding: 12px 0;
-    display: flex;
+    height: 48px;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 1px;
+    gap: 10px;
+    align-self: stretch;
+    border-radius: 10px;
+    border: 1px dashed var(--icon, #A8A8A8);
+    color: var(--icon, #A8A8A8);
+    background: #E7E7E7;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.16);
+
 }
 
-.contact-button:hover {
+.add-task-button {
+    display: flex;
+    padding: 8px 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    border-radius: 10px;
+    border: 1px solid #2A3647;
+    color: var(--white, #FFF);
+    font-size: 21px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%; /* 25.2px */
+    background: #2A3647;
+}
+
+.add-task-button:hover {
     cursor: pointer;
     background-color: rgb(41, 171, 226);
+}
+
+
+/* Card Styling */
+
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    padding: 16px;
+    align-self: stretch;
+    border-radius: 24px;
+    background: var(--white, #FFF);
+    box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.08);
+}
+
+.cardLabel{
+    display: flex;
+    padding: 4px 16px;
+    align-items: flex-start;
+    gap: 10px;
+    border-radius: 8px;
+    background: #0038FF;
+}
+
+.card-header{
+    align-self: stretch;
+    color: var(--version-2-main-color, #2A3647);
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%; /* 19.2px */
+}
+
+.card-content{
+    align-self: stretch;
+    color: var(--icon, #A8A8A8);
+    /* Version 2/body */
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 19.2px */
+}
+
+.card-progress{
+display: flex;
+flex-direction: row;
+width: 100%;
+padding: 0px 6px 2px 0px;
+align-items: center;
+gap: 11px;
+}
+
+.progressbar{
+display: flex;
+    width: 128px;
+    padding-right: 64px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+    border-radius: 8px;
+    background: #F4F4F4;
+}
+
+.subtasks{
+    color: #000;
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 14.4px */
+}
+
+.organisation{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.members{
+
+}
+
+.prority{
+
+}
+
+.profile-badge{
+    display: flex;
+    width: 32px;
+    height: 32px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
