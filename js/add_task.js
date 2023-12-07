@@ -1,4 +1,4 @@
-let prios = [];
+let prios = '';
 let assignedTo = [];
 
 async function addTask() {
@@ -7,26 +7,48 @@ async function addTask() {
     let date = document.getElementById('date').value;
     let category = document.getElementById('category').value;
     let subtask = document.getElementById('subtask').value;
-    
 
-    tasks.push({ title: title, description: description, contact: getContact(), prio: getPrio(), date: date, category: category, subtask: subtask });
+    tasks.push({ title: title, description: description, contact: getContact(), prio: prios, date: date, category: category, subtask: subtask });
     await setItem('task', JSON.stringify(tasks));
     console.log(tasks);
 }
 
 
-function getPrio(p) {//ist die funktion überhaupt sinnig oder lieber radiobutton um die prio zu übergeben und das ganze add task als Form erstellen
-    prios.push(p);
+function getPrio(button) {
+  chanceColor(button);
+  prios = button;
+}
 
-    for (let i = 0; i < prios.length; i++) {
-        const prio = prios[i];
-        return prio;
+
+function chanceColor(button) {
+    let red = document.getElementById('urgentBtn');
+    let yellow = document.getElementById('mediumBtn');
+    let green = document.getElementById('lowBtn');
+
+    if (button === red) {
+        button.classList.add('red');
+        yellow.classList.remove('yellow');
+        green.classList.remove('green');
+    } else if (button === yellow) {
+        button.classList.add('yellow');
+        red.classList.remove('red');
+        green.classList.remove('green');
+    } else if (button === green) {
+        button.classList.add('green');
+        red.classList.remove('red');
+        yellow.classList.remove('yellow');
     }
 }
+
 
 function getContact() {//liste der Kontake für assigned to als dropdown wo man mehrere kontakte anklicken kann 
     for (let i = 0; i < contacts.length; i++) {
         const contact = contacts[i];
         return contact;
     }
+}
+
+
+function clearForm() {
+    location.reload();
 }

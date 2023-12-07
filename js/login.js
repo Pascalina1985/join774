@@ -4,3 +4,7 @@ function login() {
     let user = users.find(u => u.email === email && u.password === password);
     console.log(user);
 }
+
+function guestLogIn() {
+    window.location.href = 'summary.html'
+}
