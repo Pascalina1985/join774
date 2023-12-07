@@ -17,6 +17,7 @@ async function init(site) {
 
 function loadScript(site) {
     if (site === 'contacts') { initContacts() }
+    if (site === 'addTask') { initTasks() }
 }
 
 

@@ -1,6 +1,19 @@
 let prios = '';
 let assignedTo = [];
 
+async function initTasks() {
+    await loadTask();
+}
+
+async function loadTask() {
+    try {
+        tasks = JSON.parse(await getItem('task'));
+    } catch (e) {
+        console.error('Loading error:', e);
+    }
+}
+
+
 async function addTask() {
     let title = document.getElementById('titleInput').value;
     let description = document.getElementById('descriptionInput').value;
