@@ -94,6 +94,25 @@ function showContact(i) {
     let phone = contacts[i].phone;
     document.getElementById('showedContact').innerHTML = ``;
     document.getElementById('showedContact').innerHTML = showContactHTML(name, email, phone, i, firstLetterLastName);
+    if (window.innerWidth <= 700) {showContactMobile();}
+}
+
+function showContactMobile(){
+    document.getElementById('contact-list').classList.add('displayNoneMobile');
+    document.getElementById('addContactBTN').classList.add('displayNoneMobile');
+    document.getElementById('showedContact').classList.remove('displayNoneMobile');
+    document.getElementById('headline-contacts-container').classList.remove('displayNoneMobile');
+    document.getElementById('menuContactBTN').classList.remove('displayNone');
+    document.getElementById('arrowLeft').classList.remove('displayNone');
+}
+
+function hideContactMobile(){
+    document.getElementById('contact-list').classList.remove('displayNoneMobile');
+    document.getElementById('addContactBTN').classList.remove('displayNoneMobile');
+    document.getElementById('showedContact').classList.add('displayNoneMobile');
+    document.getElementById('headline-contacts-container').classList.add('displayNoneMobile');
+    document.getElementById('menuContactBTN').classList.add('displayNone');
+    document.getElementById('arrowLeft').classList.add('displayNone');
 }
 
 function showContactHTML(name, email, phone, i, firstLetterLastName) {

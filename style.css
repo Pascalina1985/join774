@@ -38,7 +38,7 @@ body.visible {
 }
 
 .displayNone {
-    display: none;
+    display: none !important;
 }
 
 
@@ -283,7 +283,7 @@ svg {
 
     .contentContainer {
         width: 100%;
-        height: unset;
+        height: calc(100vh - 160px);
     }
 
     .sidebarContainer {

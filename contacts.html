@@ -23,25 +23,28 @@
             <div class="contactContainer">
                 <div class="contact-list">
                     <div class="button-container">
-                        <button onclick="showAddContact('addContact')" class="contact-button"><p>Add new contact</p><img
+                        <button onclick="showAddContact('addContact')" class="contact-button" id="addContactBTN"><p>Add new contact</p><img
                                 class="contact-picture" src="./img/contacts/person_add.png"></button>
+                                <button onclick="/**kleines Menü mit Edit und delete öffnen**/" class="contact-button displayNone" id="menuContactBTN"><img
+                                    class="contact-picture" src="./img/contacts/more_vert.png"></button>
                     </div>
                     <div id="contact-list">
                         
                     </div>
                 </div>
-                <div class="headline-contacts-container">
+                <div id="headline-contacts-container" class="displayNoneMobile">
                     <div class="headline-contacts-headline">Contacts</div>
                     <div class="headline-contacts-line"></div>
                     <div class="headline-contacts-text">Better with a team</div>
                 </div>
             </div>
-            <div id="showedContact"></div>
+            <div id="showedContact" class="displayNoneMobile"></div>
+            <div onclick="hideContactMobile()" id="arrowLeft" class="displayNone"><img src="img\contacts\arrow-left-line.png" alt=""></div>
         </div>
 
     </div>
     </div>
-    <div id="addContact" class="addContact displayNone" w3-include-html=".\addContact.html"></div>
+    <div id="addContact" class="addContact displayNone" w3-include-html=".\addContact.html">/**kleines Menü mit Edit und delete öffnen**/</div>
     <div id="editContact" class="addContact displayNone" w3-include-html=".\editContact.html"></div>
 </body>
 
