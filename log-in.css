@@ -104,11 +104,17 @@ body {
     justify-content: space-between;
 }
 
-.mail {
-    background-image: url(./img/log-in/mail.png);
-    background-repeat: no-repeat;
-    background-size: 25px;
-    background-position: right 10px center;
+.input-position {
+    display: flex;
+    height: 152px;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.input-field {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     padding: 15px;
@@ -116,17 +122,11 @@ body {
     opacity: 0.6;
 }
 
-.password {
-    background-image: url(./img/log-in/lock.png);
-    background-repeat: no-repeat;
-    background-size: 25px;
-    background-position: right 10px center;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-    padding: 15px;
-    width: 500px;
-    opacity: 0.6;
-}
+.pngs {
+    position: relative;
+    top: calc(-47%);
+    left: calc(92%);
+  }
 
 .wrong {
     border-radius: 10px;

@@ -7,12 +7,12 @@
     <title>Join</title>
     <link rel="stylesheet" href="log-in.css">
     <link rel="icon" type="image/x-icon" href="./img/log-in/Capa 2.png">
-    <script src="./js/storage.js"></script>
     <script src="./js/sign_up.js"></script>
     <script src="./js/login.js"></script>
+    <script src="./js/storage.js"></script>
 </head>
 
-<body>
+<body onload="initRegister()">
     <div id="log-in-page">
         <div class="Join-img">
         </div>
@@ -25,13 +25,22 @@
 
 
         <div class="Log-in-position">
-            <form onsubmit="initRegister(); return false;" class="form">
+            <form class="form" onsubmit="loginForm(); return false">
                 <div class="log-in-field">
                     <div id="log-in-headline-underline">
                         <h1 class="log-in-headline">Log in</h1>
                     </div>
-                    <input required id="email" class="mail" type="email" placeholder="Email">
-                    <input required id="password" class="password" type="password" placeholder="Password">
+                    <div class="input-position">
+                        <div>
+                            <input required id="email" class="input-field" type="email" placeholder="Email">
+                            <img class="pngs" src="./img/log-in/mail.png">
+                        </div>
+                        <div>
+                            <input onclick="showPassword()" onblur="resetPasswordVisibility()" required id="password" class="input-field" type="password" placeholder="Password">
+                            <img onclick="togglePasswordVisibility()" id="lock" class="pngs" src="./img/log-in/lock.png" style="cursor: pointer;">
+                        </div>
+                    </div>
+
                     <div class="checkbox">
                         <form>
                             <input type="checkbox" name="remember" id="">
