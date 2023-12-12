@@ -5,9 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Board</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
     <script src="js/storage.js"></script>
     <script src="script.js"></script>
+    <script src="./js/contact.js"></script>
+    <script src="js/add_task.js" ></script>
     <script src="board.js"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="board.css">
@@ -26,11 +29,14 @@
                 </div>
 
 
-                
+
 
                 <div class="board-find-add-container">
-                    <div class="board-searchbar"><input type="text" placeholder="Find Task">  <img src="img/board/vector .png" alt=""><img src="img/board/magnifying-glass=Default.png" alt=""></div>
-                    <button onclick="openAddTask()" class="board-add-task-button" >Add Task<img src="img/board/add.png" alt=""></button>
+                    <div class="board-searchbar"><input type="text" placeholder="Find Task"> <img
+                            src="img/board/vector .png" alt=""><img src="img/board/magnifying-glass=Default.png" alt="">
+                    </div>
+                    <button onclick="openAddTask()" class="board-add-task-button">Add Task<img src="img/board/add.png"
+                            alt=""></button>
                 </div>
             </nav>
 
@@ -72,19 +78,99 @@
                     <article class="card">
                         <div class="cardLabel" id="cardLabel${i}">Technical Task</div>
                         <div class="card-header" id="cardHeader${i}">CSS Architecture Planning</div>
-                        <div class="card-content" id="cardContent${i}">Define CSS naming conventions and structure...</div>
+                        <div class="card-content" id="cardContent${i}">Define CSS naming conventions and structure...
+                        </div>
                         <div class="card-progress" id="cardProgress${i}">
                             <div class="progressbar" id="progressbar${i}"></div>
                             <div class="subtasks" id="subtasks${i}">1/2 Subtasks</div>
                         </div>
                         <div class="organisation" id="organisation${i}">
-                            <div class="members" id="members${i}"><img src="img/header/User profile initials.png" alt="" class="profile-badge"></div>
+                            <div class="members" id="members${i}"><img src="img/header/User profile initials.png" alt=""
+                                    class="profile-badge"></div>
                             <div class="prority" id="priority${i}"><img src="img/add-Task/Prio alta.png" alt=""></div>
                         </div>
                     </article>
 
                 </figure>
+                <!--                            add task start                                            -->
+                <section class="popUp-Container" id="openAddTask" style="visibility: hidden;">
+                    <section class="tasks popUp" >
+                        <div class="headline">
+                            <h2>Add Task</h2>
+                        </div>
+                        <div class="vertical-menu">
+                            <div class="position-left-right">
 
+                                <div class="left-selection">
+                                    <div class="title">
+                                        <p>Title<b style="color: red;">*</b></p>
+                                        <input id="titleInput" required type="text" placeholder="Enter a Title">
+                                    </div>
+                                    <div class="description">
+                                        <p>Description</p>
+                                        <textarea id="descriptionInput" placeholder="Enter a Description"></textarea>
+                                    </div>
+                                    <div class="contact">
+                                        <label for="contacts">Assigned to</label>
+                                        <select name="contacts" id="assignContact"></select>
+                                        <option disabled selected hidden>Select contacts to assign</option>
+                                    </div>
+                                </div>
+
+
+                                <div class="middle-line"></div>
+
+
+                                <div class="right-selection">
+                                    <div class="date">
+                                        <p style="margin: 0;">Due date<b style="color: red;">*</b></p>
+                                        <input required type="date" placeholder="dd/mm/yyyy" id="date">
+                                    </div>
+                                    <div class="prio">
+                                        <p style="margin: 0;">Prio</p>
+                                        <div class="prio-selection">
+                                            <button onclick="getPrio(this)" class="btn-select" id="urgentBtn">Urgent<img
+                                                    src="./img/add-Task/Prio alta.png"></button>
+                                            <button onclick="getPrio(this)" class="btn-select" id="mediumBtn">Medium<img
+                                                    src="./img/add-Task/Capa 1.png"></button>
+                                            <button onclick="getPrio(this)" class="btn-select" id="lowBtn">Low<img
+                                                    src="./img/add-Task/Prio baja.png"></button>
+                                        </div>
+                                    </div>
+                                    <div class="contact">
+                                        <label for="Category">Category<b style="color: red;">*</b></label>
+                                        <select name="Category" id="category">
+                                            <option class="placeholder-chance" disabled selected hidden>Select task
+                                                Category
+                                            </option>
+                                            <option value="Technical Task">Technical Task</option>
+                                            <option value="User Story">User Story</option>
+                                        </select>
+                                    </div>
+                                    <div class="subtask">
+                                        <p style="margin: 0;">Subtasks</p>
+                                        <input id="subtask" type="text" placeholder="Add new subtask">
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <section class="popUp-footer">
+                        <div class="required-text">
+                            <b style="color: red;">*</b>
+                            <p>This field is required</p>
+                        </div>
+                        <div class="btn-position">
+                            <button onclick="clearForm()" class="btn-clear">Clear X</button>
+                            <button onclick="addTask()" class="btn">Create Task <img
+                                    src="./img/add-Task/check.png"></button>
+                        </div>
+                    </section>
+                    </section>
+                    
+
+                </section>
+                <!--                            add task end                                            -->
             </section>
 
 

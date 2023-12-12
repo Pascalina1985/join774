@@ -220,9 +220,29 @@ display: flex;
     gap: 10px;
 }
 
+.popUp-Container{
+    display: flex;
+    justify-content: center;
+}
+
 .popUp{
     position: absolute;
-    inset: 0;
-    border-radius: 10px;
+    /* inset: 0; */
+    
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+    border-radius: 30px;
+    background-color: white;
+    padding: 30px;
+    height: fit-content;
+    width: fit-content;
+}
 
+.popUp-footer {
+    display: flex;
+    padding-top: 30px;
+    align-items: center;
+    justify-content: space-between;
+    width: -webkit-fill-available;
 }
