@@ -23,8 +23,7 @@ body {
 
 .position-left-right {
     display: flex;
-    height: 42vh;
-    width: 60vw;
+    height: 376px;
     justify-content: space-evenly;
 }
 

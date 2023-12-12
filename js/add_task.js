@@ -1,4 +1,5 @@
 let prios = '';
+let tasks = [];
 let assignedTo = [];
 let urgentPrio = [];
 
