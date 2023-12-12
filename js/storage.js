@@ -1,7 +1,6 @@
 const STORAGE_TOKEN = 'RI356J413WZ414HO4TBZGKHKPO03QERFSAEGI9S8';
 const STORAGE_URL = 'https://remote-storage.developerakademie.org/item';
 let users = [];
-let tasks = [];
 
 
 async function setItem(key, value) {
