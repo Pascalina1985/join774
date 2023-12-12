@@ -124,21 +124,30 @@ body {
 
 .pngs {
     position: relative;
-    top: calc(-47%);
+    top: -37px;
     left: calc(92%);
-  }
+}
 
-.wrong {
+.hide {
+    display: none;
+}
+
+.wrong-text {
+    position: relative;
+    top: -24px;
+    left: 12px;
+    margin: 0;
+    color: #FF001F;
+    opacity: 0.7;
+}
+
+.wrong-border {
     border-radius: 10px;
     border: 1px solid #FF001F;
     background: #FFF;
     background-repeat: no-repeat;
     background-size: 25px;
     background-position: right 10px center;
-}
-
-.password:focus {
-    background-image: url(./img/log-in/visibility_off.png);
 }
 
 .checkbox {

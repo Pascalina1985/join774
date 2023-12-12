@@ -34,10 +34,12 @@
                         <div>
                             <input required id="email" class="input-field" type="email" placeholder="Email">
                             <img class="pngs" src="./img/log-in/mail.png">
+                            <p id="wrong-mail" class="hide">Wrong E-mail Ups! Try again</p>
                         </div>
                         <div>
                             <input onclick="showPassword()" onblur="resetPasswordVisibility()" required id="password" class="input-field" type="password" placeholder="Password">
                             <img onclick="togglePasswordVisibility()" id="lock" class="pngs" src="./img/log-in/lock.png" style="cursor: pointer;">
+                            <p id="wrong-password" class="hide">Wrong password Ups! Try again</p>
                         </div>
                     </div>
 

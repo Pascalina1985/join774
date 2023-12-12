@@ -16,29 +16,43 @@ async function register() {
     let newUser = document.getElementById('newUser');
     let email = document.getElementById('email');
     let password = document.getElementById('password');
+    let confirmPassword = document.getElementById('password2');
     users.push({ newUser: newUser.value, email: email.value, password: password.value, });
     await setItem('users', JSON.stringify(users));
-    resetForm();
+    resetForm(confirmPassword);
 }
 
 
-
-function moveToLogin() {
-    window.location.href = 'log-in.html?msg=Hat alles geklappt';
-    const urlParams = new URLSearchParams(window.location.search);
-    const msg = urlParams.get('msg');
-    if (msg) {
-        msgBox.innerHTML = msg;
-    }
-}
-
-function resetForm() {
+function resetForm(confirmPassword) {
     newUser.value = '';
     email.value = '';
     password.value = '';
     confirmPassword.value = '';
 }
 
-function toSignUp() {
-    window.location.href = 'sign-up.html'
-}
+
+function showPassword(inputId) {
+    let img = document.getElementById('lock-' + inputId);
+    img.src = './img/log-in/visibility_off.png';
+  }
+  
+  function resetPasswordVisibility(inputId) {
+    let img = document.getElementById('lock-' + inputId);
+    let passwordInput = document.getElementById(inputId);
+    if (passwordInput.value === '') {
+      img.src = './img/log-in/lock.png';
+    }
+  }
+  
+  function togglePasswordVisibility(inputId) {
+    let img = document.getElementById('lock-' + inputId);
+    let passwordInput = document.getElementById(inputId);
+    if (passwordInput.type === 'password') {
+      passwordInput.type = 'text';
+      img.src = './img/log-in/visibility.png';
+    } else {
+      passwordInput.type = 'password';
+      img.src = './img/log-in/visibility_off.png';
+    }
+  }
+  

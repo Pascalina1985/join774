@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="sign-up.css">
     <link rel="icon" type="image/x-icon" href="./img/log-in/Capa 2.png">
     <script src="./js/sign_up.js"></script>
-    <script src="./js/login.js"></script>
     <script src="./js/storage.js"></script>
 </head>
 
@@ -31,16 +30,29 @@
                             <h1 class="log-in-headline">Sign up</h1>
                         </div>
                     </div>
-                    <input required id="newUser" class="new-user" type="text" placeholder="Name">
-                    <input required id="email" class="mail" type="email" placeholder="Email">
-                    <input required id="password" class="password" type="password" placeholder="Password">
-                    <input required id="confirmPassword" class="password" type="password" placeholder="Confirm Password">
+                    <div>
+                        <input required id="newUser" class="input-field" type="text" placeholder="Name">
+                        <img class="pngs" src="./img/log-in/person.png">
+                    </div>
+                    <div>
+                        <input required id="email" class="input-field" type="email" placeholder="Email">
+                        <img class="pngs" src="./img/log-in/mail.png">
+                    </div>
+                    <div>
+                        <input onclick="showPassword('password')" onblur="resetPasswordVisibility('password')" required id="password" class="input-field" type="password" placeholder="Password">
+                        <img onclick="togglePasswordVisibility('password')" id="lock-password" class="pngs" src="./img/log-in/lock.png" style="cursor: pointer;">
+                    </div>
+                    <div>
+                        <input onclick="showPassword('password2')" onblur="resetPasswordVisibility('password2')" required id="password2" class="input-field" type="password" placeholder="Confirm password">
+                        <img onclick="togglePasswordVisibility('password2')" id="lock-password2" class="pngs" src="./img/log-in/lock.png" style="cursor: pointer;">
+                    </div>
                     <div class="checkbox">
                         <form>
-                          <input type="checkbox" name="remember" id="remember">
-                          <label for="remember" class="center">I accept the <p style="color: rgb(41, 171, 226); margin-left: 4px;">Privacy policy</p></label>
+                            <input type="checkbox" name="remember" id="remember">
+                            <label for="remember" class="center">I accept the <p
+                                    style="color: rgb(41, 171, 226); margin-left: 4px;">Privacy policy</p></label>
                         </form>
-                      </div>
+                    </div>
                     <div class="buttons">
                         <button id="registerBtn" class="btn">Sign up</button>
                     </div>
