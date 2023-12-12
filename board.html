@@ -8,24 +8,29 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <script src="js/storage.js"></script>
     <script src="script.js"></script>
+    <script src="board.js"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="board.css">
+    <link rel="stylesheet" href="add_task.css">
 </head>
 
 <body onload="init('board')">
     <div class="sidebarContainer" w3-include-html=".\assets\templates\side_menu.html"></div>
     <div class="mainContainer">
         <header w3-include-html=".\assets\templates\header.html"></header>
-        <div class="contentContainer">
+        <div class="board-content-container">
 
             <nav class="board-navigation">
                 <div>
                     <h1>Board</h1>
                 </div>
 
+
+                
+
                 <div class="board-find-add-container">
                     <div class="board-searchbar"><input type="text" placeholder="Find Task">  <img src="img/board/vector .png" alt=""><img src="img/board/magnifying-glass=Default.png" alt=""></div>
-                    <button class="add-task-button" >Add Task <img src="img/board/add.png" alt=""></button>
+                    <button onclick="openAddTask()" class="board-add-task-button" >Add Task<img src="img/board/add.png" alt=""></button>
                 </div>
             </nav>
 

@@ -34,7 +34,7 @@ function getPrio(button) {
 }
 
 
-function chanceColor(button) {
+function chanceColor(button) {  // change color? 
     let red = document.getElementById('urgentBtn');
     let yellow = document.getElementById('mediumBtn');
     let green = document.getElementById('lowBtn');

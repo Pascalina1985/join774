@@ -1,5 +1,10 @@
 /* Board */
 
+.board-content-container{
+    display: flex;
+    flex-direction: column;
+}
+
 .board-navigation {
     display: flex;
     flex-direction: row;
@@ -95,7 +100,7 @@
 
 }
 
-.add-task-button {
+.board-add-task-button {
     display: flex;
     padding: 8px 16px;
     justify-content: center;
@@ -111,7 +116,7 @@
     background: #2A3647;
 }
 
-.add-task-button:hover {
+.board-add-task-button:hover {
     cursor: pointer;
     background-color: rgb(41, 171, 226);
 }
@@ -199,11 +204,11 @@ display: flex;
 }
 
 .members{
-
+ width: auto;
 }
 
 .prority{
-
+ width: auto;
 }
 
 .profile-badge{
@@ -213,4 +218,11 @@ display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
+}
+
+.popUp{
+    position: absolute;
+    inset: 0;
+    border-radius: 10px;
+
 }
