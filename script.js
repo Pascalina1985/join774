@@ -4,6 +4,10 @@ window.onresize = function() {
     skalierungAnpassen();
 };
 
+function openLogin(){
+    window.open('log-in.html','_self');
+}
+
 async function init(site) {
     document.body.classList.add('visible');
     skalierungAnpassen();
