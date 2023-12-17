@@ -41,7 +41,7 @@ function renderUrgentDate() {
     if (earliestRedDate) {
         return `${earliestRedDate}`;
     } else {
-        return `Kein rotes und dringendes Datum gefunden.`;
+        return `Kein dringendes Datum`;
     }
 }
 
