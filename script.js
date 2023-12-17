@@ -4,8 +4,8 @@ window.onresize = function() {
     skalierungAnpassen();
 };
 
-function openLogin(){
-    window.open('log-in.html','_self');
+function openLogin() {
+    window.open('log-in.html', '_self');
 }
 
 async function init(site) {
@@ -95,14 +95,24 @@ async function loadUsers() {
     }
 }
 
-//verwendet users-JSON aus signup, sobald log-in-JSON am Start, dann Verwendung dieser Daten
+//Eingeloggter User im local storage gespeichert und abgerufen
 function headerUserInitials() {
-    let userName = users[10].newUser; // Beispiel-User
-    let firstLetterName = userName.charAt(0);
-    let lastName = userName.split(' ')[1];
-    let firstLetterLastName = lastName ? lastName.charAt(0) : '';
-    document.getElementById('userLoginInitials').innerHTML = renderUserInitials(firstLetterName, firstLetterLastName);
+    let storedName = localStorage.getItem('loggedInUserName');
+
+    if (storedName) {
+        let firstLetterName = storedName.charAt(0);
+        let lastName = storedName.split(' ')[1];
+        let firstLetterLastName = lastName ? lastName.charAt(0) : '';
+
+        if (firstLetterName || firstLetterLastName) {
+            document.getElementById('userLoginInitials').innerHTML = renderUserInitials(firstLetterName, firstLetterLastName);
+        } else {
+            document.getElementById('userLoginInitials').innerHTML = `<span class="header-picture-user">G</span>`;
+        }
+    }
 }
+
+
 
 function renderUserInitials(firstLetterName, firstLetterLastName) {
     if (!firstLetterLastName) {
