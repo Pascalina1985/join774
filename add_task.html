@@ -36,10 +36,13 @@
                                 <p>Description</p>
                                 <textarea id="descriptionInput" placeholder="Enter a Description"></textarea>
                             </div>
+                            
                             <div class="contact">
                                 <label for="contacts">Assigned to</label>
-                                <select name="contacts" id="assignContact"></select>
-                                <option disabled selected hidden>Select contacts to assign</option>
+                                <select onclick="getContact()" name="contacts">
+                                    <option id="test" disabled selected hidden>Select contacts to assign</option>
+                                    <option id="assignContact"></option>
+                                </select>
                             </div>
                         </div>
 
@@ -55,10 +58,13 @@
                             <div class="prio">
                                 <p style="margin: 0;">Prio</p>
                                 <div class="prio-selection">
-                                    <button onclick="getPrio(this)" class="btn-select" id="urgentBtn">Urgent<img src="./img/add-Task/Prio alta.png"></button>
-                                    <button onclick="getPrio(this)" class="btn-select" id="mediumBtn">Medium<img src="./img/add-Task/Capa 1.png"></button>
-                                    <button onclick="getPrio(this)" class="btn-select" id="lowBtn">Low<img src="./img/add-Task/Prio baja.png"></button>
-                                  </div>
+                                    <button onclick="getPrio(this)" class="btn-select" id="urgentBtn">Urgent<img
+                                            src="./img/add-Task/Prio alta.png"></button>
+                                    <button onclick="getPrio(this)" class="btn-select" id="mediumBtn">Medium<img
+                                            src="./img/add-Task/Capa 1.png"></button>
+                                    <button onclick="getPrio(this)" class="btn-select" id="lowBtn">Low<img
+                                            src="./img/add-Task/Prio baja.png"></button>
+                                </div>
                             </div>
                             <div class="contact">
                                 <label for="Category">Category<b style="color: red;">*</b></label>

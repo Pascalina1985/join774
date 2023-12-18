@@ -45,7 +45,7 @@ function checkUser(email, password) {
     }
     email.value = '';
     password.value = '';
-    window.location.href = 'summary.html';
+    //window.location.href = 'summary.html';
 }
 
 

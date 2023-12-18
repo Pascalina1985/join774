@@ -3,6 +3,7 @@ let tasks = [];
 let assignedTo = [];
 let urgentPrio = [];
 
+
 async function initTasks() {
     await loadTask();
 }
@@ -10,6 +11,7 @@ async function initTasks() {
 async function loadTask() {
     try {
         tasks = JSON.parse(await getItem('task'));
+        contacts = JSON.parse(await getItem('contact2'));
     } catch (e) {
         console.error('Loading error:', e);
     }
@@ -59,12 +61,20 @@ function chanceColor(button) {  // change color?
 }
 
 
-function getContact() { //liste der Kontake für assigned to als dropdown wo man mehrere kontakte anklicken kann 
+ function getContact() {
+    let dropdown = document.getElementById('assignContact');
+    let test = document.getElementById('test');
+    test.innerHTML = "";
+
     for (let i = 0; i < contacts.length; i++) {
-        const contact = contacts[i];
-        return contact;
+      const contact = contacts[i];
+      let option = document.createElement("option");
+      option.text = contact.name;
+      dropdown.add(option);
+      test.innerHTML += `${contact.name}`;
     }
-}
+
+  }
 
 
 function clearForm() {
