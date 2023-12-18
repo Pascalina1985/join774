@@ -222,11 +222,14 @@ display: flex;
 
 .popUp-Container{
     display: flex;
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.1);
     justify-content: center;
 }
 
 .popUp{
-    position: absolute;
+    position: fixed;
     /* inset: 0; */
     
   top: 50%;
@@ -245,4 +248,21 @@ display: flex;
     align-items: center;
     justify-content: space-between;
     width: -webkit-fill-available;
+}
+
+.close-Btn{
+    display: flex;
+    width: 32px;
+    height: 32px;
+    padding: 4px;
+    border: none;
+    border-radius: 20px;
+    background: none;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.close-Btn:hover{
+    background-color: rgba(0, 0, 0, 0.2);
 }
