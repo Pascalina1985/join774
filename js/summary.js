@@ -2,9 +2,11 @@
 async function renderTasks() {
     await loadTask()
     let tasksInBoard = tasks.length;
+    let storedName = localStorage.getItem('loggedInUserName');
     document.getElementById('tasksInBoard').innerHTML = renderTasksHTML(tasksInBoard);
     document.getElementById('tasksUrgent').innerHTML = renderUrgentTasksHTML();
     document.getElementById('urgentDeadline').innerHTML = renderUrgentDate();
+    document.getElementById('loggedUserGreetings').innerHTML = renderLoggedUserGreetings(storedName);
 }
 
 function renderTasksHTML(tasksInBoard) {
@@ -43,6 +45,10 @@ function renderUrgentDate() {
     } else {
         return `Kein dringendes Datum`;
     }
+}
+
+function renderLoggedUserGreetings(storedName) {
+    return `${storedName}`;
 }
 
 
