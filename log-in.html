@@ -37,8 +37,10 @@
                             <p id="wrong-mail" class="hide">Wrong E-mail Ups! Try again</p>
                         </div>
                         <div>
-                            <input onclick="showPassword()" onblur="resetPasswordVisibility()" required id="password" class="input-field" type="password" placeholder="Password">
-                            <img onclick="togglePasswordVisibility()" id="lock" class="pngs" src="./img/log-in/lock.png" style="cursor: pointer;">
+                            <input onclick="showPassword()" onblur="resetPasswordVisibility()" required id="password"
+                                class="input-field" type="password" placeholder="Password">
+                            <img onclick="togglePasswordVisibility()" id="lock" class="pngs" src="./img/log-in/lock.png"
+                                style="cursor: pointer;">
                             <p id="wrong-password" class="hide">Wrong password Ups! Try again</p>
                         </div>
                     </div>
@@ -49,23 +51,24 @@
                             <label for="remember">Remember me</label>
                         </form>
                     </div>
-                    <div class="buttons">
-                        <button onclick="login()" class="btn">Log in</button>
-                        <button onclick="guestLogIn()" class="btn-clear">Guest Log in</button>
-                    </div>
-                </div>
             </form>
-
-            <div class="Sign-up-section-for-mobile">
-                <button type="button" class="btn">Sign up</button>
-                <h3>Not a Join User?</h3>
-            </div>
-
-            <div class="legal">
-                <p class="bold1">Privacy Policy</p>
-                <p class="bold2">Legal notice</p>
+            <div class="buttons">
+                <button onclick="login()" class="btn">Log in</button>
+                <button onclick="guestLogIn()" class="btn-clear">Guest Log in</button>
             </div>
         </div>
+
+
+        <div class="Sign-up-section-for-mobile">
+            <button type="button" class="btn">Sign up</button>
+            <h3>Not a Join User?</h3>
+        </div>
+
+        <div class="legal">
+            <p class="bold1">Privacy Policy</p>
+            <p class="bold2">Legal notice</p>
+        </div>
+    </div>
     </div>
     <div id="msgBox"></div>
 </body>

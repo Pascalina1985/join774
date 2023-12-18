@@ -2,9 +2,11 @@
 async function renderTasks() {
     await loadTask()
     let tasksInBoard = tasks.length;
+    let storedName = localStorage.getItem('loggedInUserName');
     document.getElementById('tasksInBoard').innerHTML = renderTasksHTML(tasksInBoard);
     document.getElementById('tasksUrgent').innerHTML = renderUrgentTasksHTML();
     document.getElementById('urgentDeadline').innerHTML = renderUrgentDate();
+    document.getElementById('loggedUserGreetings').innerHTML = renderLoggedUserGreetings(storedName);
 }
 
 function renderTasksHTML(tasksInBoard) {
@@ -29,7 +31,7 @@ function renderUrgentDate() {
     for (let i = 0; i < tasks.length; i++) {
         const task = tasks[i];
 
-        if (task.urgentprio && task.urgentprio.includes('red')) {
+        if (task.urgentprio && task.urgentprio.includes('red') && task.date) {
             if (!earliestRedDate || task.date < earliestRedDate) {
                 earliestRedDate = task.date;
                 const [year, month, day] = earliestRedDate.split('-');
@@ -37,7 +39,17 @@ function renderUrgentDate() {
             }
         }
     }
-    return `${earliestRedDate}`;
+
+    if (earliestRedDate) {
+        return `${earliestRedDate}`;
+    } else {
+        return `Kein dringendes Datum`;
+    }
 }
+
+function renderLoggedUserGreetings(storedName) {
+    return `${storedName}`;
+}
+
 
 //Daten aus board (todo, in progress, await feedback, done) werden noch implementiert sobald vorhanden

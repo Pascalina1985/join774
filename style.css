@@ -373,4 +373,9 @@ svg {
         justify-content: space-between;
         align-items: center;
     }
+    .addContact {
+        height: 100%;
+        width: 100%;
+        z-index: 9999;
+    }
 }

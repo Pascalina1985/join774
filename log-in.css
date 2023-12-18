@@ -301,7 +301,6 @@ body {
         display: flex;
         width: 68vw;
         justify-content: flex-start;
-        margin-top: 10px;
     }
 
     .buttons {
@@ -318,5 +317,59 @@ body {
         justify-content: space-around;
         opacity: 0.4;
         margin-top: 50px;
+    }
+}
+
+@media (max-width: 600px) {
+    .input-field {
+        width: 400px;
+    }
+
+    #log-in-headline-underline {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 500px) {
+    .log-in-field {
+        height: 420px;
+    }
+
+    #log-in-headline-underline {
+        margin-bottom: 20px;
+    }
+
+    .input-field {
+        width: 330px;
+    }
+
+    .pngs {
+        left: calc(86%);
+    }
+
+    .buttons {
+        width: 150px;
+    }
+
+    .btn {
+        width: 150px;
+    }
+
+    .btn-clear {
+        width: 150px;
+    }
+
+    .Sign-up-section-for-mobile {
+        width: 342px;
+    }
+}
+
+@media (max-width: 400px) {
+    .input-field {
+        width: 250px;
+    }
+
+    .pngs {
+        left: calc(90%);
     }
 }

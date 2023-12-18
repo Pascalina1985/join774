@@ -312,8 +312,21 @@
     cursor: pointer;
 }
 
-@media screen and (max-width: 700px) {
+#menuContactBTN{
+    display: none;
+}
 
+#contactOptions{
+    display: none;
+}
+
+@media screen and (max-width: 700px) {
+    #menuContactBTN{
+        display: unset;
+    }
+    .displayNone{
+        display: flex;
+    }
     .contactContainer {
         height: unset;
         width: 100%;
@@ -360,8 +373,8 @@
 
     .contact-button {
         position: fixed;
-        top: 760px;
-        right: 16px;
+        top: calc(100vh - 200px);
+        left: calc(100vw - 100px);
         z-index: 999;
         width: 56px;
         height: 56px;
@@ -408,5 +421,54 @@
         order: 2;
         min-height: 3px;
         width: 90px;
+    }
+
+    #contactOptions {
+        top: calc(100vh - 200px);
+        left: calc(100vw - 130px);
+        border-radius: 20px 20px 0px 20px;
+        background: var(--white, #FFF);
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        height: 80px;
+        width: 96px;
+        position: absolute;
+        z-index: 9999;
+    }
+
+    #contactOptions button {
+        background-color: white;
+        border: 0;
+        display: flex;
+        width: 96px;
+        padding: 8px;
+        align-items: center;
+        gap: 8px;
+        margin: 0;
+    }
+    #contactOptions button:hover {
+        cursor: pointer;
+    }
+
+    #contactOptions p {
+        color: var(--Version-2-main-color, #2A3647);
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 120%;
+        margin: 0;
+        font-family: 'Inter', sans-serif;
+    }
+    #contactOptions svg {
+        height: 24px;
+        height: 24px;
+    }
+    #contactOptions button:active p {
+        color: var(--Ligth-blue, #29ABE2);
+    }
+    #contactOptions button:active svg path {
+        fill: #29ABE2;
     }
 }

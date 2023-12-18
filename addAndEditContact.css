@@ -80,6 +80,8 @@ h2 {
     margin-top: 204px;
 }
 
+
+
 .createContact {
     display: flex;
     flex-direction: column;
@@ -96,7 +98,7 @@ h2 {
     cursor: pointer;
 }
 
-.closeButton img {
+.icon {
     width: 24px;
     height: 24px;
 }
@@ -206,12 +208,144 @@ input :placeholder-shown {
     line-height: 120%;
 }
 
-.iconName{
+.iconName {
     background-image: url('img/addContact/personInput.png');
 }
-.iconMail{
+
+.iconMail {
     background-image: url('img/addContact/mail.png');
 }
-.iconPhone{
+
+.iconPhone {
     background-image: url('img/addContact/call.png');
+}
+
+.icon{
+    display: unset;
+}
+
+.iconWhite {
+    display: none;
+}
+
+@media screen and (max-width: 700px) {
+    .addAndEditContactMainContainer {
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+    }
+
+    .addAndEditContactHeader {
+        display: flex;
+        height: 351px;
+        width: 100%;
+        gap: 12px;
+        flex-shrink: 0;
+        background-color: #2a3647;
+        border-bottom-left-radius: unset;
+        border-top-right-radius: 30px;
+    }
+
+    h1 {
+       
+        margin-bottom: 16px;
+        font-size: 47px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    .logo {
+        display: none;
+    }
+
+    .vector5 {
+        width: 90px;
+    }
+
+    .headline {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 66px 24px;
+    }
+
+    .createContactContainer {
+        height: unset;
+        width: 100%;
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+    }
+
+    .contactImageContainer {
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        top: 292px;
+        width: 100%;
+    }
+    .contactImage{
+    margin: 0;
+    }
+    .contactImage img{
+        height: 120px;
+        width: 120px;
+    }
+
+    .createContact {
+        padding: 0;
+        width: 100%;
+        align-items: center;
+    }
+
+    .closeButton {
+        border: 0;
+        background-color: #FFF;
+        display: flex;
+        justify-content: flex-end;
+        cursor: pointer;
+    }
+
+    .iconWhite {
+        display: unset;
+        position: fixed;
+        top: 30px;
+        right: 30px;
+        z-index: 9999;
+        color: white;
+        width: 24px;
+            height: 24px;
+    }
+
+    .icon{
+        display: none;
+    }
+
+    .inputContainer {
+        width: 100%;
+        align-items: center;
+        margin-top: 92px;
+    }
+
+    .icons {
+        width: 24px;
+        height: 24px;
+        padding-right: 21px;
+    }
+
+    .createContactButton {
+        margin-bottom: 80px;
+    }
+
+    input {
+        width: 322px;
+    }
+
+    
+
+   
+
 }
