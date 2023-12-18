@@ -4,21 +4,18 @@ function loginForm() {
 
 
 function login() {
-    let email = document.getElementById('email');
-    let password = document.getElementById('password');
-
-    checkUser(email, password);
-}
-
-
-function checkUser(email, password) {
     let inputMail = users.find(m => m.email === email.value);
     let inputPassword = users.find(p => p.password === password.value);
-    let loggedInUser = inputMail;
-    let name = loggedInUser.newUser;
-    localStorage.setItem('loggedInUserName', name);
+    //let loggedInUser = inputMail;
+    //let name = loggedInUser.newUser;
+    //localStorage.setItem('loggedInUserName', name);
     let mailText = document.getElementById('wrong-mail');
     let passwordText = document.getElementById('wrong-password');
+
+    if (!email.validity.valid || !password.validity.valid) {
+        // Wenn die Felder leer oder ungültig sind
+        return;
+    }
 
     if (!inputMail) {
         email.classList.add('wrong-border');
@@ -40,12 +37,9 @@ function checkUser(email, password) {
         passwordText.classList.add('hide');
     }
 
-    if (!inputMail || !inputPassword) {
-        return;
+    if (inputMail && inputPassword) {
+        window.location.href = 'summary.html';
     }
-    email.value = '';
-    password.value = '';
-    //window.location.href = 'summary.html';
 }
 
 
