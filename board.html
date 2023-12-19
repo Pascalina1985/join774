@@ -48,7 +48,7 @@
                         <div><img src="img/board/plus button.png" alt=""></div>
                     </div>
 
-                    <article class="empty-board-task">No tasks To Do</article>
+                    <article id="toDoContainer" class="empty-board-task">No tasks To Do</article>
                 </figure>
 
                 <figure class="board-task-group">
@@ -57,7 +57,7 @@
                         <div><img src="img/board/plus button.png" alt=""></div>
                     </div>
 
-                    <article class="empty-board-task">Nothing in progress</article>
+                    <article id="progressContainer" class="empty-board-task">Nothing in progress</article>
                 </figure>
 
                 <figure class="board-task-group">
@@ -66,7 +66,7 @@
                         <div><img src="img/board/plus button.png" alt=""></div>
                     </div>
 
-                    <article class="empty-board-task">No Feedback yet</article>
+                    <article id="feedbackContainer" class="empty-board-task">No Feedback yet</article>
                 </figure>
 
                 <figure class="board-task-group">
@@ -75,7 +75,7 @@
                         <div><img src="img/board/plus button.png" alt=""></div>
                     </div>
 
-                    <article class="card">
+                    <article id="" class="card">
                         <div class="cardLabel" id="cardLabel${i}">Technical Task</div>
                         <div class="card-header" id="cardHeader${i}">CSS Architecture Planning</div>
                         <div class="card-content" id="cardContent${i}">Define CSS naming conventions and structure...
@@ -95,8 +95,10 @@
                 <!--                            add task start                                            -->
                 <section class="popUp-Container" id="openAddTask" style="visibility: hidden;">
                     <section class="tasks popUp" >
+                        <button onclick="closeAddTask()" class="close-Btn"><img src="img/board/close.png" alt=""></button>
                         <div class="headline">
                             <h2>Add Task</h2>
+                            
                         </div>
                         <div class="vertical-menu">
                             <div class="position-left-right">

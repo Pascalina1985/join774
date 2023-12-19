@@ -1,4 +1,5 @@
 let prios = '';
+let status = ''; // status added 
 let tasks = [];
 let assignedTo = [];
 let urgentPrio = [];
@@ -19,6 +20,7 @@ async function loadTask() {
 
 
 async function addTask() {
+    let status = "ToDo";  // status added
     let title = document.getElementById('titleInput').value;
     let description = document.getElementById('descriptionInput').value;
     let date = document.getElementById('date').value;

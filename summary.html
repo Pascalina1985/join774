@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="summary.css">
     <script src="script.js"></script>
+    <script src="board.js"></script>
     <script src="js/login.js"></script>
     <script src="js/sign_up.js"></script>
     <script src="js/add_task.js"></script>
@@ -56,7 +57,7 @@
                                     </svg>
                                 </div>
                                 <div class="to-do-container">
-                                    <span class="task-span">1</span>
+                                    <span id="tasksToDo" class="task-span">1</span>
                                     <span class="text-span">To-do</span>
                                 </div>
                             </div>
@@ -69,7 +70,7 @@
                                     </svg>
                                 </div>
                                 <div class="to-do-container">
-                                    <span class="task-span">1</span>
+                                    <span id="tasksDone" class="task-span">1</span>
                                     <span class="text-span">Done</span>
                                 </div>
                             </div>
@@ -96,11 +97,11 @@
                                 <span class="text-task">Tasks in<br> Board</span>
                             </div>
                             <div class="task-sections">
-                                <span class="task-span">2</span>
+                                <span id="tasksInProgress" class="task-span">2</span>
                                 <span class="text-task">Tasks in<br> Progress</span>
                             </div>
                             <div class="task-sections">
-                                <span class="task-span">2</span>
+                                <span id="tasksAwaitingFeedback" class="task-span">2</span>
                                 <span class="text-task">Awaiting<br> Feedback</span>
                             </div>
                         </div>
