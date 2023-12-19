@@ -13,7 +13,6 @@ function login() {
     let passwordText = document.getElementById('wrong-password');
 
     if (!email.validity.valid || !password.validity.valid) {
-        // Wenn die Felder leer oder ungültig sind
         return;
     }
 
