@@ -1,16 +1,53 @@
-// Für Gesamtzahl tasks und dringliche tasks Daten aus add_task.js von tasks JSON-Objekt entnommen
 async function renderTasks() {
-    await loadTask()
-    let tasksInBoard = tasks.length;
-    let storedName = localStorage.getItem('loggedInUserName');
-    document.getElementById('tasksInBoard').innerHTML = renderTasksHTML(tasksInBoard);
+    const taskStatistics = await getTasksData();
+
+    document.getElementById('tasksInBoard').innerHTML = renderTasksHTML(taskStatistics.tasksInBoard);
     document.getElementById('tasksUrgent').innerHTML = renderUrgentTasksHTML();
     document.getElementById('urgentDeadline').innerHTML = renderUrgentDate();
-    document.getElementById('loggedUserGreetings').innerHTML = renderLoggedUserGreetings(storedName);
+    document.getElementById('loggedUserGreetings').innerHTML = renderLoggedUserGreetings(taskStatistics.storedName);
+    document.getElementById('tasksToDo').innerHTML = renderTasksToDo(taskStatistics.tasksToDo);
+    document.getElementById('tasksDone').innerHTML = renderTasksDone(taskStatistics.tasksDone);
+    document.getElementById('tasksInProgress').innerHTML = renderTasksInProgress(taskStatistics.tasksinProgress);
+    document.getElementById('tasksAwaitingFeedback').innerHTML = renderTasksAwaitingFeedback(taskStatistics.tasksAwaitFeedback);
+}
+
+async function getTasksData() {
+    await loadTask();
+    let tasksInBoard = tasks.length;
+    let tasksToDo = ToDo.length;
+    let tasksDone = done.length;
+    let tasksinProgress = inProgress.length;
+    let tasksAwaitFeedback = awaitFeedback.length;
+    let storedName = getCookie('username');
+
+    return {
+        tasksInBoard,
+        tasksToDo,
+        tasksDone,
+        tasksinProgress,
+        tasksAwaitFeedback,
+        storedName
+    };
 }
 
 function renderTasksHTML(tasksInBoard) {
     return `${tasksInBoard}`;
+}
+
+function renderTasksToDo(tasksToDo) {
+    return `${tasksToDo}`;
+}
+
+function renderTasksDone(tasksDone) {
+    return `${tasksDone}`;
+}
+
+function renderTasksInProgress(tasksinProgress) {
+    return `${tasksinProgress}`;
+}
+
+function renderTasksAwaitingFeedback(tasksAwaitFeedback) {
+    return `${tasksAwaitFeedback}`;
 }
 
 function renderUrgentTasksHTML() {
@@ -50,6 +87,3 @@ function renderUrgentDate() {
 function renderLoggedUserGreetings(storedName) {
     return `${storedName}`;
 }
-
-
-//Daten aus board (todo, in progress, await feedback, done) werden noch implementiert sobald vorhanden

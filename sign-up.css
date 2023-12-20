@@ -93,7 +93,7 @@ body {
     position: relative;
     top: calc(16%);
     left: calc(-10%);
-  }
+}
 
 .wrong {
     border-radius: 10px;
@@ -108,6 +108,11 @@ body {
     display: flex;
     width: 260px;
     justify-content: center;
+    align-items: center;
+}
+
+.checkbox form {
+    display: flex;
     align-items: center;
 }
 
@@ -184,40 +189,14 @@ body {
     font-weight: bold;
 }
 
-@media (max-width: 615px) {
-
-    .Join-img {
-        left: -50px;
-    }
-
+@media (max-width: 610px) {
     .form {
-        width: 370px;
-    }
-
-    .log-in-headline {
-        font-size: 48px;
-    }
-
-    .new-user {
-        width: 310px;
-    }
-
-    .mail {
-        width: 310px;
-    }
-
-    .password {
-        width: 310px;
+        width: 490px;
     }
 }
 
-@media (max-width: 370px) {
-    
-    .Join-img {
-        height: 100px;
-        left: -50px;
-    }
 
+@media (max-width: 500px) {
     .form {
         width: 310px;
     }
@@ -228,7 +207,9 @@ body {
 
     .arrow-position {
         margin-right: 32px;
+        margin-bottom: 16px;
     }
+
 
     #log-in-headline-underline::after {
         left: 30px;
@@ -238,16 +219,13 @@ body {
         height: 51vh;
     }
 
-    .new-user {
-        width: 240px;
+    .input-field {
+        width: 250px;
+        margin-left: 14px;
     }
 
-    .mail {
-        width: 240px;
+    .pngs {
+        top: calc(-46%);
+        left: calc(80%);
     }
-
-    .password {
-        width: 240px;
-    }
-
 }

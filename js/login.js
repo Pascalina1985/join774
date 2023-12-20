@@ -1,3 +1,4 @@
+
 function loginForm() {
     login();
 }
@@ -6,14 +7,11 @@ function loginForm() {
 function login() {
     let inputMail = users.find(m => m.email === email.value);
     let inputPassword = users.find(p => p.password === password.value);
-    //let loggedInUser = inputMail;
-    //let name = loggedInUser.newUser;
-    //localStorage.setItem('loggedInUserName', name);
+    let userName = getName(email.value, password.value);
     let mailText = document.getElementById('wrong-mail');
     let passwordText = document.getElementById('wrong-password');
 
     if (!email.validity.valid || !password.validity.valid) {
-        // Wenn die Felder leer oder ungültig sind
         return;
     }
 
@@ -38,10 +36,19 @@ function login() {
     }
 
     if (inputMail && inputPassword) {
+        setCookie('username', userName, 30);
         window.location.href = 'summary.html';
     }
 }
 
+function getName(email, password) {
+    let foundUser = users.find(user => user.email === email && user.password === password);
+    if (foundUser) {
+        return foundUser.newUser; // Gibt den Namen des gefundenen Benutzers zurück
+    } else {
+        return null; // Oder eine andere Kennzeichnung für keinen gefundenen Benutzer
+    }
+}
 
 function showPassword() {
     let img = document.getElementById('lock');
@@ -74,5 +81,5 @@ function togglePasswordVisibility() {
 
 
 function guestLogIn() {
-    window.location.href = 'summary.html'
+    window.location.href = 'summary.html';
 }

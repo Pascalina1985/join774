@@ -39,30 +39,35 @@
                         <img class="pngs" src="./img/log-in/mail.png">
                     </div>
                     <div>
-                        <input onclick="showPassword('password')" onblur="resetPasswordVisibility('password')" required id="password" class="input-field" type="password" placeholder="Password">
-                        <img onclick="togglePasswordVisibility('password')" id="lock-password" class="pngs" src="./img/log-in/lock.png" style="cursor: pointer;">
+                        <input onclick="showPassword('password')" onblur="resetPasswordVisibility('password')" required
+                            id="password" class="input-field" type="password" placeholder="Password">
+                        <img onclick="togglePasswordVisibility('password')" id="lock-password" class="pngs"
+                            src="./img/log-in/lock.png" style="cursor: pointer;">
                     </div>
                     <div>
-                        <input onclick="showPassword('password2')" onblur="resetPasswordVisibility('password2')" required id="password2" class="input-field" type="password" placeholder="Confirm password">
-                        <img onclick="togglePasswordVisibility('password2')" id="lock-password2" class="pngs" src="./img/log-in/lock.png" style="cursor: pointer;">
+                        <input onclick="showPassword('password2')" onblur="resetPasswordVisibility('password2')"
+                            required id="password2" class="input-field" type="password" placeholder="Confirm password">
+                        <img onclick="togglePasswordVisibility('password2')" id="lock-password2" class="pngs"
+                            src="./img/log-in/lock.png" style="cursor: pointer;">
                     </div>
-                    <div class="checkbox">
-                        <form>
-                            <input type="checkbox" name="remember" id="remember">
-                            <label for="remember" class="center">I accept the <p
-                                    style="color: rgb(41, 171, 226); margin-left: 4px;">Privacy policy</p></label>
-                        </form>
-                    </div>
-                    <div class="buttons">
-                        <button id="registerBtn" class="btn">Sign up</button>
-                    </div>
-                </div>
             </form>
-            <div class="legal">
-                <p class="bold1">Privacy Policy</p>
-                <p class="bold2">Legal notice</p>
+            <div class="checkbox">
+                <form>
+                    <input type="checkbox" name="remember" id="remember">
+                    <label for="remember" class="center">I accept the <p
+                            style="color: rgb(41, 171, 226); margin-left: 4px;">Privacy policy</p></label>
+                </form>
+            </div>
+            <div class="buttons">
+                <button disabled id="registerBtn" class="btn">Sign up</button>
             </div>
         </div>
+
+        <div class="legal">
+            <p class="bold1">Privacy Policy</p>
+            <p class="bold2">Legal notice</p>
+        </div>
+    </div>
     </div>
 </body>
 
