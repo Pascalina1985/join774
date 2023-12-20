@@ -27,8 +27,16 @@ async function addTask() {
     let category = document.getElementById('category').value;
     let subtask = document.getElementById('subtask').value;
 
-    tasks.push({ title: title, description: description, contact: getContact(), prio: prios, date: date, category: category, subtask: subtask, urgentprio: urgentPrio });
+    // tasks.push({ status, title: title, description: description, contact: getContact(), prio: prios, date: date, category: category, subtask: subtask, urgentprio: urgentPrio });
+    // await setItem('task', JSON.stringify(tasks));
+
+    const newTask = { status, title, description, contact: getContact(), prio: prios, date, category, subtask, urgentprio: urgentPrio };
+    
+    tasks.push(newTask);
     await setItem('task', JSON.stringify(tasks));
+    addTaskToArrays(status, newTask);  // auf dem Board zu finden
+    updateTaskContainers();            // auf dem Board zu finden
+
     console.log(tasks);
 }
 
@@ -66,7 +74,7 @@ function chanceColor(button) {  // change color?
  function getContact() {
     let dropdown = document.getElementById('assignContact');
     let test = document.getElementById('test');
-    test.innerHTML = "";
+    // test.innerHTML = "";
 
     for (let i = 0; i < contacts.length; i++) {
       const contact = contacts[i];
