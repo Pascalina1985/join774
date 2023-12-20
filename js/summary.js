@@ -18,7 +18,7 @@ async function getTasksData() {
     let tasksDone = done.length;
     let tasksinProgress = inProgress.length;
     let tasksAwaitFeedback = awaitFeedback.length;
-    let storedName = localStorage.getItem('loggedInUserName');
+    let storedName = getCookie('username');
 
     return {
         tasksInBoard,
