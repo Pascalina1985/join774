@@ -39,9 +39,8 @@
                             
                             <div class="contact">
                                 <label for="contacts">Assigned to</label>
-                                <select onclick="getContact()" name="contacts">
-                                    <option id="test" disabled selected hidden>Select contacts to assign</option>
-                                    <option id="assignContact"></option>
+                                <select onclick="getContact()" name="contacts" id="assignContact">
+                                    <option disabled selected hidden>Select contacts to assign</option>
                                 </select>
                             </div>
                         </div>
@@ -78,6 +77,7 @@
                             <div class="subtask">
                                 <p style="margin: 0;">Subtasks</p>
                                 <input id="subtask" type="text" placeholder="Add new subtask">
+                                <img onclick="addSubtask()" class="pngs" src="./img/log-in/Subtasks icons11.png">
                             </div>
                         </div>
 
@@ -92,12 +92,11 @@
                 </div>
                 <div class="btn-position">
                     <button onclick="clearForm()" class="btn-clear">Clear X</button>
-                    <button onclick="addTask()" class="btn">Create Task <img src="./img/add-Task/check.png"></button>
+                    <button onclick="addTask()" class="btn" id="create-btn">Create Task <img src="./img/add-Task/check.png"></button>
                 </div>
             </section>
         </div>
     </div>
-
 
 </body>
 
