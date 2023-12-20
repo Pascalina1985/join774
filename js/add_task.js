@@ -37,19 +37,6 @@ async function pushToTask() {
     let selectedContactIndex = contactDropdown.selectedIndex;
     let selectedContactName = contactDropdown.options[selectedContactIndex].text;
 
-<<<<<<< HEAD
-    // tasks.push({ status, title: title, description: description, contact: getContact(), prio: prios, date: date, category: category, subtask: subtask, urgentprio: urgentPrio });
-    // await setItem('task', JSON.stringify(tasks));
-
-    const newTask = { status, title, description, contact: getContact(), prio: prios, date, category, subtask, urgentprio: urgentPrio };
-    
-    tasks.push(newTask);
-    await setItem('task', JSON.stringify(tasks));
-    addTaskToArrays(status, newTask);  // auf dem Board zu finden
-    updateTaskContainers();            // auf dem Board zu finden
-
-    console.log(tasks);
-=======
     if (title === "" || date === "" || category === "") {
         document.getElementById('titleInput').classList.add('wrong-border');
         document.getElementById('date').classList.add('wrong-border');
@@ -57,8 +44,9 @@ async function pushToTask() {
     } else {
         tasks.push({ title: title, description: description, contact: selectedContactName, prio: prios, date: date, category: category, subtask: subtask, urgentprio: urgentPrio });
         await setItem('task', JSON.stringify(tasks));
+        addTaskToArrays(status, newTask);  // auf dem Board zu finden
+        updateTaskContainers();   
     }
->>>>>>> 90473173ec59bcc1ad79874bbe0a7db7021c2f53
 }
 
 
@@ -92,19 +80,6 @@ function prioColor(button) {
 }
 
 
-<<<<<<< HEAD
- function getContact() {
-    let dropdown = document.getElementById('assignContact');
-    let test = document.getElementById('test');
-    // test.innerHTML = "";
-
-    for (let i = 0; i < contacts.length; i++) {
-      const contact = contacts[i];
-      let option = document.createElement("option");
-      option.text = contact.name;
-      dropdown.add(option);
-      test.innerHTML += `${contact.name}`;
-=======
 function getContact() {
     if (!contactsDisplayed) {
         let dropdown = document.getElementById('assignContact');
@@ -115,7 +90,6 @@ function getContact() {
             dropdown.add(option);
         }
         contactsDisplayed = true;
->>>>>>> 90473173ec59bcc1ad79874bbe0a7db7021c2f53
     }
 }
 
