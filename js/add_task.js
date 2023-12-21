@@ -20,33 +20,24 @@ async function loadTask() {
 }
 
 
-async function addTask() {
-    await pushToTask();
-    console.log(tasks);
-}
-
-
 async function pushToTask() {
     let status = "ToDo";  // status added
     let title = document.getElementById('titleInput').value;
     let description = document.getElementById('descriptionInput').value;
     let date = document.getElementById('date').value;
-    let category = document.getElementById('category').value;
-    let subtask = document.getElementById('subtask').value;
+    let category = document.getElementById('category');
+    let selectedCategoryIndex = category.selectedIndex;
+    let selectedCategoryName = category.options[selectedCategoryIndex].text;
     let contactDropdown = document.getElementById('assignContact');
     let selectedContactIndex = contactDropdown.selectedIndex;
     let selectedContactName = contactDropdown.options[selectedContactIndex].text;
 
-    if (title === "" || date === "" || category === "") {
-        document.getElementById('titleInput').classList.add('wrong-border');
-        document.getElementById('date').classList.add('wrong-border');
-        document.getElementById('category').classList.add('wrong-border');
-    } else {
-        tasks.push({ title: title, description: description, contact: selectedContactName, prio: prios, date: date, category: category, subtask: subtask, urgentprio: urgentPrio });
-        await setItem('task', JSON.stringify(tasks));
-        addTaskToArrays(status, newTask);  // auf dem Board zu finden
-        updateTaskContainers();   
-    }
+    tasks.push({ title: title, description: description, contact: selectedContactName, prio: prios, date: date, category: selectedCategoryName, subtask: subtask, urgentprio: urgentPrio });
+    await setItem('task', JSON.stringify(tasks));
+    console.log(tasks);
+    //addTaskToArrays(status, newTask);  // auf dem Board zu finden
+    //updateTaskContainers();
+
 }
 
 
@@ -98,39 +89,40 @@ function addSubtask() {
     var subtaskInput = document.getElementById('subtask');
     var subtaskValue = subtaskInput.value;
     if (subtaskValue) {
-      var subtaskList = document.createElement('ul');
-      var newSubtask = document.createElement('li');
-      newSubtask.appendChild(document.createTextNode(subtaskValue));
-      subtaskList.appendChild(newSubtask);
-      subtaskList.classList.add('list');
-      var subtaskContainer = document.getElementsByClassName('subtask')[0];
-      subtaskContainer.appendChild(subtaskList);
-      subtaskInput.value = '';
-  
-      newSubtask.addEventListener('dblclick', function () {
-        var deleteIcon = document.createElement('img');
-        deleteIcon.src = './img/log-in/delete.png';
-        deleteIcon.onclick = function () {
-          this.parentNode.remove();
-        };
-  
-        var inputField = document.createElement('input');
-        inputField.type = 'text';
-        inputField.value = this.firstChild.nodeValue;
-  
-        inputField.onblur = function () {
-          newSubtask.firstChild.nodeValue = this.value;
-          this.parentNode.removeChild(this);
-        };
-  
-        this.appendChild(deleteIcon);
-        this.appendChild(inputField);
-        inputField.focus();
-      });
+        var subtaskList = document.createElement('ul');
+        var newSubtask = document.createElement('li');
+        newSubtask.appendChild(document.createTextNode(subtaskValue));
+        subtaskList.appendChild(newSubtask);
+        subtaskList.classList.add('list');
+        var subtaskContainer = document.getElementsByClassName('subtask')[0];
+        subtaskContainer.appendChild(subtaskList);
+        subtaskInput.value = '';
+
+        newSubtask.addEventListener('dblclick', function () {
+            var deleteIcon = document.createElement('img');
+            deleteIcon.src = './img/log-in/delete.png';
+            deleteIcon.onclick = function () {
+                this.parentNode.remove();
+            };
+
+            var inputField = document.createElement('input');
+            inputField.type = 'text';
+            inputField.value = this.firstChild.nodeValue;
+
+            inputField.onblur = function () {
+                newSubtask.firstChild.nodeValue = this.value;
+                this.parentNode.removeChild(this);
+            };
+
+            this.appendChild(deleteIcon);
+            this.appendChild(inputField);
+            inputField.focus();
+        });
     }
-  }
+}
 
 
 function clearForm() {
-    location.reload();
+    tasks.length = 0;
+    //location.reload();
 }

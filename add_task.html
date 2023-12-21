@@ -19,8 +19,8 @@
     <div class="sidebarContainer" w3-include-html=".\assets\templates\side_menu.html"></div>
     <div class="mainContainer">
         <header w3-include-html=".\assets\templates\header.html"></header>
-        <div class="contentContainer">
-            <section class="tasks">
+        <form onsubmit="pushToTask(); return false" class="contentContainer">
+            <div class="tasks">
                 <div class="headline">
                     <h2>Add Task</h2>
                 </div>
@@ -36,7 +36,7 @@
                                 <p>Description</p>
                                 <textarea id="descriptionInput" placeholder="Enter a Description"></textarea>
                             </div>
-                            
+
                             <div class="contact">
                                 <label for="contacts">Assigned to</label>
                                 <select onclick="getContact()" name="contacts" id="assignContact">
@@ -67,9 +67,8 @@
                             </div>
                             <div class="contact">
                                 <label for="Category">Category<b style="color: red;">*</b></label>
-                                <select name="Category" id="category">
-                                    <option class="placeholder-chance" disabled selected hidden>Select task Category
-                                    </option>
+                                <select name="Category" id="category" required>
+                                    <option class="placeholder-chance" disabled selected hidden>Select task Category</option>
                                     <option value="Technical Task">Technical Task</option>
                                     <option value="User Story">User Story</option>
                                 </select>
@@ -83,7 +82,7 @@
 
                     </div>
                 </div>
-            </section>
+            </div>
 
             <section class="buttons-and-text">
                 <div class="required-text">
@@ -92,10 +91,11 @@
                 </div>
                 <div class="btn-position">
                     <button onclick="clearForm()" class="btn-clear">Clear X</button>
-                    <button onclick="addTask()" class="btn" id="create-btn">Create Task <img src="./img/add-Task/check.png"></button>
+                    <button class="btn" id="create-btn">Create Task <img
+                            src="./img/add-Task/check.png"></button>
                 </div>
             </section>
-        </div>
+        </form>
     </div>
 
 </body>
