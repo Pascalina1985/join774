@@ -12,7 +12,7 @@
     margin-left: 96px;
     width: 1014px;
     height: auto;
-    max-height: 628px;
+    max-height: 650px;
     overflow-y: hidden;
 }
 
@@ -79,4 +79,25 @@
 
 .join-blue {
     color: rgb(41, 171, 226);
+}
+
+@media (max-width: 700px) {
+    .h1 {
+        width: 106px;
+        height: 56px;
+        font-size: 47px;
+        margin-left: 16px;
+        margin-top: 48px;
+    }
+    .text-section {
+        width: 396px;
+        margin-left: 16px;
+        gap: 24px;
+    }
+    .height61 {
+        height: auto;
+    }
+    .height80 {
+        height: auto;
+    }
 }
