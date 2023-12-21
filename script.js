@@ -98,21 +98,20 @@ async function loadUsers() {
 
 function headerUserInitials() {
     let storedName = getCookie('username');
+    let isGuest = getCookie('guest');
 
-    if (storedName) {
+    if (isGuest === 'true') { //Gast-Log-In
+        document.getElementById('userLoginInitials').innerHTML = `<span class="header-picture-user">G</span>`;
+    } else if (storedName) {
         let firstLetterName = storedName.charAt(0);
         let lastName = storedName.split(' ')[1];
         let firstLetterLastName = lastName ? lastName.charAt(0) : '';
 
         if (firstLetterName || firstLetterLastName) {
             document.getElementById('userLoginInitials').innerHTML = renderUserInitials(firstLetterName, firstLetterLastName);
-        } else {
-            document.getElementById('userLoginInitials').innerHTML = `<span class="header-picture-user">G</span>`;
         }
     }
 }
-
-
 
 function renderUserInitials(firstLetterName, firstLetterLastName) {
     if (!firstLetterLastName) {
@@ -153,4 +152,18 @@ function getCookie(name) {
 
 function openHelp() {
     window.location.href = 'help.html';
+}
+
+function setGuestCookie() { //Cookie für Gast-LogIn
+    const expirationDate = new Date();
+    expirationDate.setDate(expirationDate.getDate() + 1);
+    document.cookie = `guest=true; expires=${expirationDate.toUTCString()}; path=/`;
+}
+
+function deleteGuestCookie() { //Wenn User eingeloggt ist
+    document.cookie = 'guest=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+}
+
+function deleteUserCookie() { //Wenn Gast eingeloggt ist
+    document.cookie = 'username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
 }

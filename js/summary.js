@@ -4,7 +4,7 @@ async function renderTasks() {
     document.getElementById('tasksInBoard').innerHTML = renderTasksHTML(taskStatistics.tasksInBoard);
     document.getElementById('tasksUrgent').innerHTML = renderUrgentTasksHTML();
     document.getElementById('urgentDeadline').innerHTML = renderUrgentDate();
-    document.getElementById('loggedUserGreetings').innerHTML = renderLoggedUserGreetings(taskStatistics.storedName);
+    document.getElementById('loggedUserGreetings').innerHTML = renderLoggedUserGreetings(taskStatistics.storedName, taskStatistics.isGuest);
     document.getElementById('tasksToDo').innerHTML = renderTasksToDo(taskStatistics.tasksToDo);
     document.getElementById('tasksDone').innerHTML = renderTasksDone(taskStatistics.tasksDone);
     document.getElementById('tasksInProgress').innerHTML = renderTasksInProgress(taskStatistics.tasksinProgress);
@@ -19,6 +19,7 @@ async function getTasksData() {
     let tasksinProgress = inProgress.length;
     let tasksAwaitFeedback = awaitFeedback.length;
     let storedName = getCookie('username');
+    let isGuest = getCookie('guest');
 
     return {
         tasksInBoard,
@@ -26,7 +27,8 @@ async function getTasksData() {
         tasksDone,
         tasksinProgress,
         tasksAwaitFeedback,
-        storedName
+        storedName,
+        isGuest
     };
 }
 
@@ -84,9 +86,14 @@ function renderUrgentDate() {
     }
 }
 
-function renderLoggedUserGreetings(storedName) {
-    return `${storedName}`;
+function renderLoggedUserGreetings(storedName, isGuest) {
+    if (storedName) {
+        return `${storedName}!`;
+    } else if (isGuest === 'true') {
+        return `Hallo Gast!`;
+    }
 }
+
 
 function openBoard() {
     window.location.href = 'board.html';

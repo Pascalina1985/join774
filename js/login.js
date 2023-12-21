@@ -1,4 +1,3 @@
-
 function loginForm() {
     login();
 }
@@ -37,6 +36,7 @@ function login() {
 
     if (inputMail && inputPassword) {
         setCookie('username', userName, 30);
+        deleteGuestCookie(); //Gast-cookie gelöscht
         window.location.href = 'summary.html';
     }
 }
@@ -81,5 +81,7 @@ function togglePasswordVisibility() {
 
 
 function guestLogIn() {
+    setGuestCookie(); //setzt Gast-cookie
+    deleteUserCookie();
     window.location.href = 'summary.html';
 }
