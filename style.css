@@ -217,6 +217,10 @@ header h2 {
     height: 32px;
 }
 
+.header-picure-help:hover {
+    cursor: pointer;
+}
+
 .header-picture-user {
     width: 56px;
     height: 56px;
@@ -266,41 +270,33 @@ svg {
         transform: none !important;
         flex-direction: column;
     }
-
     .container {
         flex-direction: column;
         height: 100%;
         width: 100%;
         justify-content: space-between;
-        
     }
-
     .mainContainer {
         display: flex;
         height: auto;
         width: 100%;
     }
-
     .contentContainer {
         width: 100%;
         height: calc(100vh - 160px);
     }
-
     .sidebarContainer {
         height: 80px;
         width: 100%;
         flex-direction: row;
         order: 1;
     }
-
     .sidebarLogo {
         display: none;
     }
-
     .sidebarFooter {
         display: none;
     }
-
     .sidebarButton {
         flex-direction: column;
         gap: 4px;
@@ -308,61 +304,50 @@ svg {
         height: 76px;
         padding: 0;
     }
-
     .sidebarMenuButton {
         width: 76px;
         height: 76px;
         gap: 0;
         border-radius: 8px;
     }
-
     .sidebarMenuContainer {
         padding: 0px 16px;
         width: 100%;
         flex-direction: row;
         justify-content: space-between;
     }
-
     .sidebarMenuButton p {
         width: 76px;
         text-align: center;
     }
-
     .sidebarMenuButton img {
         width: 24px;
         height: 24px;
         padding-top: 15px;
     }
-
     .sidebarMenuButton:hover {
         background: #091931;
     }
-
     header {
         padding: 0;
         height: 80px;
         width: 100%;
     }
-
     .headline-container {
         display: none;
     }
-
     .header-picure-help {
         display: none;
     }
-
     .header-picture-logo {
         display: flex;
         height: 39px;
         width: 32px;
     }
-
     .header-picture-user {
         width: 40px;
         height: 40px;
     }
-
     .header-pictures-container {
         padding-left: 16px;
         padding-right: 16px;

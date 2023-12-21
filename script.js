@@ -95,7 +95,7 @@ async function loadUsers() {
     }
 }
 
-//Eingeloggter User im local storage gespeichert und abgerufen
+
 function headerUserInitials() {
     let storedName = getCookie('username');
 
@@ -149,4 +149,8 @@ function getCookie(name) {
         }
     }
     return null;
+}
+
+function openHelp() {
+    window.location.href = 'help.html';
 }

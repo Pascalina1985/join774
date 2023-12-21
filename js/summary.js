@@ -87,3 +87,7 @@ function renderUrgentDate() {
 function renderLoggedUserGreetings(storedName) {
     return `${storedName}`;
 }
+
+function openBoard() {
+    window.location.href = 'board.html';
+}
