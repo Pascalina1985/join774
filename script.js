@@ -157,17 +157,7 @@ function openHelp() {
     window.location.href = 'help.html';
 }
 
-function setGuestCookie() { //Cookie für Gast-LogIn
-    const expirationDate = new Date();
-    expirationDate.setDate(expirationDate.getDate() + 1);
-    document.cookie = `guest=true; expires=${expirationDate.toUTCString()}; path=/`;
-}
-
-function deleteGuestCookie() { //Wenn User eingeloggt ist
-    document.cookie = 'guest=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
-}
-
-function deleteUserCookie() { //Wenn Gast eingeloggt ist
+function deleteCookie(){
     document.cookie = 'username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
 }
 
