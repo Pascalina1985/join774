@@ -1,6 +1,6 @@
 svgURLS = ['iconSummery', 'iconAddTask', 'iconBoard', 'iconContacts']
 
-window.onresize = function() {
+window.onresize = function () {
     skalierungAnpassen();
 };
 
@@ -46,6 +46,7 @@ async function includeHTML() {
 function skalierungAnpassen() {
     let windowWidth = window.innerWidth;
     let windowHeigth = window.innerHeight;
+    let container = document.getElementById('container');
     let sidebarHeigth = document.querySelector('.sidebarContainer').offsetHeight;
     let scaleX = windowWidth / 1460;
     let scaleY = windowHeigth / sidebarHeigth;
@@ -53,8 +54,10 @@ function skalierungAnpassen() {
     scaleY = Math.round(scaleY * 100) / 100;
     let transformStringX = 'scale(' + scaleX + ')';
     let transformStringY = 'scale(' + scaleY + ')';
-    if (sidebarHeigth * scaleX < windowHeigth) { document.body.style.transform = transformStringX; };
-    if (sidebarHeigth * scaleX > windowHeigth) { document.body.style.transform = transformStringY; };
+    if (sidebarHeigth * scaleX < windowHeigth) { container.style.transform = transformStringX; };
+    if (sidebarHeigth * scaleX > windowHeigth) { container.style.transform = transformStringY; };
+
+
 }
 
 function loadSVG() {
@@ -166,4 +169,12 @@ function deleteGuestCookie() { //Wenn User eingeloggt ist
 
 function deleteUserCookie() { //Wenn Gast eingeloggt ist
     document.cookie = 'username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+}
+
+function openHeaderMenu() {
+    document.getElementById('headerMenu').classList.remove('displayNone');
+}
+
+function closeHeaderMenu() {
+    document.getElementById('headerMenu').classList.add('displayNone');
 }
