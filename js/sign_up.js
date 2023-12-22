@@ -20,6 +20,7 @@ async function register() {
     users.push({ newUser: newUser.value, email: email.value, password: password.value, });
     await setItem('users', JSON.stringify(users));
     resetForm(confirmPassword);
+    window.location.href = 'log-in.html'
 }
 
 

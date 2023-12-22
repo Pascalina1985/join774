@@ -4,7 +4,7 @@ async function renderTasks() {
     document.getElementById('tasksInBoard').innerHTML = renderTasksHTML(taskStatistics.tasksInBoard);
     document.getElementById('tasksUrgent').innerHTML = renderUrgentTasksHTML();
     document.getElementById('urgentDeadline').innerHTML = renderUrgentDate();
-    document.getElementById('loggedUserGreetings').innerHTML = renderLoggedUserGreetings(taskStatistics.storedName, taskStatistics.isGuest);
+    document.getElementById('loggedUserGreetings').innerHTML = renderLoggedUserGreetings(taskStatistics.storedName);
     document.getElementById('tasksToDo').innerHTML = renderTasksToDo(taskStatistics.tasksToDo);
     document.getElementById('tasksDone').innerHTML = renderTasksDone(taskStatistics.tasksDone);
     document.getElementById('tasksInProgress').innerHTML = renderTasksInProgress(taskStatistics.tasksinProgress);
@@ -19,7 +19,6 @@ async function getTasksData() {
     let tasksinProgress = inProgress.length;
     let tasksAwaitFeedback = awaitFeedback.length;
     let storedName = getCookie('username');
-    let isGuest = getCookie('guest');
 
     return {
         tasksInBoard,
@@ -86,11 +85,11 @@ function renderUrgentDate() {
     }
 }
 
-function renderLoggedUserGreetings(storedName, isGuest) {
-    if (storedName) {
+function renderLoggedUserGreetings(storedName) {
+    if (storedName === 'Guest') {
+        return ``;
+    } else {
         return `${storedName}!`;
-    } else if (isGuest === 'true') {
-        return `Hallo Gast!`;
     }
 }
 
