@@ -10,6 +10,7 @@ function openLogin() {
 
 async function init(site) {
     document.body.classList.add('visible');
+    isLoggedin();
     skalierungAnpassen();
     await loadUsers();
     await includeHTML();
@@ -17,6 +18,12 @@ async function init(site) {
     loadSVG();
     changeSidebarActive(site);
     loadScript(site);
+}
+
+function isLoggedin(){
+    if (!getCookie('username')) {
+        window.location.href = 'log-in.html';
+    }
 }
 
 function loadScript(site) {

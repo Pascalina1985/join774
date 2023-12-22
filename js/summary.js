@@ -26,8 +26,7 @@ async function getTasksData() {
         tasksDone,
         tasksinProgress,
         tasksAwaitFeedback,
-        storedName,
-        isGuest
+        storedName
     };
 }
 
@@ -86,7 +85,7 @@ function renderUrgentDate() {
 }
 
 function renderLoggedUserGreetings(storedName) {
-    if (storedName === 'Guest') {
+    if (storedName === 'Guest' || storedName === null ) {
         return ``;
     } else {
         return `${storedName}!`;
