@@ -4,6 +4,7 @@ let tasks = [];
 let assignedTo = [];
 let urgentPrio = [];
 let contactsDisplayed = false;
+let subTasks = [];
 
 
 async function initTasks() {
@@ -32,7 +33,7 @@ async function pushToTask() {
     let selectedContactIndex = contactDropdown.selectedIndex;
     let selectedContactName = contactDropdown.options[selectedContactIndex].text;
 
-    tasks.push({ title: title, description: description, contact: selectedContactName, prio: prios, date: date, category: selectedCategoryName, subtask: subtask, urgentprio: urgentPrio });
+    tasks.push({ title: title, description: description, contact: selectedContactName, prio: prios, date: date, category: selectedCategoryName, subtask: subTasks, urgentprio: urgentPrio });
     await setItem('task', JSON.stringify(tasks));
     console.log(tasks);
     //addTaskToArrays(status, newTask);  // auf dem Board zu finden
@@ -84,45 +85,80 @@ function getContact() {
     }
 }
 
-
 function addSubtask() {
-    var subtaskInput = document.getElementById('subtask');
-    var subtaskValue = subtaskInput.value;
-    if (subtaskValue) {
-        var subtaskList = document.createElement('ul');
-        var newSubtask = document.createElement('li');
-        newSubtask.appendChild(document.createTextNode(subtaskValue));
-        subtaskList.appendChild(newSubtask);
-        subtaskList.classList.add('list');
-        var subtaskContainer = document.getElementsByClassName('subtask')[0];
-        subtaskContainer.appendChild(subtaskList);
-        subtaskInput.value = '';
+    let content = document.getElementById('subtask');
+    subTasks.push(content.value);
+    content.value = '';
+    displaySubtasks();
+}
 
-        newSubtask.addEventListener('dblclick', function () {
-            var deleteIcon = document.createElement('img');
-            deleteIcon.src = './img/log-in/delete.png';
-            deleteIcon.onclick = function () {
-                this.parentNode.remove();
-            };
+function deleteSubtask(index) {
+    subTasks.splice(index, 1); // Entfernt die Subtask aus dem Array
+    displaySubtasks(); // Aktualisiert die Anzeige der Subtasks
+}
 
-            var inputField = document.createElement('input');
-            inputField.type = 'text';
-            inputField.value = this.firstChild.nodeValue;
+function editSubtask(index) {
+    let listItem = document.getElementById('list').getElementsByTagName('li')[index];
+    let subtaskContent = listItem.firstChild.nodeValue.trim(); // Holt den Textinhalt des li-Elements
 
-            inputField.onblur = function () {
-                newSubtask.firstChild.nodeValue = this.value;
-                this.parentNode.removeChild(this);
-            };
+    let inputField = document.createElement('input'); // Erstellt ein Eingabefeld
+    inputField.type = 'text';
+    inputField.value = subtaskContent;
 
-            this.appendChild(deleteIcon);
-            this.appendChild(inputField);
-            inputField.focus();
-        });
+    inputField.onblur = function () {
+        subTasks[index] = this.value; // Aktualisiert den Wert im Array
+        displaySubtasks(); // Aktualisiert die Anzeige der Subtasks
+    };
+
+    listItem.innerHTML = ''; // Leert das li-Element
+    listItem.appendChild(inputField); // Fügt das Eingabefeld hinzu
+}
+
+function displaySubtasks() {
+    let listContainer = document.getElementById('list');
+    listContainer.innerHTML = '';
+
+    for (let i = 0; i < subTasks.length; i++) {
+        const createdSubtask = subTasks[i];
+        let listItem = document.createElement('li');
+        listItem.textContent = createdSubtask;
+        listItem.classList.add('hidden');
+
+        let buttonContainer = document.createElement('div'); // Erstellt ein div-Element für die Buttons
+
+        let deleteImg = document.createElement('img');
+        deleteImg.src = "./img/log-in/delete.png";
+        deleteImg.className = "deleteImg";
+        deleteImg.onclick = function () { deleteSubtask(i); };
+
+        let editImg = document.createElement('img');
+        editImg.src = "./img/log-in/edit.png";
+        editImg.className = "editImg";
+        editImg.onclick = function () { editSubtask(i); };
+
+        buttonContainer.appendChild(deleteImg);
+        buttonContainer.appendChild(editImg);
+        buttonContainer.classList.add('button-position');
+
+        listItem.appendChild(buttonContainer); // Fügt den Button-Container zum li-Element hinzu
+
+        listContainer.appendChild(listItem);
     }
 }
 
 
 function clearForm() {
-    tasks.length = 0;
-    //location.reload();
+    document.getElementById('titleInput').value = '';
+    document.getElementById('descriptionInput').value = '';
+    document.getElementById('date').value = '';
+    let subList = document.getElementById('list');
+    subList.innerHTML = '';
+    let options = document.getElementsByTagName("select");
+    for (let i = 0; i < options.length; i++) {
+      options[i].selectedIndex = 0;
+    }
+    var buttons = document.getElementsByClassName("btn-select");
+    for (var i = 0; i < buttons.length; i++) {
+      buttons[i].classList.remove("red", "yellow", "green");
+    }
 }

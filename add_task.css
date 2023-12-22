@@ -129,7 +129,7 @@ p {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 420px;
+    height: 500px;
 }
 
 .date {
@@ -203,6 +203,35 @@ p {
     flex-direction: column;
     align-items: flex-start;
     gap: 8px;
+}
+
+.subtask-list {
+    overflow-y: hidden;
+    height: 100px;
+    width: 400px;
+    margin: 0;
+}
+
+.deleteImg,
+.editImg {
+    display: none;
+}
+
+li:hover .deleteImg,
+li:hover .editImg {
+    display: inline;
+}
+
+.hidden {
+    overflow: hidden;
+}
+
+.button-position {
+    position: relative;
+    top: -20px;
+    left: 350px;
+    overflow-y: hidden;
+    cursor: pointer;
 }
 
 .red {
