@@ -95,13 +95,18 @@ body {
     left: calc(-10%);
 }
 
-.wrong {
-    border-radius: 10px;
+.hiden {
+    display: none;
+}
+
+.wrong-border {
     border: 1px solid #FF001F;
-    background: #FFF;
-    background-repeat: no-repeat;
-    background-size: 25px;
-    background-position: right 10px center;
+}
+
+.wrong-text {
+    margin: 0;
+    color: #FF001F;
+    opacity: 0.7;
 }
 
 .checkbox {
@@ -168,6 +173,22 @@ body {
     box-shadow: 0px 6px 3px lightgray;
 }
 
+.success {
+    display: flex;
+    height: 74px;
+    padding: 0px 25px;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    background: var(--Version-2-main-color, #2A3647);
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.15);
+    position: fixed;
+    bottom: 100vh; /* Startposition unten außerhalb des sichtbaren Bereichs */
+    left: 50%; /* Zentrieren horizontal */
+    transform: translateX(-50%); /* Zentrieren horizontal */
+    transition: bottom 0.5s ease, background-color 0.5s ease; /* Animationseffekte hinzufügen */
+  }
 
 .legal {
     display: flex;

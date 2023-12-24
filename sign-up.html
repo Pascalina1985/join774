@@ -49,17 +49,19 @@
                             required id="password2" class="input-field" type="password" placeholder="Confirm password">
                         <img onclick="togglePasswordVisibility('password2')" id="lock-password2" class="pngs"
                             src="./img/log-in/lock.png" style="cursor: pointer;">
+                        <p class="hiden" id="warning">Ups! your password don't match</p>
                     </div>
-            <div class="checkbox">
-                
-                    <input type="checkbox" name="remember" id="remember" required>
-                    <label for="remember" class="center">I accept the <p
-                            style="color: rgb(41, 171, 226); margin-left: 4px;">Privacy policy</p></label>
-                </form>
-            </div>
-            <div class="buttons">
-                <button id="registerBtn" class="btn">Sign up</button>
-            </div>
+                    <div class="checkbox">
+
+                        <input type="checkbox" name="remember" id="remember" required>
+                        <label for="remember" class="center">I accept the <p
+                                style="color: rgb(41, 171, 226); margin-left: 4px;">Privacy policy</p></label>
+                    </div>
+                    <div class="buttons">
+                        <button id="registerBtn" class="btn">Sign up</button>
+                    </div>
+                    <div id="animation" class="hiden">You Signed Up successfully</div>
+            </form>
         </div>
 
         <div class="legal">

@@ -1,5 +1,4 @@
 function loginForm() {
-
     login();
 }
 
@@ -8,12 +7,23 @@ function login() {
     let inputMail = users.find(m => m.email === email.value);
     let inputPassword = users.find(p => p.password === password.value);
     let userName = getName(email.value, password.value);
-    let mailText = document.getElementById('wrong-mail');
-    let passwordText = document.getElementById('wrong-password');
 
     if (!email.validity.valid || !password.validity.valid) {
         return;
     }
+
+    wrongPassword(inputMail, inputPassword);
+
+    if (inputMail && inputPassword) {
+        setCookie('username', userName, 30);
+        window.location.href = 'summary.html';
+    }
+}
+
+
+function wrongPassword(inputMail, inputPassword) {
+    let mailText = document.getElementById('wrong-mail');
+    let passwordText = document.getElementById('wrong-password');
 
     if (!inputMail) {
         email.classList.add('wrong-border');
@@ -34,12 +44,8 @@ function login() {
         passwordText.classList.remove('wrong-text');
         passwordText.classList.add('hide');
     }
-
-    if (inputMail && inputPassword) {
-        setCookie('username', userName, 30);
-        window.location.href = 'summary.html';
-    }
 }
+
 
 function getName(email, password) {
     let foundUser = users.find(user => user.email === email && user.password === password);

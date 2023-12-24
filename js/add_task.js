@@ -87,10 +87,12 @@ function getContact() {
 
 function addSubtask() {
     let content = document.getElementById('subtask');
-    subTasks.push(content.value);
-    content.value = '';
-    displaySubtasks();
-}
+    if (content.value.trim() !== '') { // Überprüfe, ob der Input-Wert nicht leer ist
+      subTasks.push(content.value);
+      content.value = '';
+      displaySubtasks();
+    }
+  }
 
 function deleteSubtask(index) {
     subTasks.splice(index, 1); // Entfernt die Subtask aus dem Array
