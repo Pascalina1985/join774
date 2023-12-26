@@ -7,11 +7,11 @@
     <title>Board</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
-    <script src="js/storage.js"></script>
-    <script src="script.js"></script>
+        <script src="script.js"></script>
+    <script src="./js/storage.js"></script>
     <script src="./js/contact.js"></script>
-    <script src="js/add_task.js" ></script>
-    <script src="board.js"></script>
+    <script src="./js/add_task.js"></script>
+    <script src="./js/board.js"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="board.css">
     <link rel="stylesheet" href="add_task.css">
@@ -113,10 +113,12 @@
                                         <p>Description</p>
                                         <textarea id="descriptionInput" placeholder="Enter a Description"></textarea>
                                     </div>
+        
                                     <div class="contact">
                                         <label for="contacts">Assigned to</label>
-                                        <select name="contacts" id="assignContact"></select>
-                                        <option disabled selected hidden>Select contacts to assign</option>
+                                        <select onclick="getContact()" name="contacts" id="assignContact">
+                                            <option disabled selected hidden>Select contacts to assign</option>
+                                        </select>
                                     </div>
                                 </div>
 
@@ -132,19 +134,18 @@
                                     <div class="prio">
                                         <p style="margin: 0;">Prio</p>
                                         <div class="prio-selection">
-                                            <button onclick="getPrio(this)" class="btn-select" id="urgentBtn">Urgent<img
+                                            <button type="button" onclick="getPrio(this)" class="btn-select" id="urgentBtn">Urgent<img
                                                     src="./img/add-Task/Prio alta.png"></button>
-                                            <button onclick="getPrio(this)" class="btn-select" id="mediumBtn">Medium<img
+                                            <button type="button" onclick="getPrio(this)" class="btn-select" id="mediumBtn">Medium<img
                                                     src="./img/add-Task/Capa 1.png"></button>
-                                            <button onclick="getPrio(this)" class="btn-select" id="lowBtn">Low<img
+                                            <button type="button" onclick="getPrio(this)" class="btn-select" id="lowBtn">Low<img
                                                     src="./img/add-Task/Prio baja.png"></button>
                                         </div>
                                     </div>
                                     <div class="contact">
                                         <label for="Category">Category<b style="color: red;">*</b></label>
-                                        <select name="Category" id="category">
-                                            <option class="placeholder-chance" disabled selected hidden>Select task
-                                                Category
+                                        <select name="Category" id="category" required>
+                                            <option class="placeholder-chance" disabled selected hidden>Select task Category
                                             </option>
                                             <option value="Technical Task">Technical Task</option>
                                             <option value="User Story">User Story</option>
@@ -153,6 +154,8 @@
                                     <div class="subtask">
                                         <p style="margin: 0;">Subtasks</p>
                                         <input id="subtask" type="text" placeholder="Add new subtask">
+                                        <img onclick="addSubtask()" class="pngs" src="./img/log-in/Subtasks icons11.png">
+                                        <ul class="subtask-list" id="list"></ul>
                                     </div>
                                 </div>
 
@@ -165,10 +168,11 @@
                         </div>
                         <div class="btn-position">
                             <button onclick="clearForm()" class="btn-clear">Clear X</button>
-                            <button onclick="addTask()" class="btn">Create Task <img
+                            <button onclick="pushToTask()" class="btn">Create Task <img
                                     src="./img/add-Task/check.png"></button>
                         </div>
                     </section>
+
                     </section>
                     
 

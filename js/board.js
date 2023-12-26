@@ -3,6 +3,8 @@ let inProgress = [];
 let awaitFeedback = [];
 let done = [];
 
+initTasks()
+
 
 function openAddTask() {
     let addTask = document.getElementById('openAddTask')
@@ -29,19 +31,14 @@ function addTaskToArrays(status, task) {
     }
 }
 
-function updateTaskContainers() {
-    updateContainer('ToDo', ToDo, 'toDoContainer');
-    updateContainer('inProgress', inProgress, 'progressContainer');
-    updateContainer('awaitFeedback', awaitFeedback, 'feedbackContainer');
-    updateContainer('done', done, 'doneContainer');
-}
+
 
 function updateContainer(status, taskArray, containerId) {
     const container = document.getElementById(containerId);
-    container.innerHTML = ""; // Clear the container
+    // container.innerHTML = ""; // Clear the container
 
     if (taskArray.length === 0) {
-        container.textContent = `No tasks ${status}`;
+       // container.textContent = `No tasks ${status}`;
     } else {
         taskArray.forEach(task => {
             // Create HTML elements for each task and append them to the container
@@ -49,3 +46,11 @@ function updateContainer(status, taskArray, containerId) {
         });
     }
 }
+    
+function updateTaskContainers() {
+    updateContainer('ToDo', ToDo, 'toDoContainer');
+    updateContainer('inProgress', inProgress, 'progressContainer');
+    updateContainer('awaitFeedback', awaitFeedback, 'feedbackContainer');
+    updateContainer('done', done, 'doneContainer');
+}
+    updateTaskContainers();
