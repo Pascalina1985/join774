@@ -76,4 +76,9 @@ a {
         margin: 10px;
         height: calc(100vh - 200px);
     }
+    .backArrow{
+        position: fixed;
+        left: unset;
+        right: 20px;
+    }
 }
