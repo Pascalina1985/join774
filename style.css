@@ -343,20 +343,23 @@ svg {
 
     .sidebarButton {
         flex-direction: column;
+        padding: 0;
         width: 56px;
         height: 56px;
     }
 
     .sidebarMenuButton {
-        width: 56px;
-        height: 56px;
+        padding: 0;
+        width: 76px;
+        height: 76px;
     }
 
     .sidebarMenuContainer {
-        padding: 0px 16px;
+        padding: 0px 8px;
         width: 100%;
         flex-direction: row;
         justify-content: space-between;
+        gap: 0;
     }
 
     .sidebarMenuButton p {
