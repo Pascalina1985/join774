@@ -217,10 +217,12 @@ header h2 {
 .header-picure-help {
     width: 32px;
     height: 32px;
+    background-image: url("img/header/help.png");
 }
 
 .header-picure-help:hover {
     cursor: pointer;
+    background-image: url("img/header/help_hover.png");
 }
 
 .header-picture-user {
