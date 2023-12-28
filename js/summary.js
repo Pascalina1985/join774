@@ -101,8 +101,6 @@ function openBoard() {
 function greetingDate() {
     let currentTime = new Date();
     let hours = currentTime.getHours();
-    debugger;
-
     let greeting;
 
     if (hours < 12) {
