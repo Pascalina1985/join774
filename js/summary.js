@@ -9,6 +9,7 @@ async function renderTasks() {
     document.getElementById('tasksDone').innerHTML = renderTasksDone(taskStatistics.tasksDone);
     document.getElementById('tasksInProgress').innerHTML = renderTasksInProgress(taskStatistics.tasksinProgress);
     document.getElementById('tasksAwaitingFeedback').innerHTML = renderTasksAwaitingFeedback(taskStatistics.tasksAwaitFeedback);
+    document.getElementById('greetingDate').innerHTML = greetingDate();
 }
 
 async function getTasksData() {
@@ -85,7 +86,7 @@ function renderUrgentDate() {
 }
 
 function renderLoggedUserGreetings(storedName) {
-    if (storedName === 'Guest' || storedName === null ) {
+    if (storedName === 'Guest' || storedName === null) {
         return ``;
     } else {
         return `${storedName}!`;
@@ -95,4 +96,20 @@ function renderLoggedUserGreetings(storedName) {
 
 function openBoard() {
     window.location.href = 'board.html';
+}
+
+function greetingDate() {
+    let currentTime = new Date();
+    let hours = currentTime.getHours();
+    let greeting;
+
+    if (hours < 12) {
+        greeting = "Good morning";
+    } else if (hours < 18) {
+        greeting = "Good afternoon";
+    } else {
+        greeting = "Good evening";
+    }
+
+    return greeting;
 }

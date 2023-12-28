@@ -101,3 +101,9 @@
         height: auto;
     }
 }
+
+@media (max-width: 420px) {
+    .text-section {
+        width: 300px;
+    }
+}

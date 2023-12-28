@@ -464,49 +464,78 @@ li:hover .editImg {
     }
 }
 
-@media (max-width: 550px) {
+@media (max-width: 450px) {
+    .headline {
+        font-size: 30px;
+        margin-bottom: 24px;
+    }
+
+    .vertical-menu {
+        height: 590px;
+    }
+
     .title input {
-        width: 80vw;
+        width: 66vw;
+        margin-bottom: 24px;
     }
 
     .description textarea {
-        width: 80vw;
+        width: 68vw;
+        margin-bottom: 24px;
     }
 
     .contact select {
-        width: 85vw;
+        width: 78vw;
     }
 
     .date input {
-        width: 80vw;
+        width: 68vw;
+        margin-bottom: 24px;
+    }
+
+    .right-selection {
+        margin-top: 20px;
     }
 
     .prio {
-        width: 85vw;
+        margin-bottom: 24px;
     }
 
     .btn-select {
-        width: 25vw;
+        width: 23vw;
+        height: 5vh;
+        font-size: 14px;
+    }
+
+    .btn-select img {
+        height: 8px;
+        margin-left: 0;
+        width: 15px;
+    }
+
+    .contact select {
+        width: 76vw;
+        margin-bottom: 24px;
+    }
+
+    .subtask {
+        width: 67vw;
+    }
+
+    .pngs {
+        left: 67vw;
     }
 
     .subtask input {
-        width: 80vw;
+        width: 67vw;
+    }
+
+    .subtask-list {
+        width: 250px;
     }
 
     .buttons-and-text {
-        right: 15px;
-        width: 90vw;
-    }
-
-    .btn-position {
-        width: 36vw;
-    }
-
-    .hidden {
-        width: 60vw;
-    }
-
-    .button-position {
-        left: 30vw;
+        width: 380px;
+        justify-content: space-around;
     }
 }

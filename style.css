@@ -196,7 +196,6 @@ header h2 {
 
 .headline-container {
     width: 319px;
-    height: 24px;
     display: flex;
     align-items: center;
     margin-left: 120px;
@@ -217,10 +216,12 @@ header h2 {
 .header-picure-help {
     width: 32px;
     height: 32px;
+    background-image: url("img/header/help.png");
 }
 
 .header-picure-help:hover {
     cursor: pointer;
+    background-image: url("img/header/help_hover.png");
 }
 
 .header-picture-user {
@@ -342,24 +343,23 @@ svg {
 
     .sidebarButton {
         flex-direction: column;
-        gap: 4px;
-        width: 76px;
-        height: 76px;
         padding: 0;
+        width: 56px;
+        height: 56px;
     }
 
     .sidebarMenuButton {
+        padding: 0;
         width: 76px;
         height: 76px;
-        gap: 0;
-        border-radius: 8px;
     }
 
     .sidebarMenuContainer {
-        padding: 0px 16px;
+        padding: 0px 8px;
         width: 100%;
         flex-direction: row;
         justify-content: space-between;
+        gap: 0;
     }
 
     .sidebarMenuButton p {

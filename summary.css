@@ -333,13 +333,11 @@ section {
     body {
         display: block;
     }
-
     .summary-main-section {
         flex-direction: column;
         gap: 16px;
         margin-top: 48px;
     }
-
     .join-container {
         width: 223px;
         height: 104px;
@@ -348,17 +346,14 @@ section {
         margin-top: 48px;
         margin-left: 16px;
     }
-
     .h1 {
         width: 203px;
         height: 56px;
         font-size: 47px;
     }
-
     .blue-line {
         display: none;
     }
-
     .join-text {
         width: 223px;
         height: 24px;
@@ -366,45 +361,37 @@ section {
         margin-block-start: 0;
         margin-block-end: 0;
     }
-
     .greeting-section {
         display: none;
     }
-
     section {
         width: 396px;
         height: 384px;
         margin-left: 0;
         margin-top: 192px;
     }
-
     .do-container {
         width: 186px;
         height: 110px;
         gap: 10px;
     }
-
     .do-done-container {
         width: 396px;
         height: 110px;
     }
-
     .urgent-deadline-container {
         width: 396px;
         height: 110px;
         gap: 20px;
     }
-
     .task-container {
         width: 396px;
         height: 116px;
     }
-
     .do-done-picture {
         height: 40px;
         width: 40px;
     }
-
     .task-span {
         width: 23px;
         height: 56px;
@@ -413,59 +400,65 @@ section {
         font-weight: 600;
         line-height: 120%;
     }
-
     .text-span {
         width: 40px;
         height: 17px;
         font-size: 14px;
     }
-
     .urgent-container {
         width: 108px;
         height: 73px;
     }
-
     .urgent-picture {
         width: 40px;
         height: 40px;
     }
-
     .urgent-line-container {
         height: 68px;
     }
-
     .deadline-container {
         width: 140px;
         height: 44px;
         gap: 8px;
     }
-
     .h2 {
         width: 100%;
         height: 19px;
         font-size: 16px;
     }
-
     .text-deadline {
         width: 130px;
         height: 17px;
         font-size: 14px;
     }
-
     .task-container {
         width: 396px;
         height: 116px;
     }
-
     .task-sections {
         width: 116px;
         height: 116px;
         gap: 13px;
     }
-
     .text-task {
         width: 54px;
         height: 34px;
         font-size: 14px;
+    }
+}
+
+@media (max-width: 400px) {
+    .do-done-container {
+        width: 300px;
+    }
+    .urgent-deadline-container {
+        width: 300px;
+    }
+    .task-container {
+        width: 300px;
+        gap: 16px;
+    }
+    section {
+        align-items: center;
     }
 }
