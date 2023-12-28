@@ -1,35 +1,43 @@
-let ToDo = [];
-let inProgress = [];
-let awaitFeedback = [];
-let done = [];
+function sortTasks() {
+    ToDo = [];
+    inProgress = [];
+    awaitFeedback = [];
+    done = [];
 
-initTasks()
+    tasks.forEach(task => {
+        switch (task.status) {
+            case "ToDo":
+                ToDo.push(task);
+                break;
+            case "inProgress":
+                inProgress.push(task);
+                break;
+            case "awaitFeedback":
+                awaitFeedback.push(task);
+                break;
+            case "done":
+                done.push(task);
+                break;
+            default:
+                console.error(`Invalid status: ${task.status}`);
+                break;
+        }
+    });
 
-
-function openAddTask() {
-    let addTask = document.getElementById('openAddTask')
-
-    addTask.style.visibility = 'visible';
+    updateTaskContainers(); // Update the UI after sorting
 }
 
-function closeAddTask(){
-    let addTask = document.getElementById('openAddTask')
-
-    addTask.style.visibility = 'hidden';
+// Call the sortTasks function when the board is loaded
+function initTasks() {
+    loadTask()
+        .then(() => {
+            sortTasks();
+        })
+        .catch(error => {
+            console.error('Loading error:', error);
+        });
 }
 
-
-function addTaskToArrays(status, task) {
-    if (status === "ToDo") {
-        ToDo.push(task);
-    } else if (status === "inProgress") {
-        inProgress.push(task);
-    } else if (status === "awaitFeedback") {
-        awaitFeedback.push(task);
-    } else if (status === "done") {
-        done.push(task);
-    }
-}
 
 
 
@@ -53,4 +61,15 @@ function updateTaskContainers() {
     updateContainer('awaitFeedback', awaitFeedback, 'feedbackContainer');
     updateContainer('done', done, 'doneContainer');
 }
-    updateTaskContainers();
+
+function openAddTask() {
+    let addTask = document.getElementById('openAddTask')
+
+    addTask.style.visibility = 'visible';
+}
+
+function closeAddTask(){
+    let addTask = document.getElementById('openAddTask')
+
+    addTask.style.visibility = 'hidden';
+}

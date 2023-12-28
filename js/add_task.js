@@ -33,9 +33,11 @@ async function pushToTask() {
     let selectedContactIndex = contactDropdown.selectedIndex;
     let selectedContactName = contactDropdown.options[selectedContactIndex].text;
 
-    tasks.push({ status: "Todo", title: title, description: description, contact: selectedContactName, prio: prios, date: date, category: selectedCategoryName, subtask: subTasks, urgentprio: urgentPrio });
+    const task = { status: "ToDo", title, description, contact: selectedContactName, prio: prios, date, category: selectedCategoryName, subtask: subTasks, urgentprio: urgentPrio };
+
+    tasks.push(task);
     
-    addTaskToArrays(status, task);  // auf dem Board zu finden
+    addTaskToArrays(task);  // auf dem Board zu finden
     updateTaskContainers();
 
     await setItem('task', JSON.stringify(tasks));
