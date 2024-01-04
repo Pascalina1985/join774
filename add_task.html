@@ -17,97 +17,100 @@
 
 <body onload="init('addTask')">
     <div id="container" class="container">
-    <div class="sidebarContainer" w3-include-html=".\assets\templates\side_menu.html"></div>
-    <div class="mainContainer">
-        <header w3-include-html=".\assets\templates\header.html"></header>
-        <form onsubmit="pushToTask(); return false" class="contentContainer">
-            <div class="tasks">
-                <div class="headline">
-                    <h2>Add Task</h2>
-                </div>
-                <div class="vertical-menu">
-                    <div class="position-left-right">
+        <div class="sidebarContainer" w3-include-html=".\assets\templates\side_menu.html"></div>
+        <div class="mainContainer">
+            <header w3-include-html=".\assets\templates\header.html"></header>
+            <form onsubmit="pushToTask(); return false" class="contentContainer">
+                <div class="tasks">
+                    <div class="headline">
+                        <h2>Add Task</h2>
+                    </div>
+                    <div class="vertical-menu">
+                        <div class="position-left-right">
 
-                        <div class="left-selection">
-                            <div class="title">
-                                <p>Title<b style="color: red;">*</b></p>
-                                <input id="titleInput" required type="text" placeholder="Enter a Title">
-                            </div>
-                            <div class="description">
-                                <p>Description</p>
-                                <textarea id="descriptionInput" placeholder="Enter a Description"></textarea>
-                            </div>
+                            <div class="left-selection">
+                                <div class="title">
+                                    <p>Title<b style="color: red;">*</b></p>
+                                    <input id="titleInput" required type="text" placeholder="Enter a Title">
+                                </div>
+                                <div class="description">
+                                    <p>Description</p>
+                                    <textarea id="descriptionInput" placeholder="Enter a Description"></textarea>
+                                </div>
 
-                            <div class="contact">
-                                <label for="contacts">Assigned to</label>
-                                <div class="containerDropDown">
-                                    <div class="inputDropDown">
-                                        <input id="inputDropDown" type="text" onkeyup="search()" placeholder="Select contacts to assign">
-                                        <img id="openDropdown" onclick="checkDropdown()" src="img/add-Task/arrow_drop_down.svg" alt="">
+                                <div class="contact">
+                                    <label for="contacts">Assigned to</label>
+                                    <div class="containerDropDown">
+                                        <div class="inputDropDown">
+                                            <input id="inputDropDown" type="text" onkeyup="search()"
+                                                placeholder="Select contacts to assign">
+                                            <img id="openDropdown" onclick="checkDropdown()"
+                                                src="img/add-Task/arrow_drop_down.svg" alt="">
+                                        </div>
+
+                                        <div id="dropDownContacts">
+
+                                        </div>
                                     </div>
                                     <div id="checkedUserInitials">
-                            
-                                    </div>
-                                    <div id="dropDownContacts">
-                            
+
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
 
-                        <div class="middle-line"></div>
+                            <div class="middle-line"></div>
 
 
-                        <div class="right-selection">
-                            <div class="date">
-                                <p style="margin: 0;">Due date<b style="color: red;">*</b></p>
-                                <input required type="date" placeholder="dd/mm/yyyy" id="date">
-                            </div>
-                            <div class="prio">
-                                <p style="margin: 0;">Prio</p>
-                                <div class="prio-selection">
-                                    <button type="button" onclick="getPrio(this)" class="btn-select" id="urgentBtn">Urgent<img
-                                            src="./img/add-Task/Prio alta.png"></button>
-                                    <button type="button" onclick="getPrio(this)" class="btn-select" id="mediumBtn">Medium<img
-                                            src="./img/add-Task/Capa 1.png"></button>
-                                    <button type="button" onclick="getPrio(this)" class="btn-select" id="lowBtn">Low<img
-                                            src="./img/add-Task/Prio baja.png"></button>
+                            <div class="right-selection">
+                                <div class="date">
+                                    <p style="margin: 0;">Due date<b style="color: red;">*</b></p>
+                                    <input required type="date" placeholder="dd/mm/yyyy" id="date">
+                                </div>
+                                <div class="prio">
+                                    <p style="margin: 0;">Prio</p>
+                                    <div class="prio-selection">
+                                        <button type="button" onclick="getPrio(this)" class="btn-select"
+                                            id="urgentBtn">Urgent<img src="./img/add-Task/Prio alta.png"></button>
+                                        <button type="button" onclick="getPrio(this)" class="btn-select"
+                                            id="mediumBtn">Medium<img src="./img/add-Task/Capa 1.png"></button>
+                                        <button type="button" onclick="getPrio(this)" class="btn-select"
+                                            id="lowBtn">Low<img src="./img/add-Task/Prio baja.png"></button>
+                                    </div>
+                                </div>
+                                <div class="contact">
+                                    <label for="Category">Category<b style="color: red;">*</b></label>
+                                    <select name="Category" id="category" required>
+                                        <option class="placeholder-chance" disabled selected hidden>Select task Category
+                                        </option>
+                                        <option value="Technical Task">Technical Task</option>
+                                        <option value="User Story">User Story</option>
+                                    </select>
+                                </div>
+                                <div class="subtask">
+                                    <p style="margin: 0;">Subtasks</p>
+                                    <input id="subtask" type="text" placeholder="Add new subtask">
+                                    <img onclick="addSubtask()" class="pngs" src="./img/log-in/Subtasks icons11.png">
+                                    <ul class="subtask-list" id="list"></ul>
                                 </div>
                             </div>
-                            <div class="contact">
-                                <label for="Category">Category<b style="color: red;">*</b></label>
-                                <select name="Category" id="category" required>
-                                    <option class="placeholder-chance" disabled selected hidden>Select task Category
-                                    </option>
-                                    <option value="Technical Task">Technical Task</option>
-                                    <option value="User Story">User Story</option>
-                                </select>
-                            </div>
-                            <div class="subtask">
-                                <p style="margin: 0;">Subtasks</p>
-                                <input id="subtask" type="text" placeholder="Add new subtask">
-                                <img onclick="addSubtask()" class="pngs" src="./img/log-in/Subtasks icons11.png">
-                                <ul class="subtask-list" id="list"></ul>
-                            </div>
-                        </div>
 
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <section class="buttons-and-text">
-                <div class="required-text">
-                    <b style="color: red;">*</b>
-                    <p>This field is required</p>
-                </div>
-                <div class="btn-position">
-                    <button type="button" onclick="clearForm()" class="btn-clear">Clear X</button>
-                    <button class="btn" id="create-btn">Create Task <img src="./img/add-Task/check.png"></button>
-                </div>
-            </section>
-        </form>
-    </div>
+                <section class="buttons-and-text">
+                    <div class="required-text">
+                        <b style="color: red;">*</b>
+                        <p>This field is required</p>
+                    </div>
+                    <div class="btn-position">
+                        <button type="button" onclick="clearForm()" class="btn-clear">Clear X</button>
+                        <button class="btn" id="create-btn">Create Task <img src="./img/add-Task/check.png"></button>
+                    </div>
+                </section>
+            </form>
+        </div>
     </div>
 
 </body>

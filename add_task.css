@@ -417,6 +417,8 @@ input:focus {
 
 #checkedUserInitials{
     display: flex;
+    background: #F6F7F8;
+    gap: 5px;
 }
 
 .dropDownContent {
