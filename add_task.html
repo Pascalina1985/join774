@@ -40,9 +40,18 @@
 
                             <div class="contact">
                                 <label for="contacts">Assigned to</label>
-                                <select onclick="getContact()" name="contacts" id="assignContact">
-                                    <option disabled selected hidden>Select contacts to assign</option>
-                                </select>
+                                <div class="containerDropDown">
+                                    <div class="inputDropDown">
+                                        <input id="inputDropDown" type="text" onkeyup="search()" placeholder="Select contacts to assign">
+                                        <img id="openDropdown" onclick="checkDropdown()" src="img/add-Task/arrow_drop_down.svg" alt="">
+                                    </div>
+                                    <div id="checkedUserInitials">
+                            
+                                    </div>
+                                    <div id="dropDownContacts">
+                            
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
