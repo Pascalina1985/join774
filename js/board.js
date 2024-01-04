@@ -31,7 +31,6 @@ function sortTasks() {
                 done.push(task);
                 break;
             default:
-               // console.error(`Invalid status: ${task.status}`);
                 break;
         }
     });
@@ -48,7 +47,6 @@ function updateContainer(status, taskArray, containerId) {
     container.innerHTML = ""; // Clear the container
 
     if (taskArray.length === 0) {
-       container.textContent = `No tasks ${status}`;
     } else {
         taskArray.forEach((task, index) => {
             // Create HTML elements for each task using the createTaskTemplate function
@@ -74,20 +72,15 @@ function openAddTask() {
     addTask.style.visibility = 'visible';
 }
 
-function closeAddTask(){
+function closeAddTask() {
     let addTask = document.getElementById('openAddTask')
 
     addTask.style.visibility = 'hidden';
 }
 
 function changeTaskStatus(tasks, i, newStatus) { // beispiel changeTaskStatus(tasks, 17, awaitFeedback)
-   
     if (Array.isArray(tasks) && i >= 0 && i < tasks.length && newStatus) {
-      
-      tasks[i].status = newStatus;
-      console.log(`Status of task at index ${i} changed to ${newStatus}:`, tasks[i]);
     } else {
-      console.error("Invalid tasks array, index, or new status");
     }
   }
 
