@@ -31,6 +31,7 @@ function sortTasks() {
                 done.push(task);
                 break;
             default:
+                // console.error(`Invalid status: ${task.status}`);
                 break;
         }
     });
@@ -47,18 +48,19 @@ function updateContainer(status, taskArray, containerId) {
     container.innerHTML = ""; // Clear the container
 
     if (taskArray.length === 0) {
+        container.textContent = `No tasks ${status}`;
     } else {
         taskArray.forEach((task, index) => {
             // Create HTML elements for each task using the createTaskTemplate function
             const taskElement = document.createElement('div');
             taskElement.innerHTML = taskCardHTML(index, task);
-            
+
             // Append the task HTML to the container
             container.appendChild(taskElement);
         });
     }
 }
-    
+
 function updateTaskContainers() {
     updateContainer('ToDo', ToDo, 'toDoContainer');
     updateContainer('inProgress', inProgress, 'progressContainer');
@@ -79,10 +81,15 @@ function closeAddTask() {
 }
 
 function changeTaskStatus(tasks, i, newStatus) { // beispiel changeTaskStatus(tasks, 17, awaitFeedback)
+
     if (Array.isArray(tasks) && i >= 0 && i < tasks.length && newStatus) {
+
+        tasks[i].status = newStatus;
+        console.log(`Status of task at index ${i} changed to ${newStatus}:`, tasks[i]);
     } else {
+        console.error("Invalid tasks array, index, or new status");
     }
-  }
+}
 
 
 // HTML Template
