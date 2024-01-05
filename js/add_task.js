@@ -21,8 +21,7 @@ async function loadTask() {
 }
 
 
-async function pushToTask() {
-    let status = "ToDo";  // status added
+async function pushToTask(statusBox) {
     let title = document.getElementById('titleInput').value;
     let description = document.getElementById('descriptionInput').value;
     let date = document.getElementById('date').value;
@@ -33,17 +32,26 @@ async function pushToTask() {
     let selectedContactIndex = contactDropdown.selectedIndex;
     let selectedContactName = contactDropdown.options[selectedContactIndex].text;
 
-    const task = { status: "ToDo", title, description, contact: selectedContactName, prio: prios, date, category: selectedCategoryName, subtask: subTasks, urgentprio: urgentPrio };
+    const task = {
+        status: statusBox, 
+        title,
+        description,
+        contact: selectedContactName,
+        prio: prios,
+        date,
+        category: selectedCategoryName,
+        subtask: subTasks,
+        urgentprio: urgentPrio
+    };
 
     tasks.push(task);
-    
-    // addTaskToArrays(task);  // auf dem Board zu finden
-    // updateTaskContainers();
 
+    pushToBackend();
+}
+
+async function pushToBackend() {
     await setItem('task', JSON.stringify(tasks));
     console.log(tasks);
-    
-
 }
 
 
