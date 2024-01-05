@@ -18,32 +18,10 @@ async function sortTasks() {
     let todo = tasks.filter(t => t['status'] == 'toDo');
     document.getElementById('toDoContainer').innerHTML = '';
 
-<<<<<<< HEAD
     for (let index = 0; index < todo.length; index++) {
         const task = todo[index];
         document.getElementById('toDoContainer').innerHTML += taskCardHTML(index, task);
     }
-=======
-    tasks.forEach(task => {
-        switch (task.status) {
-            case "ToDo":
-                ToDo.push(task);
-                break;
-            case "inProgress":
-                inProgress.push(task);
-                break;
-            case "awaitFeedback":
-                awaitFeedback.push(task);
-                break;
-            case "done":
-                done.push(task);
-                break;
-            default:
-                // console.error(`Invalid status: ${task.status}`);
-                break;
-        }
-    });
->>>>>>> a625d75b31a132c5e76ba5a0f4c41b215615213c
 
     let inProgress = tasks.filter(t => t['status'] == 'inProgress');
     document.getElementById('progressContainer').innerHTML = '';
@@ -112,13 +90,7 @@ function openAddTask(statusBox) {
     currentStatusBox = statusBox;
 }
 
-<<<<<<< HEAD
-
-
-function closeAddTask(){
-=======
 function closeAddTask() {
->>>>>>> a625d75b31a132c5e76ba5a0f4c41b215615213c
     let addTask = document.getElementById('openAddTask')
 
     addTask.style.visibility = 'hidden';

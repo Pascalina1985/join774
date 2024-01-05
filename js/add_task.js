@@ -22,13 +22,8 @@ async function loadTask() {
 }
 
 
-<<<<<<< HEAD
 async function pushToTask(statusBox) {
-=======
-async function pushToTask() {
     checkDropdown();
-    let status = "ToDo";  // status added
->>>>>>> a625d75b31a132c5e76ba5a0f4c41b215615213c
     let title = document.getElementById('titleInput').value;
     let description = document.getElementById('descriptionInput').value;
     let date = document.getElementById('date').value;
@@ -39,7 +34,6 @@ async function pushToTask() {
     //let selectedContactIndex = contactDropdown.selectedIndex;
     //let selectedContactName = contactDropdown.options[selectedContactIndex].text;
 
-<<<<<<< HEAD
     const task = {
         status: statusBox, 
         title,
@@ -53,14 +47,6 @@ async function pushToTask() {
     };
 
     tasks.push(task);
-=======
-    const task = { status: "ToDo", title, description, prio: prios, date, category: selectedCategoryName, subtask: subTasks, urgentprio: urgentPrio, assignedto: assignedTo };
-
-    tasks.push(task);
-
-    // addTaskToArrays(task);  // auf dem Board zu finden
-    // updateTaskContainers();
->>>>>>> a625d75b31a132c5e76ba5a0f4c41b215615213c
 
     pushToBackend();
 }
@@ -68,11 +54,6 @@ async function pushToTask() {
 async function pushToBackend() {
     await setItem('task', JSON.stringify(tasks));
     console.log(tasks);
-<<<<<<< HEAD
-=======
-
-
->>>>>>> a625d75b31a132c5e76ba5a0f4c41b215615213c
 }
 
 
