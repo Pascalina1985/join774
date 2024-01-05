@@ -18,10 +18,32 @@ async function sortTasks() {
     let todo = tasks.filter(t => t['status'] == 'toDo');
     document.getElementById('toDoContainer').innerHTML = '';
 
+<<<<<<< HEAD
     for (let index = 0; index < todo.length; index++) {
         const task = todo[index];
         document.getElementById('toDoContainer').innerHTML += taskCardHTML(index, task);
     }
+=======
+    tasks.forEach(task => {
+        switch (task.status) {
+            case "ToDo":
+                ToDo.push(task);
+                break;
+            case "inProgress":
+                inProgress.push(task);
+                break;
+            case "awaitFeedback":
+                awaitFeedback.push(task);
+                break;
+            case "done":
+                done.push(task);
+                break;
+            default:
+                // console.error(`Invalid status: ${task.status}`);
+                break;
+        }
+    });
+>>>>>>> a625d75b31a132c5e76ba5a0f4c41b215615213c
 
     let inProgress = tasks.filter(t => t['status'] == 'inProgress');
     document.getElementById('progressContainer').innerHTML = '';
@@ -62,19 +84,19 @@ function updateContainer(status, taskArray, containerId) {
     container.innerHTML = ""; // Clear the container
 
     if (taskArray.length === 0) {
-       container.textContent = `No tasks ${status}`;
+        container.textContent = `No tasks ${status}`;
     } else {
         taskArray.forEach((task, index) => {
             // Create HTML elements for each task using the createTaskTemplate function
             const taskElement = document.createElement('div');
             taskElement.innerHTML = taskCardHTML(index, task);
-            
+
             // Append the task HTML to the container
             container.appendChild(taskElement);
         });
     }
 }
-    
+
 function updateTaskContainers() {
     updateContainer('ToDo', ToDo, 'toDoContainer');
     updateContainer('inProgress', inProgress, 'progressContainer');
@@ -90,24 +112,28 @@ function openAddTask(statusBox) {
     currentStatusBox = statusBox;
 }
 
+<<<<<<< HEAD
 
 
 function closeAddTask(){
+=======
+function closeAddTask() {
+>>>>>>> a625d75b31a132c5e76ba5a0f4c41b215615213c
     let addTask = document.getElementById('openAddTask')
 
     addTask.style.visibility = 'hidden';
 }
 
 function changeTaskStatus(tasks, i, newStatus) { // beispiel changeTaskStatus(tasks, 17, awaitFeedback)
-   
+
     if (Array.isArray(tasks) && i >= 0 && i < tasks.length && newStatus) {
-      
-      tasks[i].status = newStatus;
-      console.log(`Status of task at index ${i} changed to ${newStatus}:`, tasks[i]);
+
+        tasks[i].status = newStatus;
+        console.log(`Status of task at index ${i} changed to ${newStatus}:`, tasks[i]);
     } else {
-      console.error("Invalid tasks array, index, or new status");
+        console.error("Invalid tasks array, index, or new status");
     }
-  }
+}
 
   function moveTo(status) {
     console.log('Moving to status:', status);
