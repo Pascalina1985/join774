@@ -130,6 +130,7 @@
     align-items: flex-start;
     gap: 24px;
     padding: 16px;
+    margin-bottom: 16px;
     align-self: stretch;
     border-radius: 24px;
     background: var(--white, #FFF);
@@ -265,4 +266,19 @@ display: flex;
 
 .close-Btn:hover{
     background-color: rgba(0, 0, 0, 0.2);
+}
+
+.Drop-box{
+    border: 1px solid black;
+    border-radius: 10px;
+    min-height: 500px;
+    height: 650px;
+    width: 100%;
+    padding: 0px 36px;
+    overflow: auto;
+    scrollbar-width: none;
+    
+}
+::-webkit-scrollbar { /* hides the scrollbar */
+    display: none;
 }
