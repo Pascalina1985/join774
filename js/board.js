@@ -50,6 +50,28 @@ async function sortTasks() {
     pushToBackend();
 }
 
+function SearchOnBoard() {
+    const searchQuery = document.getElementById('searchInput').value.trim(); // Trim to handle spaces
+    if (searchQuery === '') {
+        updateTaskDisplay(tasks);
+    } else {
+        searchForTasks(searchQuery);
+    }
+}
+
+function searchForTasks(query) {
+
+    const lowerCaseQuery = query.toLowerCase();
+
+    const searchResults = tasks.filter(task =>
+        task.title.toLowerCase().includes(lowerCaseQuery) ||
+        task.description.toLowerCase().includes(lowerCaseQuery)
+    );
+
+    updateTaskDisplay(searchResults);
+}
+
+
 function startDragging(i) {
     currentDraggedElement = i;
 }
