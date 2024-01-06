@@ -71,6 +71,18 @@ function searchForTasks(query) {
     updateTaskDisplay(searchResults);
 }
 
+function updateTaskDisplay(searchResults) {
+    for (let i = 0; i < tasks.length; i++) {
+        const taskId = `card${i}`;
+        const taskElement = document.getElementById(taskId);
+
+        if (taskElement) {
+            // If the task is in searchResults, display it; otherwise, hide it
+            taskElement.style.display = searchResults.includes(tasks[i]) ? 'flex' : 'none';
+        }
+    }
+}
+
 
 function startDragging(i) {
     currentDraggedElement = i;
