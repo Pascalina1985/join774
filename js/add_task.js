@@ -35,15 +35,14 @@ async function pushToTask(statusBox) {
     //let selectedContactName = contactDropdown.options[selectedContactIndex].text;
 
     const task = {
-        status: statusBox, 
-        title,
-        description,
-        contact: selectedContactName,
-        prio: prios,
-        date,
-        category: selectedCategoryName,
-        subtask: subTasks,
-        urgentprio: urgentPrio
+        status: statusBox,
+        title, 
+        description, 
+        prio: prios, 
+        date, category: selectedCategoryName, 
+        subtask: subTasks, 
+        urgentprio: urgentPrio, 
+        assignedto: assignedTo
     };
 
     tasks.push(task);
