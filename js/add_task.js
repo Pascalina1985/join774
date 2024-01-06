@@ -30,9 +30,9 @@ async function pushToTask(statusBox) {
     let category = document.getElementById('category');
     let selectedCategoryIndex = category.selectedIndex;
     let selectedCategoryName = category.options[selectedCategoryIndex].text;
-    //let contactDropdown = document.getElementById('assignContact');
-    //let selectedContactIndex = contactDropdown.selectedIndex;
-    //let selectedContactName = contactDropdown.options[selectedContactIndex].text;
+    let contactDropdown = document.getElementById('assignContact');
+    let selectedContactIndex = contactDropdown.selectedIndex;
+    let selectedContactName = contactDropdown.options[selectedContactIndex].text;
 
     const task = {
         status: statusBox,
@@ -44,14 +44,6 @@ async function pushToTask(statusBox) {
         category: selectedCategoryName,
         subtask: subTasks,
         urgentprio: urgentPrio
-        status: statusBox,
-        title, 
-        description, 
-        prio: prios, 
-        date, category: selectedCategoryName, 
-        subtask: subTasks, 
-        urgentprio: urgentPrio, 
-        assignedto: assignedTo
     };
 
     tasks.push(task);
