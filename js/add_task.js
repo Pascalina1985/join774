@@ -44,6 +44,14 @@ async function pushToTask(statusBox) {
         category: selectedCategoryName,
         subtask: subTasks,
         urgentprio: urgentPrio
+        status: statusBox,
+        title, 
+        description, 
+        prio: prios, 
+        date, category: selectedCategoryName, 
+        subtask: subTasks, 
+        urgentprio: urgentPrio, 
+        assignedto: assignedTo
     };
 
     tasks.push(task);
