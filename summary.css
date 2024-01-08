@@ -56,6 +56,11 @@ section {
     gap: 18px;
 }
 
+.do-done-container svg {
+    width: 60px;
+    height: 60px;
+}
+
 .do-done-picture {
     width: 69px;
     height: 69px;
