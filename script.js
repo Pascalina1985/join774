@@ -1,6 +1,6 @@
 svgURLS = ['iconSummery', 'iconAddTask', 'iconBoard', 'iconContacts']
 
-window.onresize = function () {
+window.onresize = function() {
     skalierungAnpassen();
 };
 
@@ -20,7 +20,7 @@ async function init(site) {
     loadScript(site);
 }
 
-function isLoggedin(){
+function isLoggedin() {
     if (!getCookie('username')) {
         window.location.href = 'log-in.html';
     }
@@ -29,6 +29,7 @@ function isLoggedin(){
 function loadScript(site) {
     if (site === 'contacts') { initContacts() }
     if (site === 'addTask') { initTasks() }
+    if (site === 'summery') { initSummary() }
 }
 
 
@@ -164,7 +165,7 @@ function openHelp() {
     window.location.href = 'help.html';
 }
 
-function deleteCookie(){
+function deleteCookie() {
     document.cookie = 'username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
 }
 

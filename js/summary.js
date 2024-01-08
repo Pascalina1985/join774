@@ -1,3 +1,8 @@
+async function initSummary() {
+    await loadTask();
+    renderTasks();
+}
+
 async function renderTasks() {
     const taskStatistics = await getTasksData();
 
@@ -13,21 +18,35 @@ async function renderTasks() {
 }
 
 async function getTasksData() {
-    await loadTask();
     let tasksInBoard = tasks.length;
-    let tasksToDo = tasks.filter(tasks => tasks.status === 'ToDo').length;
-    let tasksDone = done.length;
-    let tasksinProgress = inProgress.length;
-    let tasksAwaitFeedback = awaitFeedback.length;
     let storedName = getCookie('username');
+    let tasksToDo = 0;
+    let tasksDone = 0;
+    let tasksinProgress = 0;
+    let tasksAwaitFeedback = 0;
+
+    for (let i = 0; i < tasks.length; i++) {
+        const task = tasks[i];
+        if (task.status) {
+            if (task.status.includes('toDo')) {
+                tasksToDo++;
+            } else if (task.status.includes('done')) {
+                tasksDone++;
+            } else if (task.status.includes('inProgress')) {
+                tasksinProgress++;
+            } else if (task.status.includes('awaitFeedback')) {
+                tasksAwaitFeedback++;
+            }
+        }
+    }
 
     return {
         tasksInBoard,
+        storedName,
         tasksToDo,
         tasksDone,
         tasksinProgress,
-        tasksAwaitFeedback,
-        storedName
+        tasksAwaitFeedback
     };
 }
 
