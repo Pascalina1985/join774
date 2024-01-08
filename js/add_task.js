@@ -5,7 +5,8 @@ let assignedTo = [];
 let urgentPrio = [];
 let contactsDisplayed = false;
 let subTasks = [];
-
+let open = false;
+let user;
 
 async function initTasks() {
     await loadTask();
@@ -21,8 +22,8 @@ async function loadTask() {
 }
 
 
-async function pushToTask() {
-    let status = "ToDo";  // status added
+async function pushToTask(statusBox) {
+    checkDropdown();
     let title = document.getElementById('titleInput').value;
     let description = document.getElementById('descriptionInput').value;
     let date = document.getElementById('date').value;
@@ -33,16 +34,29 @@ async function pushToTask() {
     let selectedContactIndex = contactDropdown.selectedIndex;
     let selectedContactName = contactDropdown.options[selectedContactIndex].text;
 
-    const task = { status: "ToDo", title, description, contact: selectedContactName, prio: prios, date, category: selectedCategoryName, subtask: subTasks, urgentprio: urgentPrio };
+    const task = {
+        status: statusBox,
+        title,
+        description,
+        contact: selectedContactName,
+        prio: prios,
+        date,
+        category: selectedCategoryName,
+        subtask: subTasks,
+        urgentprio: urgentPrio
+    };
 
     tasks.push(task);
-    
-    // addTaskToArrays(task);  // auf dem Board zu finden
-    // updateTaskContainers();
 
+    addTaskToArrays(task);  // auf dem Board zu finden
+    updateTaskContainers();
+}
+
+async function pushToBackend() {
     await setItem('task', JSON.stringify(tasks));
     console.log(tasks);
-    
+    //addTaskToArrays(status, newTask);  // auf dem Board zu finden
+    //updateTaskContainers();
 
 }
 
@@ -93,11 +107,11 @@ function getContact() {
 function addSubtask() {
     let content = document.getElementById('subtask');
     if (content.value.trim() !== '') { // Überprüfe, ob der Input-Wert nicht leer ist
-      subTasks.push(content.value);
-      content.value = '';
-      displaySubtasks();
+        subTasks.push(content.value);
+        content.value = '';
+        displaySubtasks();
     }
-  }
+}
 
 function deleteSubtask(index) {
     subTasks.splice(index, 1); // Entfernt die Subtask aus dem Array
@@ -162,10 +176,106 @@ function clearForm() {
     subList.innerHTML = '';
     let options = document.getElementsByTagName("select");
     for (let i = 0; i < options.length; i++) {
-      options[i].selectedIndex = 0;
+        options[i].selectedIndex = 0;
     }
     var buttons = document.getElementsByClassName("btn-select");
     for (var i = 0; i < buttons.length; i++) {
-      buttons[i].classList.remove("red", "yellow", "green");
+        buttons[i].classList.remove("red", "yellow", "green");
     }
+}
+
+function checkDropdown() {
+    user = getCookie('username');
+    if (open === false) {
+        openDropdown();
+        open = true;
+    }
+    else {
+        closeDropdown();
+        open = false;
+    }
+}
+
+function search() {
+    closeDropdown();
+    openDropdown();
+}
+
+function closeDropdown() {
+    document.getElementById('openDropdown').style.transform = 'rotate(0deg)';
+    let checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    let dropDown = document.getElementById('dropDownContacts');
+    let assignedToInitials = document.getElementById('checkedUserInitials');
+    dropDown.innerHTML = '';
+    checkboxes.forEach(function (checkbox) {
+        if (checkbox.checked) {
+            assignedTo.push(checkbox.value);
+        }
+    });
+    for (let i = 0; i < assignedTo.length; i++) {
+        const element = assignedTo[i];
+        assignedToInitials.innerHTML += showCheckedUserInitials(userDetails(element));
+    }
+}
+
+function openDropdown() {
+    document.getElementById('openDropdown').style.transform = 'rotate(180deg)';
+    let dropDown = document.getElementById('dropDownContacts');
+    document.getElementById('checkedUserInitials').innerHTML = '';
+    dropDown.innerHTML = '';
+    dropDown.innerHTML = isChecked(userDetails(user), user + ' (You)', 'you');
+    for (let i = 0; i < users.length; i++) {
+        const element = users[i].newUser;
+        dropDown.innerHTML += isChecked(userDetails(element), element);
+    }
+}
+
+function isChecked(userInitials, userName) {
+    let searchValue = document.getElementById('inputDropDown').value.toLowerCase();
+    let userNameLower = userName.toLowerCase();
+    if (userNameLower.includes(searchValue)) {
+        if (assignedTo.includes(userName)) {
+            assignedTo.splice(userName, 1);
+            return showUsersHTMLchecked(userInitials, userName);
+        } else {
+            return showUsersHTMLunchecked(userInitials, userName);
+        }
+    }
+    else {
+        return '';
+    }
+}
+
+
+function userDetails(name) {
+    let firstLetterName = name.charAt(0);
+    let lastName = name.split(' ')[1];
+    let firstLetterLastName = lastName ? lastName.charAt(0) : '';
+    return firstLetterName + firstLetterLastName;
+}
+
+function showUsersHTMLunchecked(userInitials, userName) {
+    return `
+    <div class="dropDownContent">
+        <div class="userInitilas">${userInitials}</div>
+        <div class="userName">${userName}</div>
+        <input class="checkBox" type="checkbox" name="myCheckbox" value="${userName}">
+    </div>
+    `
+}
+
+function showUsersHTMLchecked(userInitials, userName) {
+    return `
+    <div class="dropDownContent">
+        <div class="userInitilas">${userInitials}</div>
+        <div class="userName">${userName}</div>
+        <input class="checkBox" type="checkbox" name="myCheckbox" value="${userName}" checked>
+    </div>
+    `
+}
+
+function showCheckedUserInitials(userInitials) {
+    return `
+    <div class="userInitilas">${userInitials}</div>
+    `
 }

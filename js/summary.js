@@ -15,7 +15,7 @@ async function renderTasks() {
 async function getTasksData() {
     await loadTask();
     let tasksInBoard = tasks.length;
-    let tasksToDo = ToDo.length;
+    let tasksToDo = tasks.filter(tasks => tasks.status === 'ToDo').length;
     let tasksDone = done.length;
     let tasksinProgress = inProgress.length;
     let tasksAwaitFeedback = awaitFeedback.length;

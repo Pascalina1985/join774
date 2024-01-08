@@ -33,8 +33,8 @@
 
 
                 <div class="board-find-add-container">
-                    <div class="board-searchbar"><input type="text" placeholder="Find Task"> <img
-                            src="img/board/vector .png" alt=""><img src="img/board/magnifying-glass=Default.png" alt="">
+                    <div class="board-searchbar"><input type="text" id="searchInput" placeholder="Find Task"> <img
+                            src="img/board/vector .png" alt=""><img  onclick="SearchOnBoard()" src="img/board/magnifying-glass=Default.png" alt="">
                     </div>
                     <button onclick="openAddTask()" class="board-add-task-button">Add Task<img src="img/board/add.png"
                             alt=""></button>
@@ -43,53 +43,41 @@
 
             <section class="board-task-container">
 
-                <figure class="board-task-group">
+                <figure class="board-task-group" >
                     <div class="board-task-header">
                         <span>To do</span>
-                        <div><img src="img/board/plus button.png" alt=""></div>
+                        <div><img  onclick="openAddTask('toDo')" src="img/board/plus button.png" alt=""></div>
                     </div>
 
-                    <article id="toDoContainer" class="">No tasks To Do</article>
+                    <article id="toDoContainer" ondrop="moveTo('toDo')" ondragover="allowDrop(event);" class="Drop-box">No tasks To Do</article>
                 </figure>
 
                 <figure class="board-task-group">
                     <div class="board-task-header">
                         <span>In progress</span>
-                        <div><img src="img/board/plus button.png" alt=""></div>
+                        <div><img  onclick="openAddTask('inProgress')" src="img/board/plus button.png" alt=""></div>
                     </div>
 
-                    <article id="progressContainer" class="empty-board-task">Nothing in progress</article>
+                    <article id="progressContainer" ondrop="moveTo('inProgress')" ondragover="allowDrop(event);" class="Drop-box">Nothing in progress</article>
                 </figure>
 
                 <figure class="board-task-group">
                     <div class="board-task-header">
                         <span>Await feedback</span>
-                        <div><img src="img/board/plus button.png" alt=""></div>
+                        <div><img  onclick="openAddTask('awaitFeedback')" src="img/board/plus button.png" alt=""></div>
                     </div>
 
-                    <article id="feedbackContainer" class="empty-board-task">No Feedback yet</article>
+                    <article id="feedbackContainer" ondrop="moveTo('awaitFeedback')" ondragover="allowDrop(event);" class="Drop-box">No Feedback yet</article>
                 </figure>
 
                 <figure class="board-task-group">
                     <div class="board-task-header">
                         <span>Done</span>
-                        <div><img src="img/board/plus button.png" alt=""></div>
+                        <div><img src="" alt=""></div>
                     </div>
 
-                    <article id="" class="card">
-                        <div class="cardLabel" id="cardLabel${i}">Technical Task</div>
-                        <div class="card-header" id="cardHeader${i}">CSS Architecture Planning</div>
-                        <div class="card-content" id="cardContent${i}">Define CSS naming conventions and structure...
-                        </div>
-                        <div class="card-progress" id="cardProgress${i}">
-                            <div class="progressbar" id="progressbar${i}"></div>
-                            <div class="subtasks" id="subtasks${i}">1/2 Subtasks</div>
-                        </div>
-                        <div class="organisation" id="organisation${i}">
-                            <div class="members" id="members${i}"><img src="img/header/User profile initials.png" alt=""
-                                    class="profile-badge"></div>
-                            <div class="prority" id="priority${i}"><img src="img/add-Task/Prio alta.png" alt=""></div>
-                        </div>
+                    <article id="doneContainer" ondrop="moveTo('done')" ondragover="allowDrop(event);" class="Drop-box" >
+                        
                     </article>
 
                 </figure>
@@ -168,7 +156,7 @@
                         </div>
                         <div class="btn-position">
                             <button onclick="clearForm()" class="btn-clear">Clear X</button>
-                            <button onclick="pushToTask()" class="btn">Create Task <img
+                            <button onclick="pushToTask(currentStatusBox)" class="btn">Create Task <img
                                     src="./img/add-Task/check.png"></button>
                         </div>
                     </section>
